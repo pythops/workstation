@@ -1,3 +1,7 @@
 - name: Tmux
   include: tmux.yaml
   tags: tmux
+
+- name: Git
+  include: git.yaml
+  tags: git
