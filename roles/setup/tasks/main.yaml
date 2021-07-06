@@ -1,0 +1,3 @@
+- name: Tmux
+  include: tmux.yaml
+  tags: tmux

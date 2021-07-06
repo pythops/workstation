@@ -1,0 +1,28 @@
+- name: Install tmux binary
+  community.general.pacman:
+    name: tmux
+    state: latest
+
+- name: Install tmux plugin manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+
+- name: Copy Tmux config file
+  copy:
+    src: config/tmux/tmux.conf
+    dest: ~/.config/tmux/tmux.conf
+
+- name: Copy Tmux status file
+  copy:
+    src: config/tmux/tmux-status.conf
+    dest: ~/.config/tmux/tmux-status.conf
+
+- name: Install plugins
+  shell: ~/.tmux/plugins/tpm/bin/install_plugins
+
+- name: Clean plugins
+  shell: ~/.tmux/plugins/tpm/bin/clean_plugins
+
+- name: Update plugins
+  shell: ~/.tmux/plugins/tpm/bin/update_plugins all
