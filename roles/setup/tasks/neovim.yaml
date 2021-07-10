@@ -1,0 +1,31 @@
+- name: Install neovim
+  community.general.pacman:
+    name: neovim
+    state: latest
+
+- name: Create ~/.local/share/nvim/site/autoload directory
+  file:
+    path: ~/.local/share/nvim/site/autoload
+    state: directory
+
+- name: Install vim plug
+  get_url:
+    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    dest: "~/.local/share/nvim/site/autoload/plug.vim"
+
+- name: Copy neovim config files
+  copy:
+    src: config/nvim
+    dest: ~/.config/
+
+- name: Upgrade VimPlug
+  shell: nvim --headless +PlugUpgrade +qa
+
+- name: Install neovim plugins
+  shell: nvim --headless +PlugInstall +qa
+
+- name: Update neovim plugins
+  shell: nvim --headless +PlugUpdate +qa
+
+- name: Delete unused plugins
+  shell: nvim --headless +PlugClean! +qa
