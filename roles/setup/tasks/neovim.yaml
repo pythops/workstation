@@ -2,6 +2,7 @@
   community.general.pacman:
     name: neovim
     state: latest
+  become: yes
 
 - name: Create ~/.local/share/nvim/site/autoload directory
   file:

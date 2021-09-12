@@ -26,3 +26,5 @@ let g:ale_sign_warning = '!'
 let g:ale_lint_delay = 500
 let g:ale_statusline_format = ['%dE', '%dW', '']
 let g:ale_list_window_size = 5
+
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

@@ -16,4 +16,4 @@ source ~/.config/nvim/plugins/vimade.vim
 source ~/.config/nvim/plugins/indentline.vim
 source ~/.config/nvim/plugins/rainbow.vim
 source ~/.config/nvim/plugins/tmuxline.vim
-source ~/.config/nvim/plugins/scrollbar.vim
+source ~/.config/nvim/plugins/vimtex.vim

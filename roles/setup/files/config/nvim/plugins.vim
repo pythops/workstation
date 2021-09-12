@@ -9,6 +9,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
+  " Theme
+  Plug 'sainnhe/gruvbox-material'
+
   " Additional text objects
   Plug 'wellle/targets.vim'
 
@@ -23,9 +26,6 @@ call plug#begin('~/.vim/plugged')
 
   " Tmux integration
   Plug 'tmux-plugins/vim-tmux'
-
-  " Theme
-  Plug 'sainnhe/gruvbox-material'
 
   " Git plugin
   Plug 'tpope/vim-fugitive'
@@ -109,5 +109,8 @@ call plug#begin('~/.vim/plugged')
 
   " Easy resizing of splits
   Plug 'simeji/winresizer'
+
+  " Latex
+  Plug 'lervag/vimtex'
 
 call plug#end()
