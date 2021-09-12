@@ -1,0 +1,17 @@
+# Utils
+buku
+ipython
+httpie
+youtube_dl
+speedtest-cli
+
+# Dev
+flake8-black
+flake8-isort
+flake8-bugbear
+pdbpp
+pip-tools
+
+# Others
+keyrings.google-artifactregistry-auth
+pynvim

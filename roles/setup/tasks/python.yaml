@@ -1,0 +1,37 @@
+- name: Create $HOME/.python directory
+  file:
+    path: $HOME/.python
+    state: directory
+
+- name: Download get-pip.py
+  get_url:
+    url: https://bootstrap.pypa.io/get-pip.py
+    dest: /tmp/get-pip.py
+
+- name: Install pip
+  shell: python3 /tmp/get-pip.py --user
+
+- name: Install pip-tools package
+  pip:
+    name: pip-tools
+    state: present
+    extra_args: --user
+
+- name: Copy packages.in
+  copy:
+    src: python/packages.in
+    dest: $HOME/.python/packages.in
+
+- name: Generate python packages
+  shell: pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt
+
+- name: Install python packages
+  pip:
+    requirements: $HOME/.python/packages.txt
+    state: present
+    extra_args: --user
+
+- name: Copy pdbpp config
+  copy:
+    src: python/pdbrc.py
+    dest: ~/.pdbrc.py
