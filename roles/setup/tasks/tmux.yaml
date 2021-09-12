@@ -2,6 +2,22 @@
   community.general.pacman:
     name: tmux
     state: latest
+  become: yes
+
+- name: Install tmux plugins dependencies
+  community.general.pacman:
+    name: 
+      - gawk
+      - xsel
+      - xclip
+    state: latest
+  become: yes
+  loop:
+
+- name: Create ~/.config/tmux directory
+  file:
+    path: ~/.config/tmux
+    state: directory
 
 - name: Install tmux plugin manager
   git:
