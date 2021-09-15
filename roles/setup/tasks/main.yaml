@@ -22,6 +22,10 @@
   include: packages.yaml
   tags: packages
 
+- name: Rust
+  include: rust.yaml
+  tags: rust
+
 - name: Python
   include: python.yaml
   tags: python
