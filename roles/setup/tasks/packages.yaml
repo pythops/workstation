@@ -2,19 +2,29 @@
   community.general.pacman:
     name:
       - bat
+      - bc
+      - chromium
       - exa
-      - delta
+      - darktable
+      - git-delta
       - duf
       - dust
       - fd
+      - firefox
       - fzf
+      - gimp
       - jq
+      - minikube
+      - mupdf
       - noto-fonts
+      - powerline-fonts
       - procs
-      - rg
+      - ripgrep
       - tldr
       - ttf-font-awesome
+      - vlc
       - watchexec
+      - wpa_supplicant
       - xsel
     state: latest
   become: yes
