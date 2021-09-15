@@ -5,6 +5,11 @@
     state: latest
   become: yes
 
+- name: Create config directory
+  file:
+    path: ~/.config/alacritty
+    state: directory
+
 - name: Copy alcritty conf
   copy:
     src: config/alacritty/alacritty.yml
