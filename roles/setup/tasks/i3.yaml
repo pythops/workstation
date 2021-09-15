@@ -1,0 +1,82 @@
+- name: Install i3 package
+  community.general.pacman:
+    name: i3-wm
+    state: latest
+  become: yes
+
+- name: Install utils
+  community.general.pacman:
+    name:
+      - autocutsel
+      - autorandr
+      - feh
+      - brightnessctl
+      - unclutter
+      - xbindkeys
+      - xorg-xinit
+      - xorg-xinput
+      - xorg-xset
+      - xorg-xrdb
+      - xorg-setxkbmap
+    state: latest
+  become: yes
+
+- name: Create config dirs
+  file:
+    path: "{{  item }}"
+    state: directory
+  loop:
+    - ~/.config/dunst
+    - ~/.config/rofi
+    - ~/.config/i3
+    - ~/.config/i3status-rs
+
+- name: Copy i3 config file
+  copy:
+    src: config/i3/config
+    dest: ~/.config/i3/config
+
+# Xinit
+- name: Copy xinitrc
+  copy:
+    src: xinit/xinitrc
+    dest: ~/.xinitrc
+
+# Status bar
+- name: Install i3status-rs
+  community.general.pacman:
+    name: i3status-rust
+    state: latest
+  become: yes
+
+- name: Copy i3status-rs config file
+  copy:
+    src: config/i3status-rs/config.toml
+    dest: ~/.config/i3status-rs/config.toml
+
+# Dunst
+- name: Install dunst
+  community.general.pacman:
+    name: dunst
+    state: latest
+  become: yes
+
+- name: Copy dunst config file
+  copy:
+    src: config/dunst/config
+    dest: ~/.config/dunst/config
+
+# Rofi
+- name: Install rofi
+  community.general.pacman:
+    name: rofi
+    state: latest
+  become: yes
+
+- name: Copy rofi config file
+  copy:
+    src: config/rofi/config.rasi
+    dest: ~/.config/rofi/config.rasi
+
+- name: Reload i3 config
+  shell: pgrep -x i3 && i3-msg reload || echo "i3 not running"

@@ -1,0 +1,6 @@
+configuration {
+	theme: "gruvbox-dark-hard";
+	combi-modi: "window,drun,run";
+	modi: "combi";
+	show-icons: true;
+}
