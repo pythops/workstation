@@ -19,7 +19,6 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-
 " Navigation key mapping
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
