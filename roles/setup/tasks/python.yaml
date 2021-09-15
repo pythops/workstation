@@ -3,14 +3,6 @@
     path: $HOME/.python
     state: directory
 
-- name: Download get-pip.py
-  get_url:
-    url: https://bootstrap.pypa.io/get-pip.py
-    dest: /tmp/get-pip.py
-
-- name: Install pip
-  shell: python3 /tmp/get-pip.py --user
-
 - name: Install pip-tools package
   pip:
     name: pip-tools
