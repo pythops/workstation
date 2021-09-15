@@ -1,0 +1,20 @@
+- name: Install packages
+  community.general.pacman:
+    name:
+      - bat
+      - exa
+      - delta
+      - duf
+      - dust
+      - fd
+      - fzf
+      - jq
+      - noto-fonts
+      - procs
+      - rg
+      - tldr
+      - ttf-font-awesome
+      - watchexec
+      - xsel
+    state: latest
+  become: yes
