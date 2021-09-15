@@ -21,8 +21,14 @@ redshift:
 tmux:
 	@ansible-playbook setup.yaml -t tmux -K
 
+packages:
+	@ansible-playbook setup.yaml -t packages -K
+
 python:
 	@ansible-playbook setup.yaml -t python
+
+rust:
+	@ansible-playbook setup.yaml -t rust
 
 zsh:
 	@ansible-playbook setup.yaml -t zsh -K
