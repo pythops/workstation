@@ -1,3 +1,7 @@
+- name: Alacritty
+  include: alacritty.yaml
+  tags: alacritty
+
 - name: Tmux
   include: tmux.yaml
   tags: tmux
@@ -21,3 +25,7 @@
 - name: Python
   include: python.yaml
   tags: python
+
+- name: Zsh
+  include: zsh.yaml
+  tags: zsh
