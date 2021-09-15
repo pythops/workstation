@@ -1,7 +1,7 @@
 ## General config
 skip_global_compinit=1
 
-export PATH=$ZSH_CUSTOM/plugins/git-fuzzy/bin:$HOME/bin:$HOME/.local/bin:$HOME/npm/bin:$PATH
+export PATH=$ZSH_CUSTOM/plugins/git-fuzzy/bin:$HOME/bin:$HOME/.local/bin:$HOME/npm/bin:$HOME/.cargo/bin:$PATH
 export EDITOR='nvim'
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export LANG=en_US.UTF-8
@@ -74,14 +74,12 @@ plugins=(
   gcloud
   git
   httpie
-  kube-ps1
   kubectl
   pip
   python
   sudo
   vagrant
   vi-mode
-  z
   zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
