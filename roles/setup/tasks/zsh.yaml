@@ -1,0 +1,48 @@
+- name: Install zsh
+  community.general.pacman:
+    name: zsh
+    state: latest
+  become: yes
+
+- name: Install oh my zsh
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: ~/.oh-my-zsh
+    depth: 1
+
+- name: Copy zshrc
+  copy:
+    src: zsh/zshrc
+    dest: ~/.zshrc
+
+- name: Install spaceship prompt
+  git:
+    repo: https://github.com/spaceship-prompt/spaceship-prompt.git
+    dest: ~/.oh-my-zsh/custom/themes/spaceship-prompt
+    depth: 1
+
+- name: Enable spaceship theme
+  file:
+    src: ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
+    dest: ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+    state: link
+
+- name: Install zsh-syntax-highlighting plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+- name: Install zsh-autosuggestions plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+- name: Install zsh-completions plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-completions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
+
+- name: Install git-fuzzy plugin
+  git:
+    repo: https://github.com/bigH/git-fuzzy.git
+    dest: ~/.oh-my-zsh/custom/plugins/git-fuzzy
