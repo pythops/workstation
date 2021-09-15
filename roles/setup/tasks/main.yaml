@@ -5,3 +5,19 @@
 - name: Git
   include: git.yaml
   tags: git
+
+- name: i3
+  include: i3.yaml
+  tags: i3
+
+- name: NeoVIM
+  include: neovim.yaml
+  tags: neovim
+
+- name: Packages
+  include: packages.yaml
+  tags: packages
+
+- name: Python
+  include: python.yaml
+  tags: python
