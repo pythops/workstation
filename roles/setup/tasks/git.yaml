@@ -1,7 +1,7 @@
 - name: Install git package
   community.general.pacman:
     name: git
-    state: present
+    state: latest
   become: yes
 
 - name: Create git config
