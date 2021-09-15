@@ -3,6 +3,9 @@ SHELL := /bin/bash
 all:
 	@ansible-playbook setup.yaml -K
 
+alacritty:
+	@ansible-playbook setup.yaml -t alacritty -K
+
 git:
 	@ansible-playbook setup.yaml -t git -K
 
@@ -21,11 +24,14 @@ tmux:
 python:
 	@ansible-playbook setup.yaml -t python
 
+zsh:
+	@ansible-playbook setup.yaml -t zsh -K
+
 build:
 	@docker build -t setup .
 
 run:
 	@(\
 		Xephyr :1 -ac -br -screen 1024x768 -resizeable -reset -terminate &  \
-		docker run --rm -it -e DISPLAY=:1 -v /tmp/.X11-unix:/tmp/.X11-unix  setup bash \
+		docker run --rm -it -e DISPLAY=:1 -v /tmp/.X11-unix:/tmp/.X11-unix  setup zsh \
 	)
