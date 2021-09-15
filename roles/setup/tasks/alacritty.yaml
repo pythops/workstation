@@ -1,0 +1,11 @@
+- name: Install Alacritty
+  community.general.pacman:
+    name:
+      - alacritty
+    state: latest
+  become: yes
+
+- name: Copy alcritty conf
+  copy:
+    src: config/alacritty/alacritty.yml
+    dest: ~/.config/alacritty/alacritty.yml
