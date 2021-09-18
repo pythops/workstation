@@ -7,6 +7,7 @@ let g:ale_linters = {
 \  'yaml': ['prettier'],
 \  'apiblueprint': ['drafter'],
 \  'markdown': ['prettier'],
+\  'rust': ['rustc', 'rls'],
 \  'shell': ['shellcheck']
 \}
 
@@ -14,10 +15,9 @@ let g:ale_fixers = {
 \ 'python': ['black', 'isort'],
 \ 'json': ['jq'],
 \ 'yaml': ['prettier'],
+\ 'rust': ['rustfmt'],
 \ '*' : ['remove_trailing_lines', 'trim_whitespace']
 \}
-
-let g:syntastic_vim_checkers = ['vint']
 
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
