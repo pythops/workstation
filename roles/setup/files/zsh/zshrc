@@ -1,3 +1,11 @@
+## Zsh
+export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+ZSH_THEME="spaceship"
+DISABLE_AUTO_UPDATE="true"
+ENABLE_CORRECTION="false"
+
 ## General config
 skip_global_compinit=1
 
@@ -5,13 +13,6 @@ export PATH=$ZSH_CUSTOM/plugins/git-fuzzy/bin:$HOME/bin:$HOME/.local/bin:$HOME/n
 export EDITOR='nvim'
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export LANG=en_US.UTF-8
-
-## Zsh
-export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="spaceship"
-DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="true"
 
 ##
 ## Prompt
@@ -86,7 +87,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
 setopt inc_append_history
 setopt share_history
 
