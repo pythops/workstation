@@ -12,5 +12,5 @@ RUN make tmux
 RUN make neovim
 RUN make i3
 RUN make alacritty
-RUN make zsh
-RUN make rust
+RUN make zsh && usermod --shell /usr/sbin/zsh root
+RUN export PATH=$HOME/.cargo/bin:$PATH && make rust
