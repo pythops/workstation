@@ -1,6 +1,7 @@
 - name: Install packages
   community.general.pacman:
     name:
+      - alsa-utils
       - bat
       - bc
       - chromium
@@ -18,6 +19,7 @@
       - mupdf
       - noto-fonts
       - powerline-fonts
+      - pulseaudio-alsa
       - procs
       - ripgrep
       - tldr
