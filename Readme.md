@@ -47,7 +47,7 @@ available tagets:
 - tmux
 - zsh
 
-### Testing
+### Preview
 
 Build docker image
 ```
