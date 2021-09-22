@@ -2,6 +2,8 @@
     <h1> 💻  Workstation Setup 💻 </h1>
 </div>
 
+### 📜 Summary
+
 **OS**: [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux)
 
 **Window Manager**: [i3](https://github.com/i3/i3)
@@ -12,25 +14,30 @@
 
 **Editor**: [NeoVim](https://github.com/neovim/neovim)
 
-### Requirements
+**Dev environments**: [Python]() and [Rust]()
 
-#### Install Ansible
+<br/>
+
+### 🛠️ Requirements
+
+#### 1. Install Ansible
 ```
 $ pip install --user ansible
 $ ansible-galaxy collection install community.general
 ```
 
-#### Install Xephyr (for testing purposes, Optional)
+#### 2. Install Xephyr (needed for preview, optional)
 ```
 $ sudo pacman -Syu xorg-server-xephyr
 ```
 
 > More infos about Xephyr (https://wiki.archlinux.org/title/Xephyr)
 
-#### Install [docker](https://docs.docker.com/engine/install/) (for testing purposes, Optional)
+#### 3. Install [docker](https://docs.docker.com/engine/install/) (needed for preview, optional)
 
+<br/>
 
-### Usage
+### 🔬 Usage
 ```
 $ make <target>
 ```
@@ -47,7 +54,9 @@ available tagets:
 - tmux
 - zsh
 
-### Preview
+<br/>
+
+### 📺 Preview
 
 Build docker image
 ```
@@ -61,5 +70,7 @@ $ make run
 
 > Pressing Ctrl + Shift should lock/unlock your mouse pointer and your keystrokes inside Xephyr window exclusively.
 
-## License
+<br/>
+
+## ⚖️  License
 GPLv3
