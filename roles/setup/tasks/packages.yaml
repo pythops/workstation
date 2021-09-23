@@ -4,6 +4,7 @@
       - alsa-utils
       - bat
       - bc
+      - bluez-utils
       - chromium
       - exa
       - darktable
@@ -15,14 +16,22 @@
       - fzf
       - gimp
       - jq
+      - kubectl
+      - kubectx
+      - kustomize
       - minikube
       - mupdf
+      - nmap
       - nvme-cli
       - noto-fonts
       - powerline-fonts
+      - pulseaudio
       - pulseaudio-alsa
+      - pulseaudio-bluetooth
       - procs
       - ripgrep
+      - scrot
+      - skaffold
       - tldr
       - ttf-font-awesome
       - vlc
