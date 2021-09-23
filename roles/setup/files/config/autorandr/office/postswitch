@@ -1,0 +1,3 @@
+#!/bin/bash
+
+i3-msg '[workspace="(1|2)"] move workspace to output HDMI-1;'

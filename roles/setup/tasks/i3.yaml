@@ -80,3 +80,18 @@
 
 - name: Reload i3 config
   shell: pgrep -x i3 && i3-msg reload || echo "i3 not running"
+
+# Autorandr
+- name: Copy autorandr config
+  copy:
+    src: config/autorandr
+    dest: ~/.config/
+
+- name: Add +x permission for postswitch
+  file:
+    path: "{{ item }}"
+    mode: 0755
+  loop:
+    - ~/.config/autorandr/home/postswitch
+    - ~/.config/autorandr/mobile/postswitch
+    - ~/.config/autorandr/office/postswitch
