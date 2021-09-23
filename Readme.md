@@ -48,6 +48,7 @@ available tagets:
 - git
 - i3
 - neovim
+- npm
 - packages
 - python
 - rust

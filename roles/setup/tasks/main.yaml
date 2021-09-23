@@ -18,6 +18,10 @@
   include: neovim.yaml
   tags: neovim
 
+- name: Npm
+  include: npm.yaml
+  tags: npm
+
 - name: Packages
   include: packages.yaml
   tags: packages

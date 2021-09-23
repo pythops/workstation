@@ -1,0 +1,17 @@
+- name: Install npm package
+  community.general.pacman:
+    name: npm
+    state: latest
+  become: yes
+
+- name: Copy npm config file
+  copy:
+    src: npm/npmrc
+    dest: ~/.npmrc
+
+- name: Install node.js packages
+  community.general.npm:
+    name: "{{ item }}"
+    global: yes
+  loop:
+    - prettier

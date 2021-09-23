@@ -15,6 +15,9 @@ i3:
 neovim:
 	@ansible-playbook setup.yaml -t neovim -K
 
+npm:
+	@ansible-playbook setup.yaml -t npm -K
+
 tmux:
 	@ansible-playbook setup.yaml -t tmux -K
 
