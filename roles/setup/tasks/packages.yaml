@@ -17,6 +17,7 @@
       - jq
       - minikube
       - mupdf
+      - nvme-cli
       - noto-fonts
       - powerline-fonts
       - pulseaudio-alsa
