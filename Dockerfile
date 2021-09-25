@@ -8,6 +8,7 @@ WORKDIR /setup
 RUN make git
 RUN make packages
 RUN make python
+RUN make npm
 RUN make tmux
 RUN make neovim
 RUN make i3
