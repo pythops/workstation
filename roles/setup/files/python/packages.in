@@ -6,6 +6,8 @@ youtube_dl
 speedtest-cli
 
 # Dev
+ansible-lint
+bandit
 flake8-black
 flake8-isort
 flake8-bugbear
