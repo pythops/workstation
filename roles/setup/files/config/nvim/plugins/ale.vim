@@ -8,6 +8,7 @@ let g:ale_linters = {
 \  'apiblueprint': ['drafter'],
 \  'markdown': ['prettier'],
 \  'rust': ['rustc', 'rls'],
+\  'Dockerfile': ['hadolint'],
 \  'shell': ['shellcheck']
 \}
 
