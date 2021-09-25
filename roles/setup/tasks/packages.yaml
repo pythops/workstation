@@ -30,8 +30,9 @@
       - pulseaudio-bluetooth
       - procs
       - ripgrep
-      - scrot
+      - shellcheck
       - skaffold
+      - texlive-most
       - tldr
       - ttf-font-awesome
       - vlc
@@ -40,3 +41,12 @@
       - xsel
     state: latest
   become: yes
+
+- name: Download from github
+  get_url:
+    url: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: 755
+  loop:
+    - src: https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+      dest: ~/bin/hadolint
