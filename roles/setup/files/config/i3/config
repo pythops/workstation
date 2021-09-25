@@ -17,6 +17,9 @@ mode $close {
 # start a terminal
 bindsym $mod+Return exec alacritty
 
+# Screenshots
+bindsym $mod+Print exec maim --select ~/Screenshots/screenshot-$(date +%s).png
+
 # kill focused window
 bindsym $mod+q mode $close
 

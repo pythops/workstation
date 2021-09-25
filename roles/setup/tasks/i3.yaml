@@ -9,8 +9,9 @@
     name:
       - autocutsel
       - autorandr
-      - feh
       - brightnessctl
+      - maim
+      - feh
       - unclutter
       - xbindkeys
       - xorg-xinit
