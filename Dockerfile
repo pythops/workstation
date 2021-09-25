@@ -6,7 +6,7 @@ RUN pacman -Syu --noconfirm python python-pip make sudo && \
 COPY . /setup
 WORKDIR /setup
 RUN make git
-RUN make packages
+RUN mkdir ~/bin && make packages
 RUN make python
 RUN make npm
 RUN make tmux
