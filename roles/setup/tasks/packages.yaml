@@ -1,7 +1,6 @@
 - name: Install packages
   community.general.pacman:
     name:
-      - alsa-utils
       - bat
       - bc
       - bluez-utils
@@ -25,10 +24,8 @@
       - nmap
       - nvme-cli
       - noto-fonts
+      - pipewire-pulse
       - powerline-fonts
-      - pulseaudio
-      - pulseaudio-alsa
-      - pulseaudio-bluetooth
       - procs
       - ripgrep
       - shellcheck
