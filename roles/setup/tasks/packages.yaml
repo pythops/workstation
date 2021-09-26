@@ -15,6 +15,7 @@
       - firefox
       - fzf
       - gimp
+      - htop
       - jq
       - kubectl
       - kubectx
@@ -42,7 +43,7 @@
     state: latest
   become: yes
 
-- name: Download from github
+- name: Download binaries from github
   get_url:
     url: "{{ item.src }}"
     dest: "{{ item.dest }}"
@@ -50,3 +51,25 @@
   loop:
     - src: https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
       dest: ~/bin/hadolint
+    - src: https://github.com/dbrgn/tealdeer/releases/latest/download/tldr-linux-x86_64-musl
+      dest: ~/bin/tldr
+
+- name: Download archive packages from github
+  ansible.builtin.unarchive:
+    src: "{{ item.src }}"
+    dest: ~/bin
+    include: "{{ item.include }}"
+    extra_opts: "{{ item.extra_opts }}"
+    remote_src: yes
+    mode: 0755
+  loop:
+    - src: https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+      extra_opts:
+        - --strip-components=1
+      include:
+        - kubeval
+    - src: https://github.com/dandavison/delta/releases/download/0.8.3/delta-0.8.3-x86_64-unknown-linux-musl.tar.gz
+      include:
+        - delta-0.8.3-x86_64-unknown-linux-musl/delta
+      extra_opts:
+        - --strip-components=2
