@@ -12,6 +12,8 @@
 
 **Terminal multiplexer**: [tmux](https://github.com/tmux/tmux)
 
+**Zsh configuration framework**: [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
+
 **Editor**: [NeoVim](https://github.com/neovim/neovim)
 
 **Dev environments**: [Python]() and [Rust]()
