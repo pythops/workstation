@@ -73,6 +73,7 @@ plugins=(
   ansible
   command-not-found
   docker
+  fzf-tab
   gcloud
   git
   httpie
@@ -150,6 +151,9 @@ source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_OPTS='--border --height=60%'
 export _Z_EXCLUDE_DIRS=".cache|.git|.venv|node_modules"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow -g '!.git' -g '!node_modules' -g '!.venv' 2>/dev/null"
+
+enable-fzf-tab
+zstyle ':fzf-tab:*' fzf-pad 4
 
 # SSH Agent
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

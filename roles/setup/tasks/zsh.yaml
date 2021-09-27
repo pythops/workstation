@@ -46,3 +46,8 @@
   git:
     repo: https://github.com/bigH/git-fuzzy.git
     dest: ~/.oh-my-zsh/custom/plugins/git-fuzzy
+
+- name: Install fzf-tab plugin
+  git:
+    repo: https://github.com/Aloxaf/fzf-tab
+    dest: ~/.oh-my-zsh/custom/plugins/fzf-tab
