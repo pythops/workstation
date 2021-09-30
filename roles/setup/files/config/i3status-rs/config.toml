@@ -37,7 +37,7 @@ format = "{running}/{total}"
 [[block]]
 block = "net"
 device = "wlan0"
-format = "{ssid} {ip} {speed_down;K*b} {speed_up;K*b}"
+format = "{ssid} {speed_down;K*b} {speed_up;K*b}"
 interval = 5
 
 [[block]]
