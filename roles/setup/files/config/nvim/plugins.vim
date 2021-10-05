@@ -39,7 +39,6 @@ call plug#begin('~/.vim/plugged')
 
   " Dim inactive windows
   Plug 'TaDaa/vimade'
-  Plug 'blueyed/vim-diminactive'
 
   " i3
   Plug 'mboughaba/i3config.vim'
