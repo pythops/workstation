@@ -6,13 +6,12 @@
 
 - name: Install tmux plugins dependencies
   community.general.pacman:
-    name: 
+    name:
       - gawk
       - xsel
       - xclip
     state: latest
   become: yes
-  loop:
 
 - name: Create ~/.config/tmux directory
   file:
