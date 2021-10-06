@@ -39,7 +39,14 @@
       - wpa_supplicant
       - xsel
     state: latest
+    update_cache: yes
+    extra_args: --noconfirm
   become: yes
+
+- name: Create ~/bin directory
+  file:
+    path: ~/bin
+    state: directory
 
 - name: Download binaries from github
   get_url:
