@@ -2,4 +2,4 @@
   shell: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 
 - name: Add rust components
-  shell: rustup component add rls rust-analysis rust-src
+  shell: PATH=$HOME/.cargo/bin:$PATH rustup component add rls rust-analysis rust-src
