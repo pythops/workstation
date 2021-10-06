@@ -52,7 +52,7 @@
   get_url:
     url: "{{ item.src }}"
     dest: "{{ item.dest }}"
-    mode: 755
+    mode: 0755
   loop:
     - src: https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
       dest: ~/bin/hadolint
