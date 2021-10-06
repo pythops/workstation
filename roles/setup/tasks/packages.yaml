@@ -8,6 +8,7 @@
       - exa
       - darktable
       - git-delta
+      - github-cli
       - duf
       - dust
       - fd
