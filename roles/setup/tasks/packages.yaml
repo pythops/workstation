@@ -34,9 +34,11 @@
       - texlive-most
       - tldr
       - ttf-font-awesome
+      - usbutils
       - vlc
       - watchexec
       - wpa_supplicant
+      - xorg-server
       - xsel
     state: latest
     update_cache: yes
