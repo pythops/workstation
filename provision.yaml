@@ -1,0 +1,17 @@
+- hosts: all
+  remote_user: vagrant
+  roles:
+    - setup
+  tasks:
+    - name: Add ssh keys
+      ansible.posix.authorized_key:
+        user: vagrant
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+    - name: Change the shell for vagrant user
+      ansible.builtin.user:
+        name: vagrant
+        shell: /usr/bin/zsh
+        groups: docker
+      become: yes
