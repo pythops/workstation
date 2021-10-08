@@ -1,3 +1,6 @@
+- name: Install pip
+  shell: python -m ensurepip --upgrade --user
+
 - name: Create $HOME/.python directory
   file:
     path: $HOME/.python
@@ -8,6 +11,8 @@
     name: pip-tools
     state: present
     extra_args: --user
+  environment:
+    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
 - name: Copy packages.in
   copy:
@@ -16,12 +21,16 @@
 
 - name: Generate python packages
   shell: pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt
+  environment:
+    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
 - name: Install python packages
   pip:
     requirements: $HOME/.python/packages.txt
     state: present
     extra_args: --user
+  environment:
+    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
 - name: Copy pdbpp config
   copy:
