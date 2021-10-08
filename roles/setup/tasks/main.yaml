@@ -1,3 +1,11 @@
+- name: Packages
+  include: packages.yaml
+  tags: packages
+
+- name: Git
+  include: git.yaml
+  tags: git
+
 - name: Alacritty
   include: alacritty.yaml
   tags: alacritty
@@ -5,10 +13,6 @@
 - name: Tmux
   include: tmux.yaml
   tags: tmux
-
-- name: Git
-  include: git.yaml
-  tags: git
 
 - name: i3
   include: i3.yaml
@@ -21,10 +25,6 @@
 - name: Npm
   include: npm.yaml
   tags: npm
-
-- name: Packages
-  include: packages.yaml
-  tags: packages
 
 - name: Rust
   include: rust.yaml
