@@ -25,17 +25,14 @@
 #### 1. Install Ansible
 ```
 $ pip install --user ansible
-$ ansible-galaxy collection install community.general
+$ ansible-galaxy collection install community.general ansible.posix
 ```
 
-#### 2. Install Xephyr (needed for preview, optional)
+#### 2. Install Virtualbox and vagrant (needed for preview, optional)
 ```
-$ sudo pacman -Syu xorg-server-xephyr
+$ sudo pacman -Syu virtualbox vagrant
+$ vagrant plugin install vagrant-reload
 ```
-
-> More infos about Xephyr (https://wiki.archlinux.org/title/Xephyr)
-
-#### 3. Install [docker](https://docs.docker.com/engine/install/) (needed for preview, optional)
 
 <br/>
 
@@ -61,17 +58,10 @@ available tagets:
 
 ### 📺 Preview
 
-Build docker image
+Run an Archlinx VM and provision it
 ```
-$ make build
+$ make preview
 ```
-
-Run the whole system inside a container
-```
-$ make run
-```
-
-> Pressing Ctrl + Shift should lock/unlock your mouse pointer and your keystrokes inside Xephyr window exclusively.
 
 <br/>
 
