@@ -33,11 +33,5 @@ rust:
 zsh:
 	@ansible-playbook setup.yaml -t zsh -K
 
-build:
-	@docker build -t workstation:latest .
-
-run:
-	@(\
-		Xephyr :1 -ac -br -screen 1920x1080 -resizeable -reset -terminate &  \
-		docker run --rm -it -e DISPLAY=:1 --device /dev/snd -v /tmp/.X11-unix:/tmp/.X11-unix workstation:latest i3 \
-	)
+preview:
+	@vagrant up
