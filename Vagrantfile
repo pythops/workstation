@@ -13,7 +13,8 @@ Vagrant.configure("2") do |config|
 		vb.name = "workstation"
 		vb.customize ["modifyvm", :id, "--memory", "2048"]
                 vb.customize ["modifyvm", :id, "--vram", "256"]
-                vb.customize ["modifyvm", :id, '--audio', 'pulse', '--audiocontroller', 'hda']
+                vb.customize ["modifyvm", :id, "--audio", "pulse", "--audiocontroller", "hda"]
+                vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
 	end
   end
 
