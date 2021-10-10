@@ -4,6 +4,7 @@ ipython
 httpie
 youtube_dl
 speedtest-cli
+certbot
 
 # Dev
 ansible-lint
