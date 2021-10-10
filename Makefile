@@ -33,5 +33,11 @@ rust:
 zsh:
 	@ansible-playbook setup.yaml -t zsh -K
 
-preview:
+run:
 	@vagrant up
+
+delete:
+	@vagrant destroy -f workstation
+
+stop:
+	@vagrant halt
