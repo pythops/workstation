@@ -112,4 +112,7 @@ call plug#begin('~/.vim/plugged')
   " Latex
   Plug 'lervag/vimtex'
 
+  " Comments
+  Plug 'tpope/vim-commentary'
+
 call plug#end()
