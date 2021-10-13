@@ -20,6 +20,7 @@
       - kubectl
       - kubectx
       - kustomize
+      - linux-lts
       - minikube
       - mupdf
       - nmap
