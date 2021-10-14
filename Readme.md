@@ -12,9 +12,13 @@
 
 **Terminal multiplexer**: [tmux](https://github.com/tmux/tmux)
 
+**Tmux plugins**: [plugins](https://github.com/pythops/workstation/blob/a9c833e460dfeb614054e1a374b67cffddfa9ca1/roles/setup/files/config/tmux/tmux.conf#L60)
+
 **Zsh configuration framework**: [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
 **Editor**: [NeoVim](https://github.com/neovim/neovim)
+
+**Neovim plugins**: [plugins](https://github.com/pythops/workstation/blob/master/roles/setup/files/config/nvim/plugins.vim)
 
 **Dev environments**: [Python]() and [Rust]()
 
