@@ -7,6 +7,7 @@
       - chromium
       - exa
       - darktable
+      - dcraw
       - git-delta
       - github-cli
       - duf
