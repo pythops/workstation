@@ -8,6 +8,7 @@
       - exa
       - darktable
       - dcraw
+      - dmidecode
       - git-delta
       - github-cli
       - duf
