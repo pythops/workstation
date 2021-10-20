@@ -64,7 +64,7 @@ available tagets:
 
 Run an Archlinx VM and provision it
 ```
-$ make preview
+$ make run
 ```
 
 <br/>
