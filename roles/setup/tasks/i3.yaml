@@ -19,6 +19,7 @@
       - xorg-xset
       - xorg-xrdb
       - xorg-setxkbmap
+      - xss-lock
     state: latest
   become: yes
 

@@ -141,6 +141,7 @@ bar {
 
 # Lock the screen
 bindsym $mod+Ctrl+l exec i3lock -c 000000
+exec_always --no-startup-id xss-lock -- i3lock -c 000000
 
 # Volume Control
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short | rg -m 1 RUNNING | awk '{print $1}') +5% #increase sound volume
