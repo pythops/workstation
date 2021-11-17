@@ -115,4 +115,7 @@ call plug#begin('~/.vim/plugged')
   " Comments
   Plug 'tpope/vim-commentary'
 
+  "Syntax Highlighing
+  Plug 'sheerun/vim-polyglot'
+
 call plug#end()
