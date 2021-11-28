@@ -48,6 +48,7 @@ $ make <target>
 available tagets:
 - all: Install the whole system
 - alacritty
+- docker
 - git
 - i3
 - neovim

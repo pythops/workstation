@@ -37,3 +37,8 @@
 - name: Zsh
   include: zsh.yaml
   tags: zsh
+
+- name: Docker
+  include: docker.yaml
+  tags: docker
+  become: yes

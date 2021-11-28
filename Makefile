@@ -6,6 +6,9 @@ all:
 alacritty:
 	@ansible-playbook setup.yaml -t alacritty -K
 
+docker:
+	@ansible-playbook setup.yaml -t docker -K
+
 git:
 	@ansible-playbook setup.yaml -t git -K
 
@@ -18,9 +21,6 @@ neovim:
 npm:
 	@ansible-playbook setup.yaml -t npm -K
 
-tmux:
-	@ansible-playbook setup.yaml -t tmux -K
-
 packages:
 	@ansible-playbook setup.yaml -t packages -K
 
@@ -29,6 +29,9 @@ python:
 
 rust:
 	@ansible-playbook setup.yaml -t rust
+
+tmux:
+	@ansible-playbook setup.yaml -t tmux -K
 
 zsh:
 	@ansible-playbook setup.yaml -t zsh -K
