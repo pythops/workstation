@@ -11,5 +11,6 @@
     mode: 0755
 
 - name: execute minikube-network.sh
-  shell: minikube-network.sh
+  shell: "{{ ansible_facts['env']['HOME'] }}/bin/minikube-network.sh"
   become: yes
+  ignore_errors: yes
