@@ -1,4 +1,2 @@
-- name: restart docker
-  systemd:
-    name: docker
-    state: restarted
+- include: docker.yaml
+- include: dnsmasq.yaml
