@@ -15,6 +15,9 @@ git:
 i3:
 	@ansible-playbook setup.yaml -t i3 -K
 
+minikube:
+	@ansible-playbook setup.yaml -t minikube -K
+
 neovim:
 	@ansible-playbook setup.yaml -t neovim -K
 

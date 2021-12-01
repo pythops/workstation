@@ -42,3 +42,7 @@
   include: docker.yaml
   tags: docker
   become: yes
+
+- name: minikube
+  include: minikube.yaml
+  tags: minikube

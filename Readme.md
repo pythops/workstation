@@ -51,6 +51,7 @@ available tagets:
 - docker
 - git
 - i3
+- minikube
 - neovim
 - npm
 - packages

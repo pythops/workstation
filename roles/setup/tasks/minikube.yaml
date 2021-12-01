@@ -1,0 +1,15 @@
+- name: Install minikube package
+  community.general.pacman:
+    name: docker
+    state: latest
+  become: yes
+
+- name: Copy minikube-network.sh script
+  copy:
+    src: bin/minikube-network.sh
+    dest: ~/bin/minikube-network.sh
+    mode: 0755
+
+- name: execute minikube-network.sh
+  shell: minikube-network.sh
+  become: yes

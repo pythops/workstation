@@ -24,7 +24,6 @@
       - kustomize
       - linux-lts
       - lynis
-      - minikube
       - mupdf
       - nmap
       - nvme-cli
