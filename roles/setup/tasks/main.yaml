@@ -46,3 +46,8 @@
 - name: minikube
   include: minikube.yaml
   tags: minikube
+
+- name: dnsmasq
+  include: dnsmasq.yaml
+  tags: dnsmasq
+  become: yes

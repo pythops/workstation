@@ -6,6 +6,9 @@ all:
 alacritty:
 	@ansible-playbook setup.yaml -t alacritty -K
 
+dnsmasq:
+	@ansible-playbook setup.yaml -t dnsmasq -K
+
 docker:
 	@ansible-playbook setup.yaml -t docker -K
 

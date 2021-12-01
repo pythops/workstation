@@ -48,6 +48,7 @@ $ make <target>
 available tagets:
 - all: Install the whole system
 - alacritty
+- dnsmasq
 - docker
 - git
 - i3

@@ -1,0 +1,25 @@
+- name: install dnsmasq package
+  community.general.pacman:
+    name: dnsmasq
+    state: latest
+
+- name: Copy dnsmasq config
+  template:
+    src: etc/dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+  notify:
+    - restart dnsmasq
+
+- name: Copy /etc/resolv.conf.dnsmasq file
+  template:
+    src: etc/resolv.conf.dnsmasq
+    dest: /etc/resolv.conf.dnsmasq
+    mode: 0644
+  notify:
+    - restart dnsmasq
+
+- name: Update /etc/resolv.conf file
+  template:
+    src: etc/resolv.conf
+    dest: /etc/resolv.conf
+    mode: 0644
