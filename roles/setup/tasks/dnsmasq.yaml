@@ -3,6 +3,12 @@
     name: dnsmasq
     state: latest
 
+- name: Stop/Disable systemd-resolved
+  systemd:
+    name: systemd-resolved
+    state: stopped
+    enabled: no
+
 - name: Copy dnsmasq config
   template:
     src: etc/dnsmasq.conf
