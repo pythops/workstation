@@ -9,6 +9,7 @@
       - darktable
       - dcraw
       - dmidecode
+      - dnsutils
       - git-delta
       - github-cli
       - duf
@@ -23,6 +24,7 @@
       - kubectx
       - kustomize
       - linux-lts
+      - lsof
       - lynis
       - mupdf
       - nmap
