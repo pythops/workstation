@@ -48,5 +48,8 @@ run:
 delete:
 	@vagrant destroy -f workstation
 
+provision:
+	@vagrant up --provision
+
 stop:
 	@vagrant halt
