@@ -43,9 +43,6 @@ call plug#begin('~/.vim/plugged')
   " i3
   Plug 'mboughaba/i3config.vim'
 
-  " Code search tool
-  Plug 'dyng/ctrlsf.vim'
-
   " Highlight word under cursor and all of its occurrences
   Plug 'dominikduda/vim_current_word'
 
