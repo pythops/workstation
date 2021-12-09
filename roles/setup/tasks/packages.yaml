@@ -36,6 +36,7 @@
       - ripgrep
       - shellcheck
       - skaffold
+      - socat
       - texlive-most
       - tldr
       - ttf-font-awesome
