@@ -1,5 +1,4 @@
 {
-  "bip": "172.26.0.1/24",
   "storage-driver": "overlay2",
   "exec-opts": [
     "native.cgroupdriver=systemd"
