@@ -1,3 +1,7 @@
+- name: Install yay AUR helper
+  include: yay.yaml
+  tags: yay
+
 - name: Packages
   include: packages.yaml
   tags: packages

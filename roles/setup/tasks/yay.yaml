@@ -1,0 +1,10 @@
+- name: Install yay
+  ansible.builtin.unarchive:
+    src: https://github.com/Jguer/yay/releases/download/v11.0.2/yay_11.0.2_x86_64.tar.gz
+    dest: /usr/bin
+    remote_src: yes
+    include: yay_11.0.2_x86_64/yay
+    extra_opts:
+      - --strip-components=1
+    mode: 0755
+  become: yes

@@ -45,6 +45,10 @@ zsh:
 run:
 	@vagrant up
 
+yay:
+	@ansible-playbook setup.yaml -t yay -K
+
+
 delete:
 	@vagrant destroy -f workstation
 

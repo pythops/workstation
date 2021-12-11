@@ -59,6 +59,7 @@ available tagets:
 - python
 - rust
 - tmux
+- yay
 - zsh
 
 <br/>
