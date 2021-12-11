@@ -29,3 +29,5 @@
     src: etc/resolv.conf
     dest: /etc/resolv.conf
     mode: 0644
+
+- meta: flush_handlers
