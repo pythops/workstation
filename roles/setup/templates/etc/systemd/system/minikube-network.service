@@ -1,0 +1,12 @@
+# {{ ansible_managed }}
+
+[Unit]
+Description=Network routes to minikube network
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=ip route add 10.96.0.0/12 via 192.168.49.2
+
+[Install]
+WantedBy=multi-user.target

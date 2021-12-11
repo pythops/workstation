@@ -1,16 +1,18 @@
 - name: Install minikube package
   community.general.pacman:
-    name: docker
+    name: minikube
     state: latest
-  become: yes
+    update_cache: yes
+    executable: yay
+    extra_args: --removemake --cleanafter
 
 - name: Copy minikube-network.sh script
-  copy:
-    src: bin/minikube-network.sh
-    dest: ~/bin/minikube-network.sh
-    mode: 0755
-
-- name: execute minikube-network.sh
-  shell: "{{ ansible_facts['env']['HOME'] }}/bin/minikube-network.sh"
+  template:
+    src: etc/systemd/system/minikube-network.service
+    dest: /etc/systemd/system/minikube-network.service
+    mode: 0644
+  notify:
+    - setup-minikube-network-route
   become: yes
-  ignore_errors: yes
+
+- meta: flush_handlers

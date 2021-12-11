@@ -1,0 +1,7 @@
+- name: setup-minikube-network-route
+  systemd:
+    name: minikube-network
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+  ignore_errors: yes
