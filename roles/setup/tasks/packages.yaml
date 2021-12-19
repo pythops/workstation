@@ -23,6 +23,7 @@
       - hadolint-bin
       - gimp
       - htop
+      - iwd
       - jq
       - kubectl
       - kubectx
@@ -44,13 +45,13 @@
       - slack-desktop
       - socat
       - spotify
+      - task
       - texlive-most
       - tealdeer
       - ttf-font-awesome
       - usbutils
       - vlc
       - watchexec
-      - wpa_supplicant
       - xorg-server
       - xsel
     state: latest
@@ -65,5 +66,9 @@
     update_cache: yes
     extra_args: --removemake --cleanafter
 
-- name: reboot
-  reboot:
+- name: Enable services
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: yes
+  loop:
+    - iwd
