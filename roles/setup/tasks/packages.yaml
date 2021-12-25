@@ -40,7 +40,7 @@
       - powerline-fonts
       - procs
       - ripgrep
-      - shellcheck
+      - shellcheck-bin
       - skaffold
       - slack-desktop
       - socat
