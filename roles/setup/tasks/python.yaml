@@ -1,3 +1,11 @@
+- name: Install pyenv
+  community.general.pacman:
+    name: pyenv
+    state: latest
+    executable: yay
+    update_cache: yes
+    extra_args: --removemake --cleanafter
+
 - name: Install pip
   shell: python -m ensurepip --upgrade --user
 
