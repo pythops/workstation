@@ -30,11 +30,6 @@ interval = 10
 format = "{percentage} {time}"
 
 [[block]]
-block = "docker"
-interval = 2
-format = "{running}/{total}"
-
-[[block]]
 block = "net"
 device = "wlan0"
 format = "{ssid} {signal_strength} {speed_down;K*b} {speed_up;K*b}"
