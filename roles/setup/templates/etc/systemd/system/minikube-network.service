@@ -2,7 +2,7 @@
 
 [Unit]
 Description=Network routes to minikube network
-After=docker.service
+After=network.target
 
 [Service]
 Type=oneshot
