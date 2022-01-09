@@ -1,3 +1,2 @@
-- include: docker.yaml
 - include: dnsmasq.yaml
 - include: minikube.yaml
