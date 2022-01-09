@@ -1,0 +1,7 @@
+- name: Install podman, buildah and skopeo
+  community.general.pacman:
+    name:
+      - podman
+      - buildah
+      - skopeo
+    state: latest

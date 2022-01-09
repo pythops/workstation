@@ -48,8 +48,8 @@ $ make <target>
 available tagets:
 - all: Install the whole system
 - alacritty
+- containers: Container tools (podman, buildah, skopeo)
 - dnsmasq
-- docker
 - git
 - i3
 - minikube

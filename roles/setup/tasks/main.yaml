@@ -42,9 +42,9 @@
   include: zsh.yaml
   tags: zsh
 
-- name: Docker
-  include: docker.yaml
-  tags: docker
+- name: Containers
+  include: containers.yaml
+  tags: containers
   become: yes
 
 - name: minikube

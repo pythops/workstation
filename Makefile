@@ -9,9 +9,6 @@ alacritty:
 dnsmasq:
 	@ansible-playbook setup.yaml -t dnsmasq -K
 
-docker:
-	@ansible-playbook setup.yaml -t docker -K
-
 git:
 	@ansible-playbook setup.yaml -t git -K
 
@@ -19,7 +16,7 @@ i3:
 	@ansible-playbook setup.yaml -t i3 -K
 
 minikube:
-	@ansible-playbook setup.yaml -t minikube -K
+	@ansible-playbook setup.yaml -t minikube -K -D
 
 neovim:
 	@ansible-playbook setup.yaml -t neovim -K
@@ -29,6 +26,9 @@ npm:
 
 packages:
 	@ansible-playbook setup.yaml -t packages -K
+
+containers:
+	@ansible-playbook setup.yaml -t containers -K
 
 python:
 	@ansible-playbook setup.yaml -t python
