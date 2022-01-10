@@ -32,7 +32,6 @@
       - linux-lts
       - lsof
       - lynis
-      - mupdf
       - nmap
       - nvme-cli
       - noto-fonts
@@ -53,6 +52,7 @@
       - vlc
       - watchexec
       - xorg-server
+      - xpdf
       - xsel
     state: latest
     executable: yay
