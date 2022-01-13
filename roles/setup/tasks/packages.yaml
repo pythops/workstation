@@ -52,8 +52,8 @@
       - vlc
       - watchexec
       - xorg-server
-      - xpdf
       - xsel
+      - zathura-pdf-mupdf
     state: latest
     executable: yay
     update_cache: yes
