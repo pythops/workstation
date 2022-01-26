@@ -126,6 +126,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias t="exa --tree"
 alias sudo="sudo "
+alias pdf="zathura"
 
 ## git
 alias gd="git fuzzy diff"
