@@ -1,0 +1,17 @@
+- name: Install zathura
+  community.general.pacman:
+    name: zathura
+    state: latest
+    executable: yay
+    update_cache: yes
+    extra_args: --removemake --cleanafter
+
+- name: Create config directory
+  file:
+    path: ~/.config/zathura
+    state: directory
+
+- name: Copy zathura conf
+  copy:
+    src: config/zathura/zathurarc
+    dest: ~/.config/zathura/zathurarc

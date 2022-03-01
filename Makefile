@@ -39,6 +39,9 @@ rust:
 tmux:
 	@ansible-playbook setup.yaml -t tmux -K
 
+zathura:
+	@ansible-playbook setup.yaml -t zathura
+
 zsh:
 	@ansible-playbook setup.yaml -t zsh -K
 

@@ -55,3 +55,7 @@
   include: dnsmasq.yaml
   tags: dnsmasq
   become: yes
+
+- name: zathura
+  include: zathura.yaml
+  tags: zathura
