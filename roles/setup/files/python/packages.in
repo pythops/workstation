@@ -5,6 +5,7 @@ httpie
 youtube_dl
 speedtest-cli
 certbot
+asciinema
 
 # Dev
 ansible-lint
