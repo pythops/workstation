@@ -1,2 +1,2 @@
-- include: dnsmasq.yaml
-- include: minikube.yaml
+- import_tasks: dnsmasq.yaml
+- import_tasks: minikube.yaml

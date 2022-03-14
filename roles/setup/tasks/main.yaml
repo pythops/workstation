@@ -1,61 +1,61 @@
 - name: Install yay AUR helper
-  include: yay.yaml
+  import_tasks: yay.yaml
   tags: yay
 
 - name: Packages
-  include: packages.yaml
+  import_tasks: packages.yaml
   tags: packages
 
 - name: Git
-  include: git.yaml
+  import_tasks: git.yaml
   tags: git
 
 - name: Alacritty
-  include: alacritty.yaml
+  import_tasks: alacritty.yaml
   tags: alacritty
 
 - name: Tmux
-  include: tmux.yaml
+  import_tasks: tmux.yaml
   tags: tmux
 
 - name: i3
-  include: i3.yaml
+  import_tasks: i3.yaml
   tags: i3
 
 - name: NeoVIM
-  include: neovim.yaml
+  import_tasks: neovim.yaml
   tags: neovim
 
 - name: Npm
-  include: npm.yaml
+  import_tasks: npm.yaml
   tags: npm
 
 - name: Rust
-  include: rust.yaml
+  import_tasks: rust.yaml
   tags: rust
 
 - name: Python
-  include: python.yaml
+  import_tasks: python.yaml
   tags: python
 
 - name: Zsh
-  include: zsh.yaml
+  import_tasks: zsh.yaml
   tags: zsh
 
 - name: Containers
-  include: containers.yaml
+  import_tasks: containers.yaml
   tags: containers
   become: yes
 
 - name: minikube
-  include: minikube.yaml
+  import_tasks: minikube.yaml
   tags: minikube
 
 - name: dnsmasq
-  include: dnsmasq.yaml
+  import_tasks: dnsmasq.yaml
   tags: dnsmasq
   become: yes
 
 - name: zathura
-  include: zathura.yaml
+  import_tasks: zathura.yaml
   tags: zathura
