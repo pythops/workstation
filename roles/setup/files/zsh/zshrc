@@ -106,7 +106,6 @@ function upgrade_python_packages() {
 
 ## Shortcuts
 alias upgrade="sudo pacman -Syu && omz update && upgrade_python_packages && rustup update"
-alias download_mp3="youtube-dl -x --audio-format mp3 --audio-quality 0"
 
 ## k8s
 alias start_minikube='minikube start --driver=podman --container-runtime=cri-o --kubernetes-version=v1.21.6 --cpus=4 --memory=12gb --feature-gates="LocalStorageCapacityIsolation=false"'
