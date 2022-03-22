@@ -9,6 +9,7 @@ let g:ale_linters = {
 \  'markdown': ['prettier'],
 \  'rust': ['rustc', 'rls'],
 \  'Dockerfile': ['hadolint'],
+\  'verilog': ['verilator'],
 \  'shell': ['shellcheck']
 \}
 

@@ -54,6 +54,7 @@
       - tealdeer
       - ttf-font-awesome
       - usbutils
+      - verilator
       - vlc
       - watchexec
       - xorg-server
