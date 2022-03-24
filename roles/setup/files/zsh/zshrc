@@ -105,7 +105,7 @@ function upgrade_python_packages() {
 # Aliases
 
 ## Shortcuts
-alias upgrade="sudo pacman -Syu && omz update && upgrade_python_packages && rustup update"
+alias upgrade="yay ; omz update ; upgrade_python_packages ; rustup update"
 
 ## k8s
 alias start_minikube='minikube start --driver=podman --container-runtime=cri-o --kubernetes-version=v1.21.6 --cpus=4 --memory=12gb --feature-gates="LocalStorageCapacityIsolation=false"'
