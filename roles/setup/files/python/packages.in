@@ -20,3 +20,4 @@ pip-tools
 # Others
 keyrings.google-artifactregistry-auth
 pynvim
+kubernetes
