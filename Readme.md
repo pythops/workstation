@@ -29,7 +29,7 @@
 #### 1. Install Ansible
 ```
 $ pip install --user ansible
-$ ansible-galaxy collection install community.general ansible.posix
+$ ansible-galaxy collection install community.general ansible.posix community.crypto
 ```
 
 #### 2. Install Virtualbox and vagrant (needed for preview, optional)
