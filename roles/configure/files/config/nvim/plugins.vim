@@ -115,4 +115,7 @@ call plug#begin('~/.vim/plugged')
   "Syntax Highlighing
   Plug 'sheerun/vim-polyglot'
 
+  "Move selection/lines
+  Plug 'matze/vim-move'
+
 call plug#end()
