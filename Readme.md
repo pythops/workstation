@@ -32,7 +32,10 @@ $ pip install --user ansible
 $ ansible-galaxy collection install community.general ansible.posix community.crypto
 ```
 
-#### 2. Install Virtualbox and vagrant (needed for preview, optional)
+#### 2. Install `just` command runner
+https://github.com/casey/just
+
+#### 3. Install Virtualbox and vagrant (needed for preview, optional)
 ```
 $ sudo pacman -Syu virtualbox vagrant
 $ vagrant plugin install vagrant-reload
@@ -42,7 +45,7 @@ $ vagrant plugin install vagrant-reload
 
 ### 🔬 Usage
 ```
-$ make <target>
+$ just <target>
 ```
 
 available tagets:
@@ -68,7 +71,7 @@ available tagets:
 
 Run an Archlinx VM and provision it
 ```
-$ make run
+$ just run
 ```
 
 <br/>
