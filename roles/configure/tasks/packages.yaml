@@ -7,6 +7,7 @@
       - bandwhich
       - bc
       - bluez-utils
+      - btop
       - chromium
       - exa
       - darktable
@@ -26,7 +27,6 @@
       - fzf
       - hadolint-bin
       - gimp
-      - htop
       - iwd
       - jq
       - just
@@ -37,6 +37,7 @@
       - linux-lts
       - lsof
       - lynis
+      - neofetch
       - nmap
       - nvme-cli
       - noto-fonts
