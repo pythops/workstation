@@ -118,4 +118,7 @@ call plug#begin('~/.vim/plugged')
   "Move selection/lines
   Plug 'matze/vim-move'
 
+  " Just
+  Plug 'NoahTheDuke/vim-just'
+
 call plug#end()
