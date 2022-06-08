@@ -1,18 +1,16 @@
-output DP-1
+output HDMI-1
 off
-output DP-2
+output DP-1
 off
 output DP-3
 off
 output DP-4
 off
-output HDMI-1
+output DP-2
 crtc 1
-gamma 1.0:0.833:0.714
 mode 2560x1440
 pos 0x0
 rate 59.95
-x-prop-aspect_ratio Automatic
 x-prop-audio auto
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
@@ -20,7 +18,6 @@ x-prop-max_bpc 12
 x-prop-non_desktop 0
 output eDP-1
 crtc 0
-gamma 1.0:0.833:0.714
 mode 1920x1200
 pos 0x1440
 primary
