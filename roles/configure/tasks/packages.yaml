@@ -8,6 +8,7 @@
       - bc
       - bluez-utils
       - btop
+      - clinfo
       - chromium
       - exa
       - darktable
@@ -27,6 +28,7 @@
       - fzf
       - hadolint-bin
       - gimp
+      - intel-compute-runtime
       - iwd
       - jq
       - just
