@@ -47,6 +47,7 @@
       - powerline-fonts
       - procs
       - ripgrep
+      - rustscan
       - shellcheck-bin
       - skaffold
       - slack-desktop
@@ -55,6 +56,7 @@
       - task
       - texlive-most
       - tealdeer
+      - tokei
       - ttf-font-awesome
       - usbutils
       - verilator
