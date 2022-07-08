@@ -16,6 +16,7 @@ flake8-isort
 flake8-bugbear
 pdbpp
 pip-tools
+pre-commit
 
 # Others
 keyrings.google-artifactregistry-auth
