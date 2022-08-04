@@ -8,7 +8,9 @@ let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_italic = 1
 let g:gruvbox_material_sign_column_background = 'none'
 
-let g:gruvbox_material_palette = {
+let g:gruvbox_material_better_performance = 1
+
+let g:gruvbox_material_colors_override = {
           \ 'bg0':              ['#000000',   '255'],
           \ 'bg1':              ['#262727',   '235'],
           \ 'bg2':              ['#282828',   '235'],
