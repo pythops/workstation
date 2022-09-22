@@ -40,6 +40,9 @@ rust ansible_options='':
 tmux ansible_options='':
 	@ansible-playbook configure.yaml -t tmux -K {{ ansible_options }}
 
+starship ansible_options='':
+	@ansible-playbook configure.yaml -t starship -K {{ ansible_options }}
+
 zathura ansible_options='':
 	@ansible-playbook configure.yaml -t zathura {{ ansible_options }}
 

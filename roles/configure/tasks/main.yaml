@@ -56,6 +56,10 @@
   tags: dnsmasq
   become: yes
 
+- name: starship
+  import_tasks: starship.yaml
+  tags: starship
+
 - name: zathura
   import_tasks: zathura.yaml
   tags: zathura
