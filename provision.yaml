@@ -1,7 +1,7 @@
 - hosts: all
   remote_user: vagrant
   roles:
-    - setup
+    - configure
   tasks:
     - name: Add ssh keys
       ansible.posix.authorized_key:
