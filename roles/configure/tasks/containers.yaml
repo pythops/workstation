@@ -1,7 +1,17 @@
-- name: Install podman, buildah and skopeo
+- name: Install docker, podman, buildah and skopeo
   community.general.pacman:
     name:
+      - docker
       - podman
       - buildah
       - skopeo
     state: latest
+
+- name: Configure docker
+  template:
+    src: etc/docker/daemon.json
+    dest: /etc/docker/daemon.json
+    mode: 0644
+  become: yes
+
+- meta: flush_handlers
