@@ -15,18 +15,6 @@
     src: zsh/zshrc
     dest: ~/.zshrc
 
-- name: Install spaceship prompt
-  git:
-    repo: https://github.com/spaceship-prompt/spaceship-prompt.git
-    dest: ~/.oh-my-zsh/custom/themes/spaceship-prompt
-    depth: 1
-
-- name: Enable spaceship theme
-  file:
-    src: ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
-    dest: ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
-    state: link
-
 - name: Install zsh-syntax-highlighting plugin
   git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git

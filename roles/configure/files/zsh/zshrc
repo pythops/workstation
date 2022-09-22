@@ -2,7 +2,6 @@
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-ZSH_THEME="spaceship"
 DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="false"
 
@@ -18,54 +17,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 ##
 ## Prompt
 ##
-SPACESHIP_PROMPT_ORDER=(
-    user
-    host
-    dir
-    kubectl_context
-    git
-    venv
-    line_sep
-    char
-)
-
-SPACESHIP_RPROMPT_ORDER=(
-    jobs
-    exit_code
-)
-
-#### Disable some features
-export SPACESHIP_PACKAGE_SHOW=false
-export SPACESHIP_NODE_SHOW=false
-export SPACESHIP_DOCKER_SHOW=false
-
-#### Char
-export SPACESHIP_CHAR_SYMBOL=""
-export SPACESHIP_CHAR_SUFFIX="  "
-
-#### Venv
-export SPACESHIP_VENV_SUFFIX="%F{226}) "
-export SPACESHIP_VENV_PREFIX="%F{226}(venv: "
-export SPACESHIP_VENV_COLOR=226
-
-#### Dir
-export SPACESHIP_DIR_TRUNC_REPO=false
-export SPACESHIP_DIR_TRUNC=0
-export SPACESHIP_DIR_PREFIX=
-
-#### k8s
-export SPACESHIP_KUBECONTEXT_COLOR=033
-export SPACESHIP_KUBECONTEXT_SUFFIX=" %F{033}\u2388 "
-export SPACESHIP_KUBECONTEXT_PREFIX="%F{033}\u2388 "
-
-#### Git
-export SPACESHIP_GIT_PREFIX=
-
-#### Exit code
-export SPACESHIP_EXIT_CODE_SHOW=true
-
-#### Jobs
-export SPACESHIP_JOBS_SYMBOL=""
+export STARSHIP_CONFIG=~/.config/starship/config.toml
+eval "$(starship init zsh)"
 
 ##
 ## Oh my ZSH Plugins
@@ -108,7 +61,7 @@ function upgrade_python_packages() {
 alias upgrade="yay ; omz update ; upgrade_python_packages ; rustup update"
 
 ## k8s
-alias start_minikube='minikube start --driver=podman --container-runtime=cri-o --kubernetes-version=v1.21.6 --cpus=4 --memory=12gb --feature-gates="LocalStorageCapacityIsolation=false"'
+alias start_minikube='minikube start --driver=docker --kubernetes-version=v1.21.6 --cpus=4 --memory=12gb --feature-gates="LocalStorageCapacityIsolation=false"'
 alias kadm="kubectl -n kube-system "
 alias k="kubectl"
 alias kc="kubectx"
