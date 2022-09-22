@@ -16,6 +16,8 @@
 
 **Zsh configuration framework**: [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
+**Prompt**: [starship](https://github.com/starship/starship)
+
 **Editor**: [NeoVim](https://github.com/neovim/neovim)
 
 **Neovim plugins**: [plugins](https://github.com/pythops/workstation/blob/master/roles/setup/files/config/nvim/plugins.vim)
@@ -61,6 +63,7 @@ available tagets:
 - packages
 - python
 - rust
+- starship
 - tmux
 - yay
 - zsh
