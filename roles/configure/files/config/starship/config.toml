@@ -10,17 +10,13 @@ $git_metrics\
 $git_status\
 $python\
 $rust\
+$jobs\
 $character
 """
-
-add_newline = true
 
 [directory]
 truncate_to_repo = false
 truncation_length = 10
-
-[line_break]
-disabled = true
 
 [kubernetes]
 format = "[$symbol $context](fg:33) "
@@ -36,3 +32,6 @@ format = '[(\( $symbol $virtualenv\) )]($style)'
 [character]
 success_symbol = "[➜](bold green) "
 error_symbol = "[✗](bold red) "
+
+[jobs]
+symbol = " "
