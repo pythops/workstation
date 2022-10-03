@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
 
   " Theme
-  Plug 'sainnhe/gruvbox-material'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Additional text objects
   Plug 'wellle/targets.vim'
