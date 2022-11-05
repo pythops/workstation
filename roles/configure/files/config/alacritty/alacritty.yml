@@ -5,8 +5,21 @@ window:
 
 font:
   normal:
-    family: monospace
-  size: 11.0
+    family: Fira Code
+    style: regular
+  bold:
+    family: Fira Code
+    style: Bold
+
+  italic:
+    family: Fira Code
+    style: Italic
+
+  bold_italic:
+    family: Fira Code
+    style: Bold Italic
+
+  size: 11.5
 
 colors:
   primary:
