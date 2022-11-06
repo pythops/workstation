@@ -18,6 +18,7 @@ syntax on
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
 
 " Navigation key mapping
 nnoremap <C-J> <C-W><C-J>
