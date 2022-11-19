@@ -1,10 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-  " Nerdtree
-  Plug 'preservim/nerdtree'
-  Plug 'preservim/nerdcommenter'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-
   " Status bar
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -34,9 +29,9 @@ call plug#begin('~/.vim/plugged')
   " Smooth scrolling
   Plug 'psliwka/vim-smoothie'
 
-  " fzf
-  Plug 'junegunn/fzf'
-  Plug 'junegunn/fzf.vim'
+  " telescope
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 
   " Dim inactive windows
   Plug 'TaDaa/vimade'
@@ -121,5 +116,7 @@ call plug#begin('~/.vim/plugged')
 
   " Just
   Plug 'NoahTheDuke/vim-just'
+
+  Plug 'ggandor/leap.nvim'
 
 call plug#end()
