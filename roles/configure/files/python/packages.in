@@ -17,6 +17,7 @@ flake8-bugbear
 pdbpp
 pip-tools
 pre-commit
+pyright
 
 # Others
 keyrings.google-artifactregistry-auth
