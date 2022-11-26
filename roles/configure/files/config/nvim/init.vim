@@ -13,3 +13,4 @@ source ~/.config/nvim/plugins/vimtex.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/leap.vim
 source ~/.config/nvim/plugins/nvim-cmp.vim
+source ~/.config/nvim/plugins/nvim-autopairs.vim

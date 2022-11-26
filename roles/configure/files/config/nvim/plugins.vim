@@ -99,6 +99,9 @@ call plug#begin('~/.vim/plugged')
   " Easy navigation
   Plug 'ggandor/leap.nvim'
 
+  "Close pairs
+  Plug 'windwp/nvim-autopairs'
+
   " Completion
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
