@@ -30,3 +30,7 @@ let g:ale_statusline_format = ['%dE', '%dW', '']
 let g:ale_list_window_size = 5
 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" Rust config
+let g:ale_rust_cargo_use_clippy = 1
+let g:ale_rust_rustfmt_options = '--edition 2021'
