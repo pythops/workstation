@@ -78,21 +78,6 @@ call plug#begin('~/.vim/plugged')
   " Changes easly quotes and parentheses
   Plug 'tpope/vim-surround'
 
-  " Vim undo tree viewer
-  Plug 'simnalamburt/vim-mundo'
-
-  " Move lines and selection easly
-  Plug 'matze/vim-move'
-
-  " Rainbow parentheses
-  Plug 'luochen1990/rainbow'
-
-  " Nicer Python indentation
-  Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
-
-  " Syntax checking
-  Plug 'vim-syntastic/syntastic'
-
   " Enhances Vim's integration with the terminal
   Plug 'wincent/terminus'
 
@@ -108,15 +93,10 @@ call plug#begin('~/.vim/plugged')
   " Comments
   Plug 'tpope/vim-commentary'
 
-  "Syntax Highlighing
-  Plug 'sheerun/vim-polyglot'
-
-  "Move selection/lines
-  Plug 'matze/vim-move'
-
   " Just
   Plug 'NoahTheDuke/vim-just'
 
+  " Easy navigation
   Plug 'ggandor/leap.nvim'
 
 call plug#end()

@@ -4,15 +4,11 @@ source ~/.config/nvim/theme.vim
 
 " Plugins conf
 source ~/.config/nvim/plugins/ale.vim
-source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/i3config.vim
 source ~/.config/nvim/plugins/vim-current-word.vim
 source ~/.config/nvim/plugins/camelcase-motion.vim
 source ~/.config/nvim/plugins/any-jump.vim
 source ~/.config/nvim/plugins/vimade.vim
-source ~/.config/nvim/plugins/indentline.vim
-source ~/.config/nvim/plugins/rainbow.vim
 source ~/.config/nvim/plugins/vimtex.vim
-source ~/.config/nvim/plugins/vim-polyglot.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/leap.vim
