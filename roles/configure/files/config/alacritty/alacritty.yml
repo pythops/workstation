@@ -49,5 +49,5 @@ colors:
 cursor:
   style:
     shape: Beam
-    blinking: On
-  thickness: 0.9
+    blinking: Always
+  thickness: 0.3
