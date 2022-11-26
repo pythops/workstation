@@ -13,6 +13,11 @@ vim.keymap.set('n', '<C-s>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-g>', builtin.grep_string, {})
 
 local options = {
+  pickers = {
+    find_files = {
+      find_command = {"rg", "--files", "--hidden", "--follow", "-g", "!.git", "-g", "!node_modules", "-g", "!.venv"}
+    },
+  },
   defaults = {
     prompt_prefix = "> ",
     selection_caret = "  ",
@@ -33,11 +38,6 @@ local options = {
       width = 0.87,
       height = 0.80,
       preview_cutoff = 120,
-    },
-    pickers = {
-      find_files = {
-        hidden = true
-      }
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = { "node_modules" },
