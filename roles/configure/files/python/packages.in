@@ -17,7 +17,7 @@ flake8-bugbear
 pdbpp
 pip-tools
 pre-commit
-pyright
+jedi-language-server
 
 # Others
 keyrings.google-artifactregistry-auth
