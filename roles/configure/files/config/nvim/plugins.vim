@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'
 
   " Shows git diff in the sign column
-  Plug 'airblade/vim-gitgutter'
+  Plug 'lewis6991/gitsigns.nvim'
 
   " Dockerfile syntax
   Plug 'ekalinin/Dockerfile.vim'
