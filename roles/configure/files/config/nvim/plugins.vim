@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
   " Status bar
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  Plug 'nvim-lualine/lualine.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
 
   " Theme
   Plug 'sainnhe/gruvbox-material'
@@ -112,4 +112,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
 
+  "Show todo
+  Plug 'folke/todo-comments.nvim'
 call plug#end()

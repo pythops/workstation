@@ -15,3 +15,5 @@ source ~/.config/nvim/plugins/leap.vim
 source ~/.config/nvim/plugins/nvim-cmp.vim
 source ~/.config/nvim/plugins/nvim-autopairs.vim
 source ~/.config/nvim/plugins/gitsigns.vim
+source ~/.config/nvim/plugins/lualine.vim
+source ~/.config/nvim/plugins/todo-comments.vim
