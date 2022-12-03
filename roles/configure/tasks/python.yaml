@@ -1,13 +1,5 @@
-- name: Install pyenv
-  community.general.pacman:
-    name: pyenv
-    state: latest
-    executable: yay
-    update_cache: yes
-    extra_args: --removemake --cleanafter
-
 - name: Install pip
-  shell: python -m ensurepip --upgrade --user
+  shell: python -Im ensurepip --upgrade --user
 
 - name: Create $HOME/.python directory
   file:
@@ -28,7 +20,7 @@
     dest: $HOME/.python/packages.in
 
 - name: Generate python packages
-  shell: pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt
+  shell: pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt --resolver=backtracking
   environment:
     PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
