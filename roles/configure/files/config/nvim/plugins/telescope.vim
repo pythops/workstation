@@ -11,6 +11,7 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-f>', builtin.find_files, {})
 vim.keymap.set('n', '<C-s>', builtin.live_grep, {})
 vim.keymap.set('n', '<C-g>', builtin.grep_string, {})
+vim.keymap.set('n', '<C-r>', builtin.spell_suggest, {})
 
 local options = {
   pickers = {

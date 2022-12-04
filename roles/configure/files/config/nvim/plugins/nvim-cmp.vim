@@ -53,6 +53,16 @@ lua <<EOF
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = "vsnip" },
+      { name = 'nvim_lsp_signature_help' },
+      {
+        name = 'spell',
+        option = {
+            keep_all_entries = false,
+            enable_in_context = function()
+                return true
+            end,
+        },
+      }
     }, {
       { name = 'buffer' },
     })
