@@ -1,6 +1,7 @@
 - name: Install packages
   community.general.pacman:
     name:
+      - act # Run github actions locally
       - arch-audit
       - base-devel
       - bat
@@ -36,11 +37,11 @@
       - kubectl
       - kubectx
       - kustomize
-      - kubeval-bin
       - linux-lts
       - lsof
       - lynis
       - neofetch
+      - nuspell
       - nmap
       - nvme-cli
       - noto-fonts
