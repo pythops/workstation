@@ -17,3 +17,4 @@ source ~/.config/nvim/plugins/nvim-autopairs.vim
 source ~/.config/nvim/plugins/gitsigns.vim
 source ~/.config/nvim/plugins/lualine.vim
 source ~/.config/nvim/plugins/todo-comments.vim
+source ~/.config/nvim/plugins/indent-blankline.vim

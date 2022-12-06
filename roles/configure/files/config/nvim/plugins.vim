@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   " Theme
   Plug 'sainnhe/gruvbox-material'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'p00f/nvim-ts-rainbow'
 
   " Additional text objects
   Plug 'wellle/targets.vim'
@@ -54,10 +55,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'pechorin/any-jump.vim'
 
   " Show the indention level
-  Plug 'Yggdroot/indentLine'
-
-  " Autocompletion
-  Plug 'davidhalter/jedi-vim'
+  Plug 'lukas-reineke/indent-blankline.nvim'
 
   " Use Tab for completion
   Plug 'ervandew/supertab'
