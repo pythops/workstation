@@ -11,8 +11,12 @@ $git_status\
 $python\
 $rust\
 $jobs\
+$line_break\
 $character
 """
+
+[line_break]
+disabled = false
 
 [directory]
 truncate_to_repo = false
@@ -31,7 +35,7 @@ format = '[(\( $symbol $virtualenv\) )]($style)'
 
 [character]
 success_symbol = "[➜](bold green) "
-error_symbol = "[✗](bold red) "
+error_symbol = "[➜](bold red) "
 vimcmd_symbol = "[ ](bold green)"
 
 [jobs]
