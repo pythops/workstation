@@ -1,6 +1,9 @@
 " Leader
 let mapleader = "\<Space>"
 
+"Disable swap
+set noswapfile
+
 " Show line number
 set number
 
