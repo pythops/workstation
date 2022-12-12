@@ -52,13 +52,8 @@ call plug#begin('~/.vim/plugged')
   " Highlight yanked text
   Plug 'machakann/vim-highlightedyank'
 
-  Plug 'pechorin/any-jump.vim'
-
   " Show the indention level
   Plug 'lukas-reineke/indent-blankline.nvim'
-
-  " Use Tab for completion
-  Plug 'ervandew/supertab'
 
   "helpers for shell commands
   Plug 'tpope/vim-eunuch'
