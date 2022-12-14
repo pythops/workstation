@@ -1,5 +1,5 @@
 - name: Install starship package
-  community.general.pacman:
+  ansible.builtin.package:
     name: starship
     state: latest
   become: yes

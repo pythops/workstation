@@ -1,5 +1,5 @@
 - name: Install zsh
-  community.general.pacman:
+  ansible.builtin.package:
     name: zsh
     state: latest
   become: yes

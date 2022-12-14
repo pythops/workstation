@@ -1,5 +1,5 @@
 - name: Install neovim
-  community.general.pacman:
+  ansible.builtin.package:
     name: neovim
     state: latest
   become: yes

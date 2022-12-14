@@ -1,11 +1,11 @@
 - name: Install tmux binary
-  community.general.pacman:
+  ansible.builtin.package:
     name: tmux
     state: latest
   become: yes
 
 - name: Install tmux plugins dependencies
-  community.general.pacman:
+  ansible.builtin.package:
     name:
       - gawk
       - xsel
@@ -35,9 +35,15 @@
 
 - name: Install plugins
   shell: ~/.tmux/plugins/tpm/bin/install_plugins
+  environment:
+    TMUX_PLUGIN_MANAGER_PATH: $HOME/.tmux/plugins/
 
 - name: Clean plugins
   shell: ~/.tmux/plugins/tpm/bin/clean_plugins
+  environment:
+    TMUX_PLUGIN_MANAGER_PATH: $HOME/.tmux/plugins/
 
 - name: Update plugins
   shell: ~/.tmux/plugins/tpm/bin/update_plugins all
+  environment:
+    TMUX_PLUGIN_MANAGER_PATH: $HOME/.tmux/plugins/

@@ -1,5 +1,5 @@
 - name: Install Alacritty
-  community.general.pacman:
+  ansible.builtin.package:
     name:
       - alacritty
     state: latest
