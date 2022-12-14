@@ -9,6 +9,7 @@
       - bc
       - bluez-utils
       - btop
+      - cargo-nextest
       - clinfo
       - chromium
       - difftastic
@@ -29,6 +30,7 @@
       - firefox
       - fzf
       - hadolint-bin
+      - hyperfine # CLI benchmarking tool
       - gimp
       - intel-compute-runtime
       - iwd
@@ -40,6 +42,7 @@
       - linux-lts
       - lsof
       - lynis
+      - miniserve # CLI tool to serve files over HTTP
       - neofetch
       - nuspell
       - nmap
@@ -58,7 +61,7 @@
       - task
       - texlive-most
       - tealdeer
-      - tokei
+      - tokei # Count the code
       - ttf-font-awesome
       - usbutils
       - verilator
