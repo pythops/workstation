@@ -1,6 +1,4 @@
-if has('termguicolors')
-  set termguicolors
-endif
+set termguicolors
 
 set background=dark
 let g:gruvbox_material_background = 'hard'
@@ -45,6 +43,12 @@ let g:gruvbox_material_colors_override = {
 
 colorscheme gruvbox-material
 
+highlight NormalFloat guibg=#000000
+highlight FloatBorder guifg=#e78a4e guibg=#000000
+highlight WarningFloat guibg=#000000
+highlight ErrorFloat guibg=#000000
+highlight InfoFloat guibg=#000000
+highlight HintFloat guibg=#000000
 
 lua <<EOF
     require'nvim-treesitter.configs'.setup {
