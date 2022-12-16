@@ -1,6 +1,19 @@
 set completeopt=menu,menuone,noselect
 
 lua <<EOF
+
+  vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    underline = false,
+    update_in_insert = false,
+    float = {border = "rounded"},
+    severity_sort = false,
+  })
+
+  vim.o.updatetime = 250
+  vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
   local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -78,5 +91,7 @@ lua <<EOF
     on_attach = on_attach,
     capabilities = capabilities,
   })
+
+  require'lspconfig'.terraformls.setup{}
 
 EOF
