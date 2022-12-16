@@ -5,21 +5,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
 
   " Theme
-  Plug 'sainnhe/gruvbox-material'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'sainnhe/gruvbox-material'
   Plug 'p00f/nvim-ts-rainbow'
+  Plug 'NoahTheDuke/vim-just'
 
   " Additional text objects
   Plug 'wellle/targets.vim'
 
-  " Syntax checking
-  Plug 'dense-analysis/ale'
-
   " Shows git diff in the sign column
   Plug 'lewis6991/gitsigns.nvim'
-
-  " Dockerfile syntax
-  Plug 'ekalinin/Dockerfile.vim'
 
   " Tmux integration
   Plug 'tmux-plugins/vim-tmux'
@@ -36,9 +31,6 @@ call plug#begin('~/.vim/plugged')
 
   " Dim inactive windows
   Plug 'TaDaa/vimade'
-
-  " i3
-  Plug 'mboughaba/i3config.vim'
 
   " Highlight word under cursor and all of its occurrences
   Plug 'dominikduda/vim_current_word'
@@ -57,9 +49,6 @@ call plug#begin('~/.vim/plugged')
 
   "helpers for shell commands
   Plug 'tpope/vim-eunuch'
-
-  " toml highlights
-  Plug 'cespare/vim-toml'
 
   " Enable . for plugins
   Plug 'tpope/vim-repeat'
@@ -86,9 +75,6 @@ call plug#begin('~/.vim/plugged')
   " Comments
   Plug 'tpope/vim-commentary'
 
-  " Just
-  Plug 'NoahTheDuke/vim-just'
-
   " Easy navigation
   Plug 'ggandor/leap.nvim'
 
@@ -107,4 +93,7 @@ call plug#begin('~/.vim/plugged')
 
   "Show todo
   Plug 'folke/todo-comments.nvim'
+
+  "coe diagnostics/formatting/linting
+  Plug 'jose-elias-alvarez/null-ls.nvim'
 call plug#end()
