@@ -45,7 +45,6 @@
 - name: Containers
   import_tasks: containers.yaml
   tags: containers
-  become: yes
 
 - name: minikube
   import_tasks: minikube.yaml
