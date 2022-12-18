@@ -1,5 +1,3 @@
-set completeopt=menu,menuone,noselect
-
 lua <<EOF
 
   vim.diagnostic.config({
@@ -83,6 +81,16 @@ lua <<EOF
 
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   require('lspconfig')['rust_analyzer'].setup {
+    settings = {
+        ['rust-analyzer'] = {
+            checkOnSave = {
+                allFeatures = true,
+                overrideCommand = {
+                    'cargo', 'clippy', '--workspace', '--message-format=json', '--all-targets', '--all-features'
+                }
+            }
+        }
+    },
     capabilities = capabilities,
     on_attach = on_attach
   }
