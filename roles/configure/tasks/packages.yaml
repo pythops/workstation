@@ -9,7 +9,6 @@
       - bc
       - bluez-utils
       - btop
-      - cargo-nextest
       - clinfo
       - chromium
       - difftastic
