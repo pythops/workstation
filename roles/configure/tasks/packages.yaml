@@ -48,6 +48,7 @@
       - nvme-cli
       - noto-fonts
       - pipewire-pulse
+      - pkgconfig
       - powerline-fonts
       - procs
       - ripgrep
