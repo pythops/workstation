@@ -10,6 +10,7 @@
       - gawk
       - xsel
       - xclip
+      - fzf
     state: latest
   become: yes
 
