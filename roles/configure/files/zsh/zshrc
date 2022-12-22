@@ -51,7 +51,7 @@ setopt share_history
 # Custom functions
 function upgrade_python_packages() {
     pip install --upgrade --user pip
-    pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt
+    pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt --resolver=backtracking
     pip install --user -r $HOME/.python/packages.txt
 }
 
