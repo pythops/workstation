@@ -11,7 +11,10 @@
 - name: Install rootless dependencies
   community.general.pacman:
     name:
-      - slirp4netns
+      - slirp4netns # User-mode networking for containers
+      - aardvark-dns #  authoritative dns server for containers
+      - qemu-user-static
+      - qemu-user-static-binfmt
     state: latest
   become: yes
 
