@@ -8,6 +8,7 @@ certbot
 asciinema
 pgcli
 ansible
+podman-compose
 
 # Dev
 ansible-lint
