@@ -53,6 +53,7 @@
       - procs
       - ripgrep
       - rustscan
+      - screen
       - shellcheck-bin
       - skaffold
       - slack-desktop
