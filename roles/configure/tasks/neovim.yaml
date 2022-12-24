@@ -19,11 +19,11 @@
     src: config/nvim
     dest: ~/.config/
 
-- name: Upgrade VimPlug
-  shell: nvim --headless +PlugUpgrade +qa
-
 - name: Install neovim plugins
   shell: nvim --headless +PlugInstall +qa
+
+- name: Upgrade VimPlug
+  shell: nvim --headless +PlugUpgrade +qa
 
 - name: Update neovim plugins
   shell: nvim --headless +PlugUpdate +qa
