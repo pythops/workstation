@@ -5,7 +5,7 @@ source ~/.config/nvim/theme.vim
 " Plugins conf
 source ~/.config/nvim/plugins/vim-current-word.vim
 source ~/.config/nvim/plugins/camelcase-motion.vim
-source ~/.config/nvim/plugins/vimade.vim
+source ~/.config/nvim/plugins/tint.vim
 source ~/.config/nvim/plugins/vimtex.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/leap.vim

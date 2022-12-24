@@ -16,9 +16,6 @@ call plug#begin('~/.vim/plugged')
   " Shows git diff in the sign column
   Plug 'lewis6991/gitsigns.nvim'
 
-  " Tmux integration
-  Plug 'tmux-plugins/vim-tmux'
-
   " Git plugin
   Plug 'tpope/vim-fugitive'
 
@@ -30,7 +27,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-telescope/telescope.nvim'
 
   " Dim inactive windows
-  Plug 'TaDaa/vimade'
+  Plug 'levouh/tint.nvim'
 
   " Highlight word under cursor and all of its occurrences
   Plug 'dominikduda/vim_current_word'
@@ -96,4 +93,5 @@ call plug#begin('~/.vim/plugged')
 
   "coe diagnostics/formatting/linting
   Plug 'jose-elias-alvarez/null-ls.nvim'
+
 call plug#end()
