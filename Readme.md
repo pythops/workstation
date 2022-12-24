@@ -55,6 +55,7 @@ available tagets:
 - alacritty
 - containers: Container tools (podman, buildah, skopeo)
 - dnsmasq
+- esp
 - git
 - i3
 - minikube

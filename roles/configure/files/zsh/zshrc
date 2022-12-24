@@ -86,6 +86,9 @@ alias gd="git fuzzy diff"
 alias gs="git fuzzy status"
 alias gl="git pull"
 
+## ESP
+alias get_idf="source $HOME/.esp/export.sh"
+
 # i3 tmux
 unset I3SOCK
 
