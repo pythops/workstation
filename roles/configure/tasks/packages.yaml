@@ -3,29 +3,30 @@
     name:
       - act # Run github actions locally
       - arch-audit
+      - bandwhich
       - base-devel
       - bat
-      - bandwhich
       - bc
       - bluez-utils
+      - bore # making tunnels to localhost
       - btop
       - clinfo
       - chromium
       - difftastic
-      - exa
       - darktable
       - dcraw
       - dmidecode
       - dnsutils
       - dog
       - dua-cli
+      - exa
+      - fd
       - git
       - git-delta
       - github-cli
       - google-cloud-sdk
       - duf
       - dust
-      - fd
       - firefox
       - fzf
       - hadolint-bin
@@ -35,6 +36,7 @@
       - iwd
       - jq
       - just
+      - jwt-cli
       - kubectl
       - kubectx
       - kustomize
@@ -59,6 +61,7 @@
       - slack-desktop
       - socat
       - spotify
+      - systeroid
       - task
       - texlive-most
       - tealdeer
