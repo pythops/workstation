@@ -1,6 +1,5 @@
 lua <<EOF
 vim.opt.list = true
-vim.opt.listchars:append "eol:↴"
 
 vim.cmd [[highlight IndentBlanklineContextStart guisp=#B16286 gui=underline]]
 vim.cmd [[highlight IndentBlanklineContextChar guifg=#B16286 gui=nocombine]]
