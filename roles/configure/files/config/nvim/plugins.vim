@@ -70,7 +70,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'lervag/vimtex'
 
   " Comments
-  Plug 'tpope/vim-commentary'
+  Plug 'numToStr/Comment.nvim'
 
   " Easy navigation
   Plug 'ggandor/leap.nvim'

@@ -16,3 +16,4 @@ source ~/.config/nvim/plugins/lualine.vim
 source ~/.config/nvim/plugins/todo-comments.vim
 source ~/.config/nvim/plugins/indent-blankline.vim
 source ~/.config/nvim/plugins/null-ls.vim
+source ~/.config/nvim/plugins/comment.vim
