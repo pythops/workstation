@@ -71,4 +71,6 @@ lua <<EOF
         enable = true
       },
     }
+
+    require'treesitter-context'.setup()
 EOF
