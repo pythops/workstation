@@ -3,7 +3,7 @@ source ~/.config/nvim/settings.vim
 source ~/.config/nvim/theme.vim
 
 " Plugins conf
-source ~/.config/nvim/plugins/vim-current-word.vim
+source ~/.config/nvim/plugins/illuminate.vim
 source ~/.config/nvim/plugins/camelcase-motion.vim
 source ~/.config/nvim/plugins/tint.vim
 source ~/.config/nvim/plugins/vimtex.vim

@@ -29,8 +29,8 @@ call plug#begin('~/.vim/plugged')
   " Dim inactive windows
   Plug 'levouh/tint.nvim'
 
-  " Highlight word under cursor and all of its occurrences
-  Plug 'dominikduda/vim_current_word'
+  " Highlight word under cursor
+  Plug 'RRethy/vim-illuminate'
 
   " Multiple cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
