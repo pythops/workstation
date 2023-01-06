@@ -38,6 +38,7 @@
       - jq
       - just
       - jwt-cli
+      - kubeconform
       - kubectl
       - kubectx
       - kustomize
@@ -56,6 +57,7 @@
       - pkgconfig
       - powerline-fonts
       - procs
+      - qemu-base
       - ripgrep
       - rustscan
       - screen
