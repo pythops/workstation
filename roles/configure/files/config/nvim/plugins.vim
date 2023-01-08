@@ -92,7 +92,10 @@ call plug#begin('~/.vim/plugged')
   "Show todo
   Plug 'folke/todo-comments.nvim'
 
-  "coe diagnostics/formatting/linting
+  "code diagnostics/formatting/linting
   Plug 'jose-elias-alvarez/null-ls.nvim'
+
+  "Use treesitter to autoclose and autorename html tag
+  Plug 'windwp/nvim-ts-autotag'
 
 call plug#end()
