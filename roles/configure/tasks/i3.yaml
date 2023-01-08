@@ -20,6 +20,7 @@
       - xorg-xrdb
       - xorg-setxkbmap
       - xss-lock
+      - xorg-xsetroot
     state: latest
   become: yes
 
