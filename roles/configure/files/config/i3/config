@@ -14,6 +14,12 @@ mode $close {
     bindsym Escape mode default
 }
 
+# Disable title click
+bindsym button1 nop
+
+# Jump to urgent window
+bindsym $mod+i [urgent=latest] focus
+
 # start a terminal
 bindsym $mod+Return exec alacritty
 
@@ -133,6 +139,7 @@ set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
 set $black #000000
+set $white #FFFFFF
 
 client.focused          $brown $brown $black $brown $brown
 client.focused_inactive $darkgray $darkgray $darkgray $darkgray $darkgray
@@ -142,7 +149,6 @@ client.urgent           $red $red $white $red $red
 # Gaps
 gaps inner 5
 gaps outer 5
-smart_gaps on
 
 # Start i3bar
 bar {
@@ -175,7 +181,6 @@ bindsym XF86MonBrightnessDown exec  brightnessctl set 2%-
 # Wallpaper
 exec_always --no-startup-id xsetroot -solid "#000000"
 
-
 # Notification
 exec_always --no-startup-id dunst -config ~/.config/dunst/config
 
@@ -195,6 +200,7 @@ exec --no-startup-id alacritty --class todo &
 bindsym $mod+t [instance="todo"] scratchpad show
 for_window [instance="todo"] move scratchpad
 
+# speedup the keyboard
 exec_always --no-startup-id xset r rate 180 80
 
 # Share clipboard
