@@ -13,16 +13,19 @@ font:
   bold:
     family: Fira Code
     style: Bold
-
   italic:
     family: Fira Code
     style: Italic
-
   bold_italic:
     family: Fira Code
     style: Bold Italic
-
   size: 11.5
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 2
 
 colors:
   primary:
