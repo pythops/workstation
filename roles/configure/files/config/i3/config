@@ -138,14 +138,14 @@ set $black #000000
 set $white #FFFFFF
 set $darkbrown #312512
 
-client.focused          $brown $brown $black $brown $darkbrown
+client.focused          $brown $brown $black $darkbrown $darkbrown
 client.focused_inactive $darkgray $darkgray $darkgray $darkgray $darkgray
 client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
 
 # Gaps
-gaps inner 5
-gaps outer 10
+gaps inner 10
+gaps outer -2
 
 # Start i3bar
 bar {
