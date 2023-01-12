@@ -10,21 +10,22 @@ lua << EOF
             null_ls.builtins.formatting.jq,
             null_ls.builtins.formatting.just,
             null_ls.builtins.formatting.terraform_fmt,
-            null_ls.builtins.formatting.mdformat,
             null_ls.builtins.formatting.shfmt,
             null_ls.builtins.formatting.taplo,
-            null_ls.builtins.formatting.trim_newlines,
-            null_ls.builtins.formatting.trim_whitespace,
+            null_ls.builtins.formatting.prettier.with {
+                filetypes = {"yaml", "html", "css", "markdown"}
+            },
             null_ls.builtins.formatting.rustfmt.with({
                 extra_args = { "--edition=2021" }
             }),
+            null_ls.builtins.formatting.trim_newlines,
+            null_ls.builtins.formatting.trim_whitespace,
 
             -- diagnostics
             null_ls.builtins.diagnostics.flake8,
             null_ls.builtins.diagnostics.luacheck,
             null_ls.builtins.diagnostics.shellcheck,
             null_ls.builtins.diagnostics.yamllint,
-            null_ls.builtins.diagnostics.djlint,
             null_ls.builtins.diagnostics.hadolint,
 
         },
