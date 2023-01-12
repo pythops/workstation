@@ -45,6 +45,7 @@
       - linux-lts
       - lsof
       - lynis
+      - luacheck
       - miniserve # CLI tool to serve files over HTTP
       - neofetch
       - nuspell
@@ -52,6 +53,7 @@
       - nvme-cli
       - noto-fonts
       - onefetch # Git repository summary on your terminal
+      - p7zip
       - pastel # cli to generate, analyze, convert and manipulate colors
       - pipewire-pulse
       - pkgconfig
@@ -62,11 +64,13 @@
       - rustscan
       - screen
       - shellcheck-bin
+      - shfmt
       - skaffold
       - slack-desktop
       - socat
       - spotify
       - systeroid
+      - taplo-cli
       - task
       - texlive-most
       - tealdeer
