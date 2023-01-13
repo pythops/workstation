@@ -16,3 +16,12 @@
   loop:
     - cargo-edit
     - cargo-nextest
+    - cargo-deny
+    - sccache
+
+- name: Add cargo config
+  copy:
+    content: |
+      [build]
+      rustc-wrapper = "sccache"
+    dest: ~/.cargo/config
