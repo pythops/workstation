@@ -5,6 +5,7 @@ lua << EOF
     null_ls.setup({
         sources = {
             -- formatting
+            null_ls.builtins.formatting.ruff,
             null_ls.builtins.formatting.isort,
             null_ls.builtins.formatting.black,
             null_ls.builtins.formatting.jq,
@@ -22,6 +23,7 @@ lua << EOF
             null_ls.builtins.formatting.trim_whitespace,
 
             -- diagnostics
+            null_ls.builtins.diagnostics.ruff,
             null_ls.builtins.diagnostics.flake8,
             null_ls.builtins.diagnostics.luacheck,
             null_ls.builtins.diagnostics.shellcheck,
