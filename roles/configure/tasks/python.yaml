@@ -32,7 +32,24 @@
   environment:
     PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
+#
+# pdbpp
+#
 - name: Copy pdbpp config
   copy:
     src: python/pdbrc.py
     dest: ~/.pdbrc.py
+
+#
+# ruff
+#
+
+- name: Create ruff config dir
+  file:
+    path: $HOME/.config/ruff
+    state: directory
+
+- name: Copy ruff config
+  copy:
+    src: config/ruff/pyproject.toml
+    dest: $HOME/.config/ruff/pyproject.toml
