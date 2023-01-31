@@ -1,0 +1,5 @@
+global:
+  collect-metrics: false
+kubeContexts:
+- kube-context: dev
+  local-cluster: true

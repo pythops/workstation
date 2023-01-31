@@ -1,10 +1,11 @@
-- name: Install docker, podman, buildah and skopeo
+- name: Install container tools
   community.general.pacman:
     name:
       - docker
       - podman
       - buildah
       - skopeo
+      - skaffold
     state: latest
   become: yes
 
@@ -45,5 +46,10 @@
     dest: /etc/docker/daemon.json
     mode: 0644
   become: yes
+
+- name: Copy skaffold config
+  copy:
+    src: skaffold/config
+    dest: ~/.skaffold/config
 
 - meta: flush_handlers
