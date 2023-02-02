@@ -62,6 +62,7 @@ alias upgrade="yay ; omz update ; upgrade_python_packages ; rustup update"
 
 ## k8s
 alias start_minikube='minikube start -p dev --driver=docker --kubernetes-version=v1.22.17 --cpus=4 --memory=12gb --feature-gates="LocalStorageCapacityIsolation=false"'
+alias delete_minikube='minikube delete -p dev'
 alias kadm="kubectl -n kube-system "
 alias k="kubectl"
 alias kc="kubectx"
