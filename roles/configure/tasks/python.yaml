@@ -33,12 +33,38 @@
     PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
 #
+# Poetry
+#
+- name: Install Poetry
+  shell: curl -sSL https://install.python-poetry.org | python3 -
+
+- name: Create poetry config dir
+  file:
+    path: $HOME/.config/pypoetry
+    state: directory
+
+- name: Copy poetry config file
+  copy:
+    src: config/pypoetry/config.toml
+    dest: $HOME/.config/pypoetry/config.toml
+
+- name: Create omz  completion file
+  file:
+    path: $HOME/.oh-my-zsh/custom/plugins/poetry/
+    state: directory
+
+- name: Generate completion file
+  shell: poetry completions zsh > $HOME/.oh-my-zsh/custom/plugins/poetry/_poetry
+  environment:
+    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
+
+#
 # pdbpp
 #
 - name: Copy pdbpp config
   copy:
     src: python/pdbrc.py
-    dest: ~/.pdbrc.py
+    dest: $HOME/.pdbrc.py
 
 #
 # ruff

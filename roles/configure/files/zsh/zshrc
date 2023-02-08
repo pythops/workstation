@@ -33,6 +33,7 @@ plugins=(
   httpie
   kubectl
   pip
+  poetry
   pyenv
   python
   sudo
