@@ -1,7 +1,7 @@
 configuration {
   combi-modi: "window,drun,run";
   modi: "combi";
-  show-iconsr: true;
+  show-icons: true;
 }
 
 @theme "gruvbox-dark-hard"
