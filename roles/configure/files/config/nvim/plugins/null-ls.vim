@@ -30,6 +30,9 @@ lua << EOF
             null_ls.builtins.diagnostics.yamllint,
             null_ls.builtins.diagnostics.hadolint,
 
+            -- completion
+            null_ls.builtins.completion.spell,
+
         },
          on_attach = function(client, bufnr)
                 if client.supports_method("textDocument/formatting") then
