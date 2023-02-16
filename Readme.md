@@ -8,7 +8,7 @@
 
 **Window Manager**: [i3](https://github.com/i3/i3)
 
-**Terminal emulator**: [alacritty](https://github.com/alacritty/alacritty)
+**Terminal emulator**: [wezterm](https://github.com/wez/wezterm)
 
 **Terminal multiplexer**: [tmux](https://github.com/tmux/tmux)
 
@@ -24,35 +24,39 @@
 
 **Dev environments**: [Python]() and [Rust]()
 
-<br/>
+<br>
 
 ### 🛠️ Requirements
 
 #### 1. Install Ansible
+
 ```
 $ pip install --user ansible
 $ ansible-galaxy collection install community.general ansible.posix community.crypto
 ```
 
 #### 2. Install `just` command runner
+
 https://github.com/casey/just
 
 #### 3. Install Virtualbox and vagrant (needed for preview, optional)
+
 ```
 $ sudo pacman -Syu virtualbox vagrant
 $ vagrant plugin install vagrant-reload
 ```
 
-<br/>
+<br>
 
 ### 🔬 Usage
+
 ```
 $ just <target>
 ```
 
 available tagets:
+
 - all: Install the whole system
-- alacritty
 - containers: Container tools (podman, buildah, skopeo)
 - dnsmasq
 - esp: esp32 s3
@@ -66,19 +70,22 @@ available tagets:
 - rust
 - starship
 - tmux
+- wezterm
 - yay
 - zsh
 
-<br/>
+<br>
 
 ### 📺 Preview
 
 Run an Archlinx VM and provision it
+
 ```
 $ just run
 ```
 
-<br/>
+<br>
 
-## ⚖️  License
+## ⚖️ License
+
 GPLv3

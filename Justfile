@@ -1,11 +1,15 @@
+set shell := ["bash", "-c"]
+
+config := ""
+
 default:
     @just --list --unsorted
 
 all ansible_options='':
     @ansible-playbook configure.yaml -K {{ ansible_options }}
 
-alacritty ansible_options='':
-    @ansible-playbook configure.yaml -t alacritty -K {{ ansible_options }}
+wezterm ansible_options='':
+    @ansible-playbook configure.yaml -t wezterm -K {{ ansible_options }}
 
 dnsmasq ansible_options='':
     @ansible-playbook configure.yaml -t dnsmasq -K {{ ansible_options }}
@@ -38,10 +42,20 @@ python ansible_options='':
     @ansible-playbook configure.yaml -t python {{ ansible_options }}
 
 rust ansible_options='':
-    @ansible-playbook configure.yaml -t rust {{ ansible_options }}
+    #!/usr/bin/env bash
+    if [[ "{{ config }}" ]]; then
+        ansible-playbook configure.yaml -t rust-config  {{ ansible_options }}
+    else
+        ansible-playbook configure.yaml -t rust -K {{ ansible_options }}
+    fi
 
 tmux ansible_options='':
-    @ansible-playbook configure.yaml -t tmux -K {{ ansible_options }}
+    #!/usr/bin/env bash
+    if [[ "{{ config }}" ]]; then
+        ansible-playbook configure.yaml -t tmux-config {{ ansible_options }}
+    else
+        ansible-playbook configure.yaml -t tmux -K {{ ansible_options }}
+    fi
 
 starship ansible_options='':
     @ansible-playbook configure.yaml -t starship -K {{ ansible_options }}
@@ -55,14 +69,5 @@ zsh ansible_options='':
 yay ansible_options='':
     @ansible-playbook configure.yaml -t yay -K {{ ansible_options }}
 
-run:
-    @vagrant up
-
-delete:
-    @vagrant destroy -f workstation
-
-provision:
-    @vagrant up --provision
-
-stop:
-    @vagrant halt
+build:
+    podman build -f Containerfile -t workstation:latest

@@ -21,7 +21,7 @@ bindsym button1 nop
 bindsym $mod+i [urgent=latest] focus
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # Screenshots
 bindsym $mod+Print exec maim --select ~/Screenshots/screenshot-$(date +%s).png
@@ -193,7 +193,7 @@ for_window [class="Spotify"] mark "spotify", move scratchpad
 exec spotify
 
 # Todo scratchpad
-exec --no-startup-id alacritty --class todo &
+exec --no-startup-id wezterm start --class todo &
 bindsym $mod+t [instance="todo"] scratchpad show
 for_window [instance="todo"] move scratchpad
 

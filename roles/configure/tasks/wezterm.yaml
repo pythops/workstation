@@ -1,0 +1,17 @@
+- name: Install wezterm
+  ansible.builtin.package:
+    name:
+      - wezterm
+    state: latest
+  become: yes
+  tags: install
+
+- name: Create config directory
+  file:
+    path: ~/.config/wezterm
+    state: directory
+
+- name: Copy wezterm conf
+  copy:
+    src: config/wezterm/wezterm.lua
+    dest: ~/.config/wezterm/wezterm.lua
