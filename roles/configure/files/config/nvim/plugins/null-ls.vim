@@ -13,6 +13,9 @@ lua << EOF
             null_ls.builtins.formatting.terraform_fmt,
             null_ls.builtins.formatting.shfmt,
             null_ls.builtins.formatting.taplo,
+            null_ls.builtins.formatting.stylua.with {
+                extra_args = {"--indent-type=Spaces", "--indent-width=2"}
+            },
             null_ls.builtins.formatting.prettier.with {
                 filetypes = {"yaml", "html", "css", "markdown"}
             },
