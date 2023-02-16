@@ -87,6 +87,7 @@ call plug#begin('~/.vim/plugged')
   "Use treesitter to autoclose and autorename html tag
   Plug 'windwp/nvim-ts-autotag'
 
+  " Icons
   Plug 'stevearc/dressing.nvim'
   Plug 'ziontee113/icon-picker.nvim'
 
