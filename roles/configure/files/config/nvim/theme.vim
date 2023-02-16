@@ -2,7 +2,7 @@ set termguicolors
 
 set background=dark
 let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_enable_italic = 0
 let g:gruvbox_material_sign_column_background = 'none'
 let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_colors_override = {
