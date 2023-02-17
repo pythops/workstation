@@ -76,7 +76,7 @@
       - texlive-most
       - tealdeer
       - tokei # Count the code
-      - ttf-font-awesome
+      - ttf-fira-code
       - usbutils
       - verilator
       - vlc
