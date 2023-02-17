@@ -38,7 +38,7 @@ plugins=(
   python
   sudo
   vagrant
-  vi-mode
+  zsh-vi-mode
   z
   zsh-autosuggestions
   zsh-completions

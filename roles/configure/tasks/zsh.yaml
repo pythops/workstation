@@ -39,3 +39,8 @@
   git:
     repo: https://github.com/Aloxaf/fzf-tab
     dest: ~/.oh-my-zsh/custom/plugins/fzf-tab
+
+- name: Install zsh-vi-mode plugin
+  git:
+    repo: https://github.com/jeffreytse/zsh-vi-mode
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
