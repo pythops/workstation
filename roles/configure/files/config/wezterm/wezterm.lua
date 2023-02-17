@@ -41,4 +41,6 @@ return {
 
   default_cursor_style = "BlinkingBlock",
   cursor_blink_rate = 500,
+
+  enable_tab_bar = false,
 }
