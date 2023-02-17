@@ -39,8 +39,9 @@ return {
 
   underline_position = -4,
 
-  default_cursor_style = "BlinkingBlock",
-  cursor_blink_rate = 500,
+  default_cursor_style = "BlinkingBar",
+  cursor_thickness = 2,
+  cursor_blink_rate = 300,
 
   enable_tab_bar = false,
 }
