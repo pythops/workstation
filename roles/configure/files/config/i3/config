@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:monospace 8
+font pango:Fira Code 10
 floating_modifier $mod
 focus_follows_mouse no
 
@@ -149,7 +149,7 @@ gaps outer -2
 
 # Start i3bar
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 12
+    font pango:Fira Code, FontAwesome 12
     status_command i3status-rs ~/.config/i3status-rs/config.toml
     colors {
         separator #666666
@@ -206,6 +206,7 @@ exec --no-startup-id autocutsel -s PRIMARY -fork
 
 # keyboard layout
 exec_always setxkbmap -layout fr
+exec_always setxkbmap -option ctrl:nocaps
 
 # Redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
