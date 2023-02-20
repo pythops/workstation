@@ -1,7 +1,10 @@
-- name: Install zsh
+- name: Install packages
   ansible.builtin.package:
-    name: zsh
+    name: "{{ item }}"
     state: latest
+  loop:
+    - zsh
+    - zoxide
   become: yes
 
 - name: Install oh my zsh
@@ -39,8 +42,3 @@
   git:
     repo: https://github.com/Aloxaf/fzf-tab
     dest: ~/.oh-my-zsh/custom/plugins/fzf-tab
-
-- name: Install zsh-vi-mode plugin
-  git:
-    repo: https://github.com/jeffreytse/zsh-vi-mode
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-vi-mode

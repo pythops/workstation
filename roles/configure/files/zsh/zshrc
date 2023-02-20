@@ -2,6 +2,9 @@
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+setopt inc_append_history
+setopt share_history
+
 DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="false"
 
@@ -27,27 +30,28 @@ plugins=(
   ansible
   command-not-found
   docker
-  fzf-tab
   gcloud
   git
   httpie
   kubectl
   pip
   poetry
-  pyenv
   python
   sudo
   vagrant
-  zsh-vi-mode
-  z
+  vi-mode
+  fzf-tab
   zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
 )
 
+export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+
 source $ZSH/oh-my-zsh.sh
-setopt inc_append_history
-setopt share_history
+
+enable-fzf-tab
+zstyle ':fzf-tab:*' fzf-pad 4
 
 # Custom functions
 function upgrade_python_packages() {
@@ -99,9 +103,15 @@ unset I3SOCK
 source ~/.cargo/env
 
 # FZF
+export _ZO_EXCLUDE_DIRS=".cache|.git|.venv|node_modules"
+export FZF_DEFAULT_OPTS='--border --height=60%'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow -g '!.git' -g '!node_modules' -g '!.venv' 2>/dev/null"
+
+eval "$(zoxide init zsh)"
+
 fz() {
   local z_path
-  z_path=$(z -l | fzf-tmux -d '100%' | awk '{print $2}')
+  z_path=$(zoxide query --list | fzf -d '100%' | awk '{print $1}')
   cd $(echo "$z_path")
 }
 zle     -N   fz
@@ -109,13 +119,6 @@ bindkey '^F' fz
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-
-export FZF_DEFAULT_OPTS='--border --height=60%'
-export _Z_EXCLUDE_DIRS=".cache|.git|.venv|node_modules"
-export FZF_DEFAULT_COMMAND="rg --files --hidden --follow -g '!.git' -g '!node_modules' -g '!.venv' 2>/dev/null"
-
-enable-fzf-tab
-zstyle ':fzf-tab:*' fzf-pad 4
 
 # SSH Agent
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
