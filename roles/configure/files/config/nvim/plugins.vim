@@ -91,4 +91,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'stevearc/dressing.nvim'
   Plug 'ziontee113/icon-picker.nvim'
 
+  " Cmdline
+  Plug 'MunifTanjim/nui.nvim'
+  Plug 'VonHeikemen/fine-cmdline.nvim'
+
 call plug#end()

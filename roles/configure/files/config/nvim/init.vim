@@ -19,3 +19,4 @@ source ~/.config/nvim/plugins/null-ls.vim
 source ~/.config/nvim/plugins/comment.vim
 source ~/.config/nvim/plugins/nvim-ts-autotag.vim
 source ~/.config/nvim/plugins/icon.vim
+source ~/.config/nvim/plugins/cmdline.vim
