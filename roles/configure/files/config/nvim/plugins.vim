@@ -95,4 +95,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'MunifTanjim/nui.nvim'
   Plug 'VonHeikemen/fine-cmdline.nvim'
 
+  " Search
+  Plug 'VonHeikemen/searchbox.nvim'
+
 call plug#end()
