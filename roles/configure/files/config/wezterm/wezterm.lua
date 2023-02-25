@@ -41,7 +41,14 @@ return {
 
   default_cursor_style = "BlinkingBar",
   cursor_thickness = 2,
-  cursor_blink_rate = 300,
+  cursor_blink_rate = 800,
 
   enable_tab_bar = false,
+
+  hyperlink_rules = {
+    {
+      regex = [[\b\w+://(?:[\d]{1,3}\.){3}[\d]{1,3}\S*\b]],
+      format = "$0",
+    },
+  },
 }
