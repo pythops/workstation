@@ -10,9 +10,9 @@
   import_tasks: git.yaml
   tags: git
 
-- name: Alacritty
-  import_tasks: alacritty.yaml
-  tags: alacritty
+- name: Wezterm
+  import_tasks: wezterm.yaml
+  tags: wezterm
 
 - name: Tmux
   import_tasks: tmux.yaml
