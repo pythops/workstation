@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-context'
   Plug 'sainnhe/gruvbox-material'
-  Plug 'p00f/nvim-ts-rainbow'
+  Plug 'HiPhish/nvim-ts-rainbow2'
   Plug 'NoahTheDuke/vim-just'
 
   " Additional text objects
