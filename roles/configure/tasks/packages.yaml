@@ -26,6 +26,7 @@
       - github-cli
       - google-cloud-sdk
       - gping # ping with a graph
+      - dua # disk space usage
       - duf
       - dust
       - firefox
@@ -53,6 +54,7 @@
       - nvme-cli
       - noto-fonts
       - onefetch # Git repository summary on your terminal
+      - ouch # Compressing and decompressing for various formats.
       - p7zip
       - pastel # cli to generate, analyze, convert and manipulate colors
       - pipewire-pulse
