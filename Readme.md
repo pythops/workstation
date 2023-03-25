@@ -1,5 +1,5 @@
 <div align="center">
-    <h1> 💻  Workstation Setup 💻 </h1>
+    <h1> 💻  My Workstation Setup 💻 </h1>
 </div>
 
 ### 📜 Summary
@@ -37,7 +37,7 @@ $ ansible-galaxy collection install community.general ansible.posix community.cr
 
 2. [just](https://github.com/casey/just) command runner
 
-3. Qemu
+3. Qemu (Optional)
 
 <br>
 
