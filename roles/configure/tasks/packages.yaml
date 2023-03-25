@@ -1,7 +1,13 @@
+- name: Upgrade the whole system
+  community.general.pacman:
+    upgrade: yes
+    executable: yay
+    update_cache: yes
+    extra_args: --removemake --cleanafter
+
 - name: Install packages
   community.general.pacman:
     name:
-      # - act # Run github actions locally
       - arch-audit
       - bandwhich
       - base-devel
@@ -29,9 +35,9 @@
       - dua-cli # disk space usage
       - duf
       - dust
+      - fakeroot
       - firefox
       - fzf
-      # - hadolint-bin
       - htop
       - hyperfine # CLI benchmarking tool
       - gimp
@@ -45,9 +51,11 @@
       - kubectx
       - kustomize
       - linux-lts
+      - lrzip
       - lsof
       - lynis
       - luacheck
+      - make
       - miniserve # CLI tool to serve files over HTTP
       - neofetch
       - nuspell
@@ -60,6 +68,7 @@
       - pastel # cli to generate, analyze, convert and manipulate colors
       - pipewire-pulse
       - pkgconfig
+      - powerline
       - powerline-fonts
       - procs
       - qemu-base
@@ -69,22 +78,23 @@
       - shellcheck
       - shfmt
       - skaffold
-      # - slack-desktop
       - socat
-      # - spotify
       - stylua
       - systeroid
       - taplo-cli
       - task
       - texlive-most
       - tealdeer
+      - terraform
       - tokei # Count the code
       - ttf-fira-code
+      - ttf-font-awesome
       - usbutils
       - verilator
       - vlc
       - watchexec
       - which
+      - xclip
       - xorg-server
       - xsel
       - zathura-pdf-mupdf
@@ -93,14 +103,13 @@
     update_cache: yes
     extra_args: --removemake --cleanafter
 
-# TODO: install AUR packages
-
-- name: Upgrade the whole system
-  community.general.pacman:
-    upgrade: yes
-    executable: yay
-    update_cache: yes
-    extra_args: --removemake --cleanafter
+- name: Install AUR packages
+  ansible.builtin.command: yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync "{{ item }}"
+  loop:
+    - act # Run github actions locally
+    - spotify
+    - slack
+    - hadolint-bin
 
 - name: Enable services
   ansible.builtin.systemd:
