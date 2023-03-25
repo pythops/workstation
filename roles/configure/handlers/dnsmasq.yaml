@@ -3,3 +3,4 @@
     name: dnsmasq
     state: restarted
     enabled: yes
+  become: yes
