@@ -11,13 +11,14 @@
   become: yes
 
 - name: Add cargo subcommands
-  community.general.cargo:
+  community.general.pacman:
     name: "{{ item }}"
   loop:
     - cargo-edit
     - cargo-nextest
     - cargo-deny
     - sccache
+  become: yes
 
 - name: Add cargo config
   copy:
@@ -25,3 +26,5 @@
       [build]
       rustc-wrapper = "sccache"
     dest: ~/.cargo/config
+  tags:
+    - config-rust
