@@ -1,8 +1,8 @@
 default:
     @just --list --unsorted
 
-deploy target:
-    @-scripts/deploy.sh {{ target }}
+configure target:
+    @-scripts/configure.sh {{ target }}
 
 start-vm:
     @-scripts/start-vm.sh
@@ -15,4 +15,7 @@ configure-vm:
         -o StrictHostKeyChecking=no \
         -o "UserKnownHostsFile /dev/null" \
         -p 10022 \
-        pythops@localhost -t "cd /mnt && SUDO_WITHOUT_PASSWORD=1  just deploy all"
+        pythops@localhost -t "cd /mnt && SUDO_WITHOUT_PASSWORD=1  just configure all"
+
+clean:
+    rm -rf archbox cloudinit
