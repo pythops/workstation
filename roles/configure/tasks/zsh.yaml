@@ -7,10 +7,16 @@
     - zoxide
   become: yes
 
+- name: remove any existing directory before installing omz
+  file:
+    path: ~/.oh-my-zsh
+    state: absent
+
 - name: Install oh my zsh
-  git:
-    repo: https://github.com/ohmyzsh/ohmyzsh.git
+  ansible.builtin.git:
+    repo: "https://github.com/ohmyzsh/ohmyzsh.git"
     dest: ~/.oh-my-zsh
+    force: true
     depth: 1
 
 - name: Copy zshrc
