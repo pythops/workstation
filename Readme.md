@@ -28,23 +28,16 @@
 
 ### 🛠️ Requirements
 
-#### 1. Install Ansible
+1. Ansible
 
 ```
 $ pip install --user ansible
 $ ansible-galaxy collection install community.general ansible.posix community.crypto
 ```
 
-#### 2. Install `just` command runner
+2. [just](https://github.com/casey/just) command runner
 
-https://github.com/casey/just
-
-#### 3. Install Virtualbox and vagrant (needed for preview, optional)
-
-```
-$ sudo pacman -Syu virtualbox vagrant
-$ vagrant plugin install vagrant-reload
-```
+3. Qemu
 
 <br>
 
@@ -54,12 +47,12 @@ $ vagrant plugin install vagrant-reload
 $ just <target>
 ```
 
-available tagets:
+Available tagetes:
 
-- all: Install the whole system
-- containers: Container tools (podman, buildah, skopeo)
+- all
+- containers
 - dnsmasq
-- esp: esp32 s3
+- esp
 - git
 - i3
 - minikube
@@ -78,11 +71,27 @@ available tagets:
 
 ### 📺 Preview
 
-Run an Archlinx VM and provision it
+Create an Archlinux VM
 
 ```
-$ just run
+$ just start-vm
 ```
+
+Configure the whole VM
+
+```
+$ just configure-vm
+```
+
+Connect to the VM using a VNC client (tigervnc in this example)
+
+```
+ $ vncviewer :5900
+```
+
+login: pythops
+
+password: pythops
 
 <br>
 
