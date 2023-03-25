@@ -40,12 +40,23 @@
     src: config/containers/storage.conf
     dest: ~/.config/containers/storage.conf
 
+- name: Create docker config directory
+  file:
+    path: /etc/docker
+    state: directory
+  become: yes
+
 - name: Configure docker
   template:
     src: etc/docker/daemon.json
     dest: /etc/docker/daemon.json
     mode: 0644
   become: yes
+
+- name: Create skaffold config directory
+  file:
+    path: ~/.skaffold
+    state: directory
 
 - name: Copy skaffold config
   copy:
