@@ -1,7 +1,7 @@
 - name: Install packages
   community.general.pacman:
     name:
-      - act # Run github actions locally
+      # - act # Run github actions locally
       - arch-audit
       - bandwhich
       - base-devel
@@ -21,17 +21,18 @@
       - dua-cli
       - exa
       - fd
+      - gcc
       - git
       - git-delta
       - github-cli
-      - google-cloud-sdk
       - gping # ping with a graph
-      - dua # disk space usage
+      - dua-cli # disk space usage
       - duf
       - dust
       - firefox
       - fzf
-      - hadolint-bin
+      # - hadolint-bin
+      - htop
       - hyperfine # CLI benchmarking tool
       - gimp
       - intel-compute-runtime
@@ -65,12 +66,12 @@
       - ripgrep
       - rustscan
       - screen
-      - shellcheck-bin
+      - shellcheck
       - shfmt
       - skaffold
-      - slack-desktop
+      # - slack-desktop
       - socat
-      - spotify
+      # - spotify
       - stylua
       - systeroid
       - taplo-cli
@@ -83,6 +84,7 @@
       - verilator
       - vlc
       - watchexec
+      - which
       - xorg-server
       - xsel
       - zathura-pdf-mupdf
@@ -90,6 +92,8 @@
     executable: yay
     update_cache: yes
     extra_args: --removemake --cleanafter
+
+# TODO: install AUR packages
 
 - name: Upgrade the whole system
   community.general.pacman:
@@ -104,3 +108,4 @@
     enabled: yes
   loop:
     - iwd
+  become: yes
