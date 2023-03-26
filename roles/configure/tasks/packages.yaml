@@ -95,6 +95,7 @@
       - watchexec
       - which
       - xclip
+      - xdg-utils
       - xorg-server
       - xsel
       - zathura-pdf-mupdf
