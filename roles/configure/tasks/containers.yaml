@@ -28,6 +28,8 @@
       dest: /etc/subuid
     - src: etc/subgid
       dest: /etc/subgid
+  notify:
+    - podman system migrate
   become: yes
 
 - name: Create rootless config directory

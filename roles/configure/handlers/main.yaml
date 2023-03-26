@@ -1,2 +1,3 @@
 - import_tasks: dnsmasq.yaml
 - import_tasks: minikube.yaml
+- import_tasks: podman.yaml
