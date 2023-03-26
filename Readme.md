@@ -1,5 +1,6 @@
 <div align="center">
-    <h1> 💻  My Workstation Setup 💻 </h1>
+    <h1> 💻 </h1>
+    <h1>My Workstation Setup </h1>
 </div>
 
 ### 📜 Summary
