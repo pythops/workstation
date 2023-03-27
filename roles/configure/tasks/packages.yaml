@@ -9,6 +9,7 @@
   community.general.pacman:
     name:
       - arch-audit
+      - arm-none-eabi-gdb
       - bandwhich
       - base-devel
       - bat
@@ -56,6 +57,7 @@
       - lynis
       - luacheck
       - make
+      - minicom
       - miniserve # CLI tool to serve files over HTTP
       - neofetch
       - nuspell
