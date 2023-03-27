@@ -48,7 +48,7 @@ $ ansible-galaxy collection install community.general ansible.posix community.cr
 $ just configure <target>
 ```
 
-Available tagetes:
+Available targets:
 
 - all
 - containers
