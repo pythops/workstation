@@ -45,7 +45,7 @@ $ ansible-galaxy collection install community.general ansible.posix community.cr
 ### 🔬 Usage
 
 ```
-$ just <target>
+$ just configure <target>
 ```
 
 Available tagetes:
