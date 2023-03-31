@@ -14,9 +14,10 @@
   community.general.pacman:
     name: "{{ item }}"
   loop:
-    - cargo-edit
-    - cargo-nextest
     - cargo-deny
+    - cargo-edit
+    - cargo-generate
+    - cargo-nextest
     - sccache
   become: yes
 
