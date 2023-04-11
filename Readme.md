@@ -36,6 +36,8 @@ $ pip install --user ansible
 $ ansible-galaxy collection install community.general ansible.posix community.crypto
 ```
 
+> Make sure that $HOME/.local/bin is in your $PATH
+
 2. [just](https://github.com/casey/just) command runner
 
 3. Qemu (Optional)
@@ -90,9 +92,12 @@ Connect to the VM using a VNC client (tigervnc in this example)
  $ vncviewer :5900
 ```
 
-login: pythops
+The credentials are:
 
+```
+login: pythops
 password: pythops
+```
 
 <br>
 
