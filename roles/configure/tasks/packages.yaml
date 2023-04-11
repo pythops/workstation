@@ -20,6 +20,7 @@
       - clinfo
       - chromium
       - difftastic
+      - discord
       - darktable
       - dcraw
       - dmidecode
@@ -44,6 +45,7 @@
       - gimp
       - intel-compute-runtime
       - iwd
+      - jless
       - jq
       - just
       - jwt-cli
