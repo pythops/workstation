@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
-  term = "wezterm",
+  term = "xterm-256color",
   font = wezterm.font({
     family = "Fira Code",
     stretch = "Expanded",
