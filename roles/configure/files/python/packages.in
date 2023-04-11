@@ -9,6 +9,7 @@ asciinema
 pgcli
 ansible
 podman-compose
+grip
 
 # Dev
 ansible-lint
