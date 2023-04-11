@@ -17,5 +17,12 @@ configure-vm:
         -p 10022 \
         pythops@localhost -t "cd /mnt && SUDO_WITHOUT_PASSWORD=1  just configure all"
 
+ssh-vm:
+    ssh \
+        -o StrictHostKeyChecking=no \
+        -o "UserKnownHostsFile /dev/null" \
+        -p 10022 \
+        pythops@localhost
+
 clean:
-    rm -rf archbox cloudinit
+    @rm -rf archbox cloudinit
