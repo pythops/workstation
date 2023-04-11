@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
   " Theme
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-context'
+  Plug 'm-demare/hlargs.nvim'
   Plug 'sainnhe/gruvbox-material'
   Plug 'HiPhish/nvim-ts-rainbow2'
   Plug 'NoahTheDuke/vim-just'

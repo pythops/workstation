@@ -75,4 +75,5 @@ lua <<EOF
     }
 
     require'treesitter-context'.setup()
+    require'hlargs'.setup()
 EOF
