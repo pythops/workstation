@@ -8,7 +8,8 @@ call plug#begin('~/.vim/plugged')
 
   " Theme
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvim-treesitter/nvim-treesitter-context'
+  Plug 'nvim-treesitter/nvim-treesitter-context', {'requires': 'nvim-treesitter/nvim-treesitter'}
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'requires': 'nvim-treesitter/nvim-treesitter'}
   Plug 'm-demare/hlargs.nvim'
   Plug 'sainnhe/gruvbox-material'
   Plug 'HiPhish/nvim-ts-rainbow2'
@@ -48,8 +49,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-obsession'
   Plug 'dhruvasagar/vim-prosession'
 
-  " Changes easly quotes and parentheses
-  Plug 'tpope/vim-surround'
+  " Text surrounding
+  Plug 'kylechui/nvim-surround'
 
   " Automated bullets lists
   Plug 'dkarter/bullets.vim'
