@@ -98,14 +98,15 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# # move focused window between monitors
+# move focused window between monitors
 bindsym $mod+o move container to output right
 bindsym $mod+Shift+o move container to output left
 
 # Bind apps to specific workspaces
-assign [class="Slack"] $ws4
+assign [class="slack"] $ws4
+assign [class="discord"] $ws4
 assign [class="firefox"] $ws2
-assign [class="Darktable"] $ws3
+assign [class="darktable"] $ws3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
