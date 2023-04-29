@@ -5,6 +5,7 @@ httpie
 yt-dlp
 speedtest-cli
 certbot
+certbot-dns-cloudflare
 asciinema
 pgcli
 ansible
