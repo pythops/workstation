@@ -24,6 +24,7 @@ lua <<EOF
   local on_attach = function(client, bufnr)
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, bufopts)
+    require'completion'.on_attach(client)
   end
 
   -- Pyright
@@ -86,19 +87,11 @@ lua <<EOF
       end, { "i", "s" }),
       }),
     sources = cmp.config.sources({
+      { name = 'path' },
       { name = 'nvim_lsp' },
       { name = "vsnip" },
       { name = 'nvim_lsp_signature_help' },
-      {
-        name = 'spell',
-        option = {
-            keep_all_entries = false,
-            enable_in_context = function()
-                return true
-            end,
-        },
-      }
-    }, {
+      { name = 'spell' },
       { name = 'buffer' },
     })
   })
@@ -107,6 +100,11 @@ lua <<EOF
   require('lspconfig')['rust_analyzer'].setup {
     settings = {
         ['rust-analyzer'] = {
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
             checkOnSave = {
                 allFeatures = true,
                 overrideCommand = {
