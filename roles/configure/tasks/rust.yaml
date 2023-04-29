@@ -1,14 +1,14 @@
-- name: Install rust toolchain
-  shell: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
-
-- name: Install rust-src
-  shell: PATH=$HOME/.cargo/bin:$PATH rustup component add rust-src
-
-- name: Install rust-analyzer
+- name: Install rustup
   community.general.pacman:
-    name: rust-analyzer
+    name: rustup
     state: latest
   become: yes
+
+- name: Install the stable toolchain
+  shell: rustup default stable
+
+- name: Install components
+  shell: rustup component add rust-analyzer rust-src clippy rustfmt
 
 - name: Add cargo subcommands
   community.general.pacman:
@@ -20,6 +20,11 @@
     - cargo-nextest
     - sccache
   become: yes
+
+- name: Create cargo config directory
+  file:
+    path: ~/.cargo
+    state: directory
 
 - name: Add cargo config
   copy:
