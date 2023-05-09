@@ -1,6 +1,6 @@
 <div align="center">
-    <h1> 💻 </h1>
     <h1>My Workstation Setup </h1>
+    <img src="assets/cover.png"</img>
 </div>
 
 ### 📜 Summary
