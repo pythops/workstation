@@ -1,6 +1,12 @@
 - name: Install pip
   shell: python -Im ensurepip --upgrade --user
 
+- name: Install pyenv
+  ansible.builtin.package:
+    name: pyenv
+    state: latest
+  become: yes
+
 - name: Create $HOME/.python directory
   file:
     path: $HOME/.python

@@ -31,7 +31,8 @@ format = "[$symbol](red bold) "
 
 [python]
 symbol = " "
-format = '[(\( $symbol $virtualenv\) )]($style)'
+version_format = '${raw}'
+format = '[(\( $symbol ${version} $virtualenv\) )]($style)'
 
 [character]
 success_symbol = "[➜](bold green) "
