@@ -134,8 +134,12 @@ source /usr/share/fzf/completion.zsh
 ##
 eval "$(zoxide init zsh)"
 
-zle     -N   zi
-bindkey '^F' zi
+_zi () {
+    zi
+}
+
+zle     -N   _zi
+bindkey '^F' _zi
 
 ##
 ## SSH Agent
