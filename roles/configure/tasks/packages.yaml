@@ -82,6 +82,7 @@
       - shellcheck
       - shfmt
       - skaffold
+      - sniffnet
       - socat
       - stylua
       - systeroid
@@ -90,6 +91,7 @@
       - texlive-most
       - tealdeer
       - terraform
+      - tigervnc
       - tokei # Count the code
       - ttf-fira-code
       - ttf-font-awesome
