@@ -93,6 +93,7 @@
       - terraform
       - tigervnc
       - tokei # Count the code
+      - typst
       - ttf-fira-code
       - ttf-font-awesome
       - usbutils
