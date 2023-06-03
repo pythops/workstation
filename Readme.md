@@ -58,6 +58,7 @@ Available targets:
 - esp
 - git
 - i3
+- keyboard
 - minikube
 - neovim
 - npm

@@ -2,6 +2,10 @@
   import_tasks: yay.yaml
   tags: yay
 
+- name: Keyboard
+  import_tasks: keyboard.yaml
+  tags: keyboard
+
 - name: Packages
   import_tasks: packages.yaml
   tags: packages
