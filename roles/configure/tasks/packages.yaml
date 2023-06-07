@@ -99,6 +99,10 @@
       - usbutils
       - verilator
       - vlc
+      - vulkan-icd-loader
+      - vulkan-intel
+      - vulkan-tools
+      - vulkan-validation-layers
       - watchexec
       - which
       - xclip
