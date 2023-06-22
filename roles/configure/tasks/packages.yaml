@@ -44,6 +44,7 @@
       - hyperfine # CLI benchmarking tool
       - gimp
       - intel-compute-runtime
+      - intel-gpu-tools
       - iwd
       - jless
       - jq
@@ -88,7 +89,6 @@
       - systeroid
       - taplo-cli
       - task
-      - texlive-most
       - tealdeer
       - terraform
       - tigervnc
