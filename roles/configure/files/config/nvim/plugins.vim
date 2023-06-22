@@ -58,9 +58,6 @@ call plug#begin('~/.vim/plugged')
   " Easy resizing of splits
   Plug 'simeji/winresizer'
 
-  " Latex
-  Plug 'lervag/vimtex'
-
   " Comments
   Plug 'numToStr/Comment.nvim'
 
