@@ -1,4 +1,4 @@
 #!/bin/bash
 
-i3-msg '[workspace="(1|2)"] move workspace to output DP-2;'
+i3-msg '[workspace="(1|2)"] move workspace to output HDMI-1;'
 i3-msg reload
