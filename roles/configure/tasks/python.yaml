@@ -1,6 +1,16 @@
 - name: Install pip
   shell: python -Im ensurepip --upgrade --user
 
+- name: Create pip config dir
+  file:
+    path: $HOME/.config/pip
+    state: directory
+
+- name: configure pip
+  copy:
+    src: config/pip/pip.conf
+    dest: ~/.config/pip/pip.conf
+
 - name: Install pyenv
   ansible.builtin.package:
     name: pyenv
