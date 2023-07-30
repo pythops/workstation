@@ -5,3 +5,4 @@
     enabled: yes
     daemon_reload: yes
   become: yes
+  ignore_errors: true
