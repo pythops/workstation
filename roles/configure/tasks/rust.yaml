@@ -1,6 +1,8 @@
-- name: Install rustup
+- name: Install rustup & rust-analyzer
   community.general.pacman:
-    name: rustup
+    name:
+      - rustup
+      - rust-analyzer
     state: latest
   become: yes
 
@@ -8,7 +10,7 @@
   shell: rustup default stable
 
 - name: Install components
-  shell: rustup component add rust-analyzer rust-src clippy rustfmt
+  shell: rustup component add rust-src clippy rustfmt
 
 - name: Add cargo subcommands
   community.general.pacman:
