@@ -129,6 +129,11 @@ lua <<EOF
     on_attach = on_attach
   }
 
+  lspconfig.wgsl_analyzer.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
+
   require("lspconfig").pyright.setup{
     before_init = function(_, config)
         config.settings.python.pythonPath = get_python_path(config.root_dir)
