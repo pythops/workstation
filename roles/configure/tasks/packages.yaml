@@ -17,15 +17,14 @@
       - bluez-utils
       - bore # making tunnels to localhost
       - btop
-      - clinfo
       - chromium
       - difftastic
       - discord
       - darktable
-      - dcraw
+      - dcraw # Decoding raw photos
       - dmidecode
       - dnsutils
-      - dog
+      - doggo-bin # DNS client
       - dua-cli
       - exa
       - fd
@@ -61,8 +60,8 @@
       - luacheck
       - make
       - minicom
-      - miniserve # CLI tool to serve files over HTTP
-      - neofetch
+      - miniserve # Serve files over HTTP
+      - neofetch # system information
       - nuspell
       - nmap
       - nvme-cli
@@ -70,7 +69,7 @@
       - onefetch # Git repository summary on your terminal
       - ouch # Compressing and decompressing for various formats.
       - p7zip
-      - pastel # cli to generate, analyze, convert and manipulate colors
+      - pastel # Generate, analyze, convert and manipulate colors
       - pipewire-pulse
       - pkgconfig
       - powerline
@@ -86,8 +85,8 @@
       - sniffnet
       - socat
       - stylua
-      - systeroid
-      - taplo-cli
+      - systeroid # Alternative to sysctl
+      - taplo-cli # TOML toolkit
       - task
       - tealdeer
       - terraform
