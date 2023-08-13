@@ -42,8 +42,6 @@
       - htop
       - hyperfine # CLI benchmarking tool
       - gimp
-      - intel-compute-runtime
-      - intel-gpu-tools
       - iwd
       - jless
       - jq
@@ -98,10 +96,6 @@
       - usbutils
       - verilator
       - vlc
-      - vulkan-icd-loader
-      - vulkan-intel
-      - vulkan-tools
-      - vulkan-validation-layers
       - watchexec
       - which
       - xclip
