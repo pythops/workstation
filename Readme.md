@@ -57,6 +57,7 @@ Available targets:
 - dnsmasq
 - esp
 - git
+- gpu
 - i3
 - keyboard
 - minikube

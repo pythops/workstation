@@ -1,0 +1,23 @@
+- name: Install gpu monitoring tools
+  community.general.pacman:
+    name:
+      - intel-gpu-tools
+      - nvtop
+    state: latest
+  become: yes
+
+- name: Install Vulkan for intel gpu
+  community.general.pacman:
+    name:
+      - vulkan-icd-loader
+      - vulkan-intel
+      - vulkan-tools
+      - vulkan-validation-layers
+    state: latest
+  become: yes
+
+- name: Install wgsl-analyer
+  ansible.builtin.get_url:
+    url: https://github.com/wgsl-analyzer/wgsl-analyzer/releases/download/v0.7.0/wgsl_analyzer-linux-x64
+    dest: ~/.local/bin/wgsl_analyzer
+    mode: 0755

@@ -10,6 +10,7 @@ available_targets=(
 	"dnsmasq"
 	"esp"
 	"git"
+	"gpu"
 	"i3"
 	"keyboard"
 	"minikube"
