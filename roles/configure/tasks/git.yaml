@@ -1,6 +1,8 @@
-- name: Install git package
+- name: Install git packages
   community.general.pacman:
-    name: git
+    name:
+      - git
+      - lazygit
     state: latest
   become: yes
 
