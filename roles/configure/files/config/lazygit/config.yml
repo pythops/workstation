@@ -1,3 +1,11 @@
+gui:
+  mouseEvents: false
+  theme:
+    selectedLineBgColor:
+      - "#272727"
+    activeBorderColor:
+      - green
+      - bold
 keybinding:
   universal:
     scrollUpMain: "<c-k>"
