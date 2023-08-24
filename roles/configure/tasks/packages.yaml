@@ -68,6 +68,7 @@
       - ouch # Compressing and decompressing for various formats.
       - p7zip
       - pastel # Generate, analyze, convert and manipulate colors
+      - pcsclite # needed by yubikey
       - pipewire-pulse
       - pkgconfig
       - powerline
@@ -84,6 +85,7 @@
       - socat
       - stylua
       - systeroid # Alternative to sysctl
+      - swig # needed by yubikey
       - taplo-cli # TOML toolkit
       - task
       - tealdeer
@@ -98,10 +100,6 @@
       - vlc
       - watchexec
       - which
-      - xclip
-      - xdg-utils
-      - xorg-server
-      - xsel
       - zathura-pdf-mupdf
     state: latest
     executable: yay

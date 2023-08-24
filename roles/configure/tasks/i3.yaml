@@ -4,7 +4,7 @@
     state: latest
   become: yes
 
-- name: Install utils
+- name: Install wm utils
   community.general.pacman:
     name:
       - autocutsel
@@ -21,6 +21,10 @@
       - xorg-setxkbmap
       - xss-lock
       - xorg-xsetroot
+      - xdg-utils
+      - xorg-server
+      - xsel
+      - xclip
     state: latest
   become: yes
 
