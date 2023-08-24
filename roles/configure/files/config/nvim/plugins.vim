@@ -98,4 +98,7 @@ call plug#begin('~/.vim/plugged')
   " Search
   Plug 'VonHeikemen/searchbox.nvim'
 
+  "Lazygit
+  Plug 'kdheepak/lazygit.nvim'
+
 call plug#end()

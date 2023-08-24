@@ -20,3 +20,4 @@ source ~/.config/nvim/plugins/nvim-ts-autotag.vim
 source ~/.config/nvim/plugins/icon.vim
 source ~/.config/nvim/plugins/cmdline.vim
 source ~/.config/nvim/plugins/search.vim
+source ~/.config/nvim/plugins/lazygit.vim
