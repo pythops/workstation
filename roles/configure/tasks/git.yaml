@@ -6,6 +6,16 @@
     state: latest
   become: yes
 
+- name: Create ~/.config/lazygit directory
+  file:
+    path: ~/.config/lazygit
+    state: directory
+
+- name: Copy lazygit config
+  copy:
+    src: config/lazygit/config.yml
+    dest: ~/.config/lazygit/config.yml
+
 - name: Create git config
   copy:
     src: git/gitconfig
