@@ -1,12 +1,21 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+
 gui:
   mouseEvents: false
+  nerdFontsVersion: "3"
   theme:
     selectedLineBgColor:
       - "#272727"
     activeBorderColor:
       - green
       - bold
+
 keybinding:
   universal:
     scrollUpMain: "<c-k>"
     scrollDownMain: "<c-j>"
+
+notARepository: "skip"
