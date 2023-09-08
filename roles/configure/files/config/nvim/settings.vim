@@ -54,3 +54,9 @@ nnoremap <leader>c :set spell!<CR>
 
 " Add wgsl file type
 au BufNewFile,BufRead *.wgsl set filetype=wgsl
+
+" Ansible file type
+au BufRead,BufNewFile */roles/*.y*ml set filetype=yaml.ansible
+
+" Github Actions file type
+au BufRead,BufNewFile */.github/*.y*ml set filetype=yaml.github
