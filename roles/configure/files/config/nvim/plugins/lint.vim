@@ -6,7 +6,7 @@ lua <<EOF
     yaml = {"yamllint"},
     markdown = {"vale"},
     dockerfile = {"hadolint"},
-    ['yaml.ansible'] = {"ansible-lint", "yamllint"},
+    ['yaml.ansible'] = {"ansible_lint", "yamllint"},
     ['yaml.github'] = {"actionlint", "yamllint"},
   }
 
