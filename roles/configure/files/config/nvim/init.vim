@@ -14,10 +14,11 @@ source ~/.config/nvim/plugins/gitsigns.vim
 source ~/.config/nvim/plugins/lualine.vim
 source ~/.config/nvim/plugins/todo-comments.vim
 source ~/.config/nvim/plugins/indent-blankline.vim
-source ~/.config/nvim/plugins/null-ls.vim
 source ~/.config/nvim/plugins/comment.vim
 source ~/.config/nvim/plugins/nvim-ts-autotag.vim
 source ~/.config/nvim/plugins/icon.vim
 source ~/.config/nvim/plugins/cmdline.vim
 source ~/.config/nvim/plugins/search.vim
 source ~/.config/nvim/plugins/lazygit.vim
+source ~/.config/nvim/plugins/formatter.vim
+source ~/.config/nvim/plugins/lint.vim
