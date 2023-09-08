@@ -29,6 +29,12 @@ lua <<EOF
         yaml= {
           require("formatter.defaults.prettier"),
         },
+        ['yaml.ansible']= {
+          require("formatter.defaults.prettier"),
+        },
+        ['yaml.github']= {
+          require("formatter.defaults.prettier"),
+        },
         json = {
           require("formatter.filetypes.json").jq,
         },
