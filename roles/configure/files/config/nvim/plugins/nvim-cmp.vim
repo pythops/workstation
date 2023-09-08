@@ -51,6 +51,7 @@ lua <<EOF
   end
   --
 
+  -- Completion
   local cmp = require'cmp'
 
   cmp.setup({
@@ -86,6 +87,7 @@ lua <<EOF
         end
       end, { "i", "s" }),
       }),
+
     sources = cmp.config.sources({
       { name = 'path' },
       { name = 'nvim_lsp' },
@@ -96,11 +98,27 @@ lua <<EOF
     })
   })
 
+  cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
+  --
+
   -- Add additional capabilities supported by nvim-cmp
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   local lspconfig = require('lspconfig')
 
-  -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
   local servers = { 'rust_analyzer', 'pyright' }
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
