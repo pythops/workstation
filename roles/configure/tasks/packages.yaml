@@ -26,7 +26,7 @@
       - dnsutils
       - doggo-bin # DNS client
       - dua-cli
-      - exa
+      - eza
       - fd
       - gcc
       - git
