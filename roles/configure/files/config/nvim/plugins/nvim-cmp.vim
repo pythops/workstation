@@ -9,6 +9,11 @@ lua <<EOF
     severity_sort = false,
   })
 
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+    focusable = true,
+  })
+
   vim.o.updatetime = 250
   vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
@@ -24,6 +29,8 @@ lua <<EOF
   local on_attach = function(client, bufnr)
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set({'n', 'v'}, '<space>a', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<space>h', vim.lsp.buf.hover , bufopts)
     require'completion'.on_attach(client)
   end
 
