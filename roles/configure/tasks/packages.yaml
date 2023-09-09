@@ -92,6 +92,7 @@
       - terraform
       - tigervnc
       - tokei # Count the code
+      - tree-sitter-cli
       - typst
       - ttf-fira-code
       - ttf-font-awesome
