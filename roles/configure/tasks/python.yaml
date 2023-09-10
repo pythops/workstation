@@ -1,5 +1,5 @@
-- name: Install pip
-  ansible.builtin.command: python -Im ensurepip --upgrade --user
+- name: Install pip # noqa command-instead-of-module
+  ansible.builtin.shell: curl https://bootstrap.pypa.io/get-pip.py | python - --break-system-packages
   args:
     creates: $HOME/.local/bin/pip3
 
@@ -61,6 +61,8 @@
   ansible.builtin.command: pip3 install --user poetry
   args:
     creates: $HOME/.local/bin/poetry
+  environment:
+    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
 - name: Create poetry config dir
   ansible.builtin.file:
