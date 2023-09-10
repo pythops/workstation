@@ -169,6 +169,9 @@ lua <<EOF
     capabilities = capabilities,
   }
 
+  -- Ansible --
+  lspconfig.ansiblels.setup{}
+
   -- Terraform --
   lspconfig.terraformls.setup{}
 

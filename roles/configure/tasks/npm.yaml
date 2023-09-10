@@ -15,3 +15,4 @@
     global: yes
   loop:
     - prettier
+    - "@ansible/ansible-language-server"
