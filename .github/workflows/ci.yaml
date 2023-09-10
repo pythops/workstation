@@ -1,0 +1,17 @@
+---
+on: [push]
+name: Test
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install Ansible
+        run: |
+          pip3 install ansible
+          ansible-galaxy collection install community.general
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint@main
