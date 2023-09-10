@@ -169,6 +169,9 @@ lua <<EOF
     capabilities = capabilities,
   }
 
+  -- Bash --
+  lspconfig.bashls.setup{}
+
   -- Ansible --
   lspconfig.ansiblels.setup{}
 

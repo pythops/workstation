@@ -16,3 +16,4 @@
   loop:
     - prettier
     - "@ansible/ansible-language-server"
+    - "bash-language-server"
