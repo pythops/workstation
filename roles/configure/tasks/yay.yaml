@@ -3,7 +3,7 @@
     src: https://github.com/Jguer/yay/releases/download/v12.1.2/yay_12.1.2_x86_64.tar.gz
     dest: /usr/local/bin
     remote_src: true
-    include: yay_11.1.2_x86_64/yay
+    include: yay_12.1.2_x86_64/yay
     extra_opts:
       - --strip-components=1
     mode: "0755"
