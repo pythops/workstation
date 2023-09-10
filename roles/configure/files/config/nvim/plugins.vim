@@ -67,7 +67,7 @@ call plug#begin('~/.vim/plugged')
   "Close pairs
   Plug 'windwp/nvim-autopairs'
 
-  " Completion
+  " Lsp
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'

@@ -8,7 +8,7 @@ source ~/.config/nvim/plugins/camelcase-motion.vim
 source ~/.config/nvim/plugins/tint.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/leap.vim
-source ~/.config/nvim/plugins/nvim-cmp.vim
+source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/nvim-autopairs.vim
 source ~/.config/nvim/plugins/gitsigns.vim
 source ~/.config/nvim/plugins/lualine.vim
