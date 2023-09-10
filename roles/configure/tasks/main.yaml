@@ -1,3 +1,6 @@
+- name: Common
+  ansible.builtin.import_tasks: common.yaml
+
 - name: Install yay AUR helper
   ansible.builtin.import_tasks: yay.yaml
   tags: yay
