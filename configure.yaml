@@ -1,4 +1,6 @@
-- hosts: localhost
+---
+- name: Configure the workstation
+  hosts: localhost
   connection: local
   roles:
     - configure
