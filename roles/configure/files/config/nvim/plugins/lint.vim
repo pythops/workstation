@@ -2,7 +2,6 @@ lua <<EOF
 
   require('lint').linters_by_ft = {
     python = {"ruff", "flake8", "vulture"},
-    sh = {"shellcheck"},
     yaml = {"yamllint"},
     markdown = {"vale"},
     dockerfile = {"hadolint"},
