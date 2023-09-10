@@ -1,5 +1,5 @@
 - name: Install dependencies
-  ansible.builtin.package:
+  community.general.pacman:
     name: "{{ item }}"
     state: latest
   loop:
@@ -14,17 +14,18 @@
     - ccache
     - dfu-util
     - libusb
-  become: yes
+  become: true
 
 - name: Get ESP-IDF
   ansible.builtin.git:
     repo: https://github.com/espressif/esp-idf.git
     dest: ~/.esp
-    clone: yes
-    recursive: yes
+    clone: true
+    recursive: true
     version: "v5.0"
 
 - name: Install ESP-IDF for ESP32S3
-  ansible.builtin.shell: ./install.sh esp32s3
+  ansible.builtin.command: ./install.sh esp32s3
   args:
     chdir: ~/.esp
+  changed_when: false

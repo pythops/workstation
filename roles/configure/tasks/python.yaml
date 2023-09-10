@@ -1,29 +1,34 @@
 - name: Install pip
-  shell: python -Im ensurepip --upgrade --user
+  ansible.builtin.command: python -Im ensurepip --upgrade --user
+  args:
+    creates: $HOME/.local/bin/pip3
 
 - name: Create pip config dir
-  file:
+  ansible.builtin.file:
     path: $HOME/.config/pip
     state: directory
+    mode: "0755"
 
-- name: configure pip
-  copy:
+- name: Configure pip
+  ansible.builtin.copy:
     src: config/pip/pip.conf
     dest: ~/.config/pip/pip.conf
+    mode: "0644"
 
 - name: Install pyenv
-  ansible.builtin.package:
+  community.general.pacman:
     name: pyenv
     state: latest
-  become: yes
+  become: true
 
 - name: Create $HOME/.python directory
-  file:
+  ansible.builtin.file:
     path: $HOME/.python
     state: directory
+    mode: "0755"
 
 - name: Install pip-tools package
-  pip:
+  ansible.builtin.pip:
     name: pip-tools
     state: present
     extra_args: --user
@@ -31,17 +36,18 @@
     PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
 - name: Copy packages.in
-  copy:
+  ansible.builtin.copy:
     src: python/packages.in
     dest: $HOME/.python/packages.in
+    mode: "0644"
 
-- name: Generate python packages
-  shell: pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt --resolver=backtracking
+- name: Generate python packages # noqa no-changed-when
+  ansible.builtin.command: pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt --resolver=backtracking
   environment:
     PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
 - name: Install python packages
-  pip:
+  ansible.builtin.pip:
     requirements: $HOME/.python/packages.txt
     state: present
     extra_args: --user
@@ -52,25 +58,30 @@
 # Poetry
 #
 - name: Install Poetry
-  shell: curl -sSL https://install.python-poetry.org | python3 -
+  ansible.builtin.command: pip3 install --user poetry
+  args:
+    creates: $HOME/.local/bin/poetry
 
 - name: Create poetry config dir
-  file:
+  ansible.builtin.file:
     path: $HOME/.config/pypoetry
     state: directory
+    mode: "0755"
 
 - name: Copy poetry config file
-  copy:
+  ansible.builtin.copy:
     src: config/pypoetry/config.toml
     dest: $HOME/.config/pypoetry/config.toml
+    mode: "0644"
 
-- name: Create omz  completion file
-  file:
+- name: Create omz completion directory
+  ansible.builtin.file:
     path: $HOME/.oh-my-zsh/custom/plugins/poetry/
     state: directory
+    mode: "0755"
 
-- name: Generate completion file
-  shell: poetry completions zsh > $HOME/.oh-my-zsh/custom/plugins/poetry/_poetry
+- name: Generate completion file # noqa no-changed-when
+  ansible.builtin.shell: poetry completions zsh > $HOME/.oh-my-zsh/custom/plugins/poetry/_poetry
   environment:
     PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
 
@@ -78,20 +89,22 @@
 # pdbpp
 #
 - name: Copy pdbpp config
-  copy:
+  ansible.builtin.copy:
     src: python/pdbrc.py
     dest: $HOME/.pdbrc.py
+    mode: "0644"
 
 #
 # ruff
 #
-
 - name: Create ruff config dir
-  file:
+  ansible.builtin.file:
     path: $HOME/.config/ruff
     state: directory
+    mode: "0755"
 
 - name: Copy ruff config
-  copy:
+  ansible.builtin.copy:
     src: config/ruff/pyproject.toml
     dest: $HOME/.config/ruff/pyproject.toml
+    mode: "0644"

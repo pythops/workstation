@@ -4,13 +4,15 @@
       - rustup
       - rust-analyzer
     state: latest
-  become: yes
+  become: true
 
 - name: Install the stable toolchain
-  shell: rustup default stable
+  ansible.builtin.command: rustup default stable
+  changed_when: true
 
 - name: Install components
-  shell: rustup component add rust-src clippy rustfmt
+  ansible.builtin.command: rustup component add rust-src clippy rustfmt
+  changed_when: true
 
 - name: Add cargo subcommands
   community.general.pacman:
@@ -21,18 +23,18 @@
     - cargo-generate
     - cargo-nextest
     - sccache
-  become: yes
+  become: true
 
 - name: Create cargo config directory
-  file:
+  ansible.builtin.file:
     path: ~/.cargo
     state: directory
+    mode: "0755"
 
 - name: Add cargo config
-  copy:
+  ansible.builtin.copy:
     content: |
       [build]
       rustc-wrapper = "sccache"
     dest: ~/.cargo/config
-  tags:
-    - config-rust
+    mode: "0644"

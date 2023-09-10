@@ -1,3 +1,3 @@
-- import_tasks: dnsmasq.yaml
-- import_tasks: minikube.yaml
-- import_tasks: podman.yaml
+- ansible.builtin.import_tasks: dnsmasq.yaml # noqa: name[missing]
+- ansible.builtin.import_tasks: minikube.yaml # noqa: name[missing]
+- ansible.builtin.import_tasks: podman.yaml # noqa: name[missing]

@@ -7,7 +7,7 @@
       - skopeo
       - skaffold
     state: latest
-  become: yes
+  become: true
 
 - name: Install rootless dependencies
   community.general.pacman:
@@ -17,52 +17,60 @@
       - qemu-user-static
       - qemu-user-static-binfmt
     state: latest
-  become: yes
+  become: true
 
 - name: /etc/subuid and /etc/subgid conf
-  template:
+  ansible.builtin.template:
     src: "{{ item.src }}"
-    dest: "{{ item.dest}}"
+    dest: "{{ item.dest }}"
+    mode: "0644"
   loop:
     - src: etc/subuid
       dest: /etc/subuid
     - src: etc/subgid
       dest: /etc/subgid
   notify:
-    - podman system migrate
-  become: yes
+    - Podman system migrate
+  become: true
 
 - name: Create rootless config directory
-  file:
+  ansible.builtin.file:
     path: ~/.config/containers
     state: directory
+    mode: "0755"
 
 - name: Configure rootless storage
-  copy:
+  ansible.builtin.copy:
     src: config/containers/storage.conf
     dest: ~/.config/containers/storage.conf
+    mode: "0644"
 
 - name: Create docker config directory
-  file:
+  ansible.builtin.file:
     path: /etc/docker
     state: directory
-  become: yes
+    mode: "0755"
+  become: true
 
 - name: Configure docker
-  template:
+  ansible.builtin.template:
     src: etc/docker/daemon.json
     dest: /etc/docker/daemon.json
-    mode: 0644
-  become: yes
+    mode: "0644"
+  become: true
 
 - name: Create skaffold config directory
-  file:
+  ansible.builtin.file:
     path: ~/.skaffold
     state: directory
+    mode: "0755"
 
 - name: Copy skaffold config
-  copy:
+  ansible.builtin.copy:
     src: skaffold/config
     dest: ~/.skaffold/config
+    mode: "0644"
 
 - meta: flush_handlers
+  tags:
+    - skip_ansible_lint

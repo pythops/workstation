@@ -1,15 +1,17 @@
 - name: Install starship package
-  ansible.builtin.package:
+  community.general.pacman:
     name: starship
     state: latest
-  become: yes
+  become: true
 
 - name: Create config directory
-  file:
+  ansible.builtin.file:
     path: ~/.config/starship
     state: directory
+    mode: "0755"
 
 - name: Copy config file
-  copy:
+  ansible.builtin.copy:
     src: config/starship/config.toml
     dest: ~/.config/starship/config.toml
+    mode: "0644"

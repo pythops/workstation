@@ -1,8 +1,8 @@
 - name: Upgrade the whole system
   community.general.pacman:
-    upgrade: yes
+    upgrade: true
     executable: yay
-    update_cache: yes
+    update_cache: true
     extra_args: --removemake --cleanafter
 
 - name: Install packages
@@ -104,10 +104,10 @@
       - zathura-pdf-mupdf
     state: latest
     executable: yay
-    update_cache: yes
+    update_cache: true
     extra_args: --removemake --cleanafter
 
-- name: Install AUR packages
+- name: Install AUR packages # noqa: no-changed-when
   ansible.builtin.command: yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync "{{ item }}"
   loop:
     - act # Run github actions locally
@@ -118,7 +118,7 @@
 - name: Enable services
   ansible.builtin.systemd:
     name: "{{ item }}"
-    enabled: yes
+    enabled: true
   loop:
     - iwd
-  become: yes
+  become: true

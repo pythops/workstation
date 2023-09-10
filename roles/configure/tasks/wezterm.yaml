@@ -1,17 +1,18 @@
 - name: Install wezterm
-  ansible.builtin.package:
+  community.general.pacman:
     name:
       - wezterm
     state: latest
-  become: yes
-  tags: install
+  become: true
 
 - name: Create config directory
-  file:
+  ansible.builtin.file:
     path: ~/.config/wezterm
     state: directory
+    mode: "0755"
 
 - name: Copy wezterm conf
-  copy:
+  ansible.builtin.copy:
     src: config/wezterm/wezterm.lua
     dest: ~/.config/wezterm/wezterm.lua
+    mode: "0644"

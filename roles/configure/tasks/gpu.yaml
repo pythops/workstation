@@ -4,7 +4,7 @@
       - intel-gpu-tools
       - nvtop
     state: latest
-  become: yes
+  become: true
 
 - name: Install Vulkan for intel gpu
   community.general.pacman:
@@ -14,10 +14,10 @@
       - vulkan-tools
       - vulkan-validation-layers
     state: latest
-  become: yes
+  become: true
 
 - name: Install wgsl-analyer
   ansible.builtin.get_url:
     url: https://github.com/wgsl-analyzer/wgsl-analyzer/releases/download/v0.7.0/wgsl_analyzer-linux-x64
     dest: ~/.local/bin/wgsl_analyzer
-    mode: 0755
+    mode: "0755"

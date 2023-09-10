@@ -2,17 +2,19 @@
   community.general.pacman:
     name: minikube
     state: latest
-    update_cache: yes
+    update_cache: true
     executable: yay
     extra_args: --removemake --cleanafter
 
 - name: Copy minikube-network.sh script
-  template:
+  ansible.builtin.template:
     src: etc/systemd/system/minikube-network.service
     dest: /etc/systemd/system/minikube-network.service
-    mode: 0644
+    mode: "0644"
   notify:
-    - setup-minikube-network-route
-  become: yes
+    - Setup minikube network
+  become: true
 
 - meta: flush_handlers
+  tags:
+    - skip_ansible_lint

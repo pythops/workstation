@@ -3,15 +3,17 @@
     name: zathura
     state: latest
     executable: yay
-    update_cache: yes
+    update_cache: true
     extra_args: --removemake --cleanafter
 
 - name: Create config directory
-  file:
+  ansible.builtin.file:
     path: ~/.config/zathura
     state: directory
+    mode: "0755"
 
 - name: Copy zathura conf
-  copy:
+  ansible.builtin.copy:
     src: config/zathura/zathurarc
     dest: ~/.config/zathura/zathurarc
+    mode: "0644"

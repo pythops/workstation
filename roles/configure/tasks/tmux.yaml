@@ -1,50 +1,56 @@
 - name: Install tmux binary
-  ansible.builtin.package:
+  community.general.pacman:
     name: tmux
     state: latest
-  become: yes
+  become: true
 
 - name: Install tmux plugins dependencies
-  ansible.builtin.package:
+  community.general.pacman:
     name:
       - gawk
       - xsel
       - xclip
       - fzf
     state: latest
-  become: yes
+  become: true
 
 - name: Create ~/.config/tmux directory
-  file:
+  ansible.builtin.file:
     path: ~/.config/tmux
     state: directory
+    mode: "0755"
 
-- name: Install tmux plugin manager
-  git:
+- name: Install tmux plugin manager # noqa latest[git]
+  ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tpm
     dest: ~/.tmux/plugins/tpm
 
 - name: Copy Tmux config file
-  copy:
+  ansible.builtin.copy:
     src: config/tmux/tmux.conf
     dest: ~/.config/tmux/tmux.conf
+    mode: "0644"
 
 - name: Copy Tmux status file
-  copy:
+  ansible.builtin.copy:
     src: config/tmux/tmux-status.conf
     dest: ~/.config/tmux/tmux-status.conf
+    mode: "0644"
 
 - name: Install plugins
-  shell: ~/.tmux/plugins/tpm/bin/install_plugins
+  ansible.builtin.command: ~/.tmux/plugins/tpm/bin/install_plugins
+  changed_when: true
   environment:
     TMUX_PLUGIN_MANAGER_PATH: $HOME/.tmux/plugins/
 
 - name: Clean plugins
-  shell: ~/.tmux/plugins/tpm/bin/clean_plugins
+  ansible.builtin.command: ~/.tmux/plugins/tpm/bin/clean_plugins
+  changed_when: true
   environment:
     TMUX_PLUGIN_MANAGER_PATH: $HOME/.tmux/plugins/
 
 - name: Update plugins
-  shell: ~/.tmux/plugins/tpm/bin/update_plugins all
+  ansible.builtin.command: ~/.tmux/plugins/tpm/bin/update_plugins all
+  changed_when: true
   environment:
     TMUX_PLUGIN_MANAGER_PATH: $HOME/.tmux/plugins/

@@ -2,7 +2,7 @@
   community.general.pacman:
     name: i3-wm
     state: latest
-  become: yes
+  become: true
 
 - name: Install wm utils
   community.general.pacman:
@@ -26,12 +26,13 @@
       - xsel
       - xclip
     state: latest
-  become: yes
+  become: true
 
 - name: Create config dirs
-  file:
-    path: "{{  item }}"
+  ansible.builtin.file:
+    path: "{{ item }}"
     state: directory
+    mode: "0755"
   loop:
     - ~/.config/dunst
     - ~/.config/rofi
@@ -39,65 +40,72 @@
     - ~/.config/i3status-rs
 
 - name: Copy i3 config file
-  copy:
+  ansible.builtin.copy:
     src: config/i3/config
     dest: ~/.config/i3/config
+    mode: "0644"
 
 # Xinit
 - name: Copy xinitrc
-  copy:
+  ansible.builtin.copy:
     src: xinit/xinitrc
     dest: ~/.xinitrc
+    mode: "0644"
 
 # Status bar
 - name: Install i3status-rs
   community.general.pacman:
     name: i3status-rust
     state: latest
-  become: yes
+  become: true
 
 - name: Copy i3status-rs config file
-  copy:
+  ansible.builtin.copy:
     src: config/i3status-rs/config.toml
     dest: ~/.config/i3status-rs/config.toml
+    mode: "0644"
 
 # Dunst
 - name: Install dunst
   community.general.pacman:
     name: dunst
     state: latest
-  become: yes
+  become: true
 
 - name: Copy dunst config file
-  copy:
+  ansible.builtin.copy:
     src: config/dunst/config
     dest: ~/.config/dunst/config
+    mode: "0644"
 
 # Rofi
 - name: Install rofi
   community.general.pacman:
     name: rofi
     state: latest
-  become: yes
+  become: true
 
 - name: Copy rofi config file
-  copy:
+  ansible.builtin.copy:
     src: config/rofi/config.rasi
     dest: ~/.config/rofi/config.rasi
+    mode: "0644"
 
 - name: Reload i3 config
-  shell: pgrep -x i3 && i3-msg reload || echo "i3 not running"
+  ansible.builtin.shell: pgrep -x i3 && i3-msg reload || echo "i3 not running"
+  changed_when: true
 
 # Autorandr
 - name: Copy autorandr config
-  copy:
+  ansible.builtin.copy:
     src: config/autorandr
     dest: ~/.config/
+    mode: "0644"
 
-- name: Add +x permission for postswitch
-  file:
+- name: Add X permission for postswitch
+  ansible.builtin.file:
     path: "{{ item }}"
-    mode: 0755
+    mode: "0755"
   loop:
     - ~/.config/autorandr/home/postswitch
     - ~/.config/autorandr/mobile/postswitch

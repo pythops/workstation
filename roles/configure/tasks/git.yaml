@@ -4,20 +4,22 @@
       - git
       - lazygit
     state: latest
-  become: yes
+  become: true
 
 - name: Create ~/.config/lazygit directory
-  file:
+  ansible.builtin.file:
     path: ~/.config/lazygit
     state: directory
+    mode: "0755"
 
 - name: Copy lazygit config
-  copy:
+  ansible.builtin.copy:
     src: config/lazygit/config.yml
     dest: ~/.config/lazygit/config.yml
+    mode: "0644"
 
 - name: Create git config
-  copy:
+  ansible.builtin.copy:
     src: git/gitconfig
     dest: ~/.gitconfig
-    mode: 0644
+    mode: "0644"

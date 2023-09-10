@@ -1,15 +1,16 @@
-- name: Install keyd package
+- name: Install keyd package # noqa no-changed-when
   ansible.builtin.command: yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync keyd-git
 
 - name: Add keyd config
-  copy:
+  ansible.builtin.copy:
     src: etc/keyd/default.conf
     dest: /etc/keyd/default.conf
-  become: yes
+    mode: "0644"
+  become: true
 
 - name: Start and enabled keyd
-  systemd:
+  ansible.builtin.systemd:
     name: keyd
     state: restarted
-    enabled: yes
-  become: yes
+    enabled: true
+  become: true

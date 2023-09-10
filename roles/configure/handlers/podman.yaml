@@ -1,2 +1,2 @@
-- name: podman system migrate
-  command: podman system migrate
+- name: Podman system migrate # noqa no-changed-when
+  ansible.builtin.command: podman system migrate

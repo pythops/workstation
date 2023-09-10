@@ -1,33 +1,36 @@
-- name: install dnsmasq package
+- name: Install dnsmasq package
   community.general.pacman:
     name: dnsmasq
     state: latest
 
 - name: Stop/Disable systemd-resolved
-  systemd:
+  ansible.builtin.systemd:
     name: systemd-resolved
     state: stopped
-    enabled: no
+    enabled: false
 
 - name: Copy dnsmasq config
-  template:
+  ansible.builtin.template:
     src: etc/dnsmasq.conf
     dest: /etc/dnsmasq.conf
+    mode: "0644"
   notify:
     - restart dnsmasq
 
 - name: Copy /etc/resolv.conf.dnsmasq file
-  template:
+  ansible.builtin.template:
     src: etc/resolv.conf.dnsmasq
     dest: /etc/resolv.conf.dnsmasq
-    mode: 0644
+    mode: "0644"
   notify:
-    - restart dnsmasq
+    - Restart dnsmasq
 
 - name: Update /etc/resolv.conf file
-  template:
+  ansible.builtin.template:
     src: etc/resolv.conf
     dest: /etc/resolv.conf
-    mode: 0644
+    mode: "0644"
 
 - meta: flush_handlers
+  tags:
+    - skip_ansible_lint

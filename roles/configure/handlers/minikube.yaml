@@ -1,8 +1,8 @@
-- name: setup-minikube-network-route
-  systemd:
+- name: Setup minikube network # noqa ignore-errors
+  ansible.builtin.systemd:
     name: minikube-network
     state: restarted
-    enabled: yes
-    daemon_reload: yes
-  become: yes
+    enabled: true
+    daemon_reload: true
+  become: true
   ignore_errors: true

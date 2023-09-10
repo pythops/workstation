@@ -2,18 +2,19 @@
   community.general.pacman:
     name: npm
     state: latest
-  become: yes
+  become: true
 
 - name: Copy npm config file
-  copy:
+  ansible.builtin.copy:
     src: npm/npmrc
     dest: ~/.npmrc
+    mode: "0644"
 
 - name: Install node.js packages
   community.general.npm:
     name: "{{ item }}"
-    global: yes
+    global: true
   loop:
-    - prettier
+    - "prettier"
     - "@ansible/ansible-language-server"
     - "bash-language-server"
