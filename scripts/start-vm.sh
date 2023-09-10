@@ -17,6 +17,7 @@ if [ ! -f "archbox/cloud-init.iso" ]; then
         - git
         - just
         - ansible
+        - unzip
     ssh_pwauth: false
     swap:
       filename: ""
