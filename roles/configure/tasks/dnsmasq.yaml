@@ -15,7 +15,7 @@
     dest: /etc/dnsmasq.conf
     mode: "0644"
   notify:
-    - restart dnsmasq
+    - Restart dnsmasq
 
 - name: Copy /etc/resolv.conf.dnsmasq file
   ansible.builtin.template:
