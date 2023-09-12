@@ -1,7 +1,6 @@
 #!/bin/sh
 
 xset s off -dpms
-xset r rate 180 80
 xrdb ~/.Xresources
 unclutter &
 exec i3

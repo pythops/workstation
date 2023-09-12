@@ -205,6 +205,9 @@ exec --no-startup-id autocutsel -s PRIMARY -fork
 # keyboard layout
 exec_always setxkbmap -layout fr
 
+# speedup the keyboard
+exec_always --no-startup-id xset r rate 180 80
+
 # Redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift
