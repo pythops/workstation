@@ -22,3 +22,4 @@ source ~/.config/nvim/plugins/search.vim
 source ~/.config/nvim/plugins/lazygit.vim
 source ~/.config/nvim/plugins/formatter.vim
 source ~/.config/nvim/plugins/lint.vim
+source ~/.config/nvim/plugins/surround.vim
