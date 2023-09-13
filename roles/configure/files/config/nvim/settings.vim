@@ -60,3 +60,9 @@ au BufRead,BufNewFile */roles/*.y*ml set filetype=yaml.ansible
 
 " Github Actions file type
 au BufRead,BufNewFile */.github/*.y*ml set filetype=yaml.github
+
+" Add line text object
+xnoremap il g_o^
+onoremap il :normal vil<CR>
+xnoremap al $o^
+onoremap al :normal val<CR>
