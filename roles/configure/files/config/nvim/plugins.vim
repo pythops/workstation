@@ -15,9 +15,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'HiPhish/nvim-ts-rainbow2'
   Plug 'NoahTheDuke/vim-just'
 
-  " Additional text objects
-  Plug 'wellle/targets.vim'
-
   " Shows git diff in the sign column
   Plug 'lewis6991/gitsigns.nvim'
 
@@ -44,10 +41,6 @@ call plug#begin('~/.vim/plugged')
 
   "helpers for shell commands
   Plug 'tpope/vim-eunuch'
-
-  " Vim sessions
-  Plug 'tpope/vim-obsession'
-  Plug 'dhruvasagar/vim-prosession'
 
   " Text surrounding
   Plug 'kylechui/nvim-surround'
