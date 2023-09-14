@@ -26,7 +26,6 @@ lua <<EOF
     end
     -- THIS IS FOR BUILTIN LSP
     vim.diagnostic.open_float(0, {
-      scope = "cursor",
       focusable = false,
       close_events = {
         "CursorMoved",
@@ -46,15 +45,6 @@ lua <<EOF
   })
   --
 
-  local has_words_before = function()
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-  end
-
-  local feedkey = function(key, mode)
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-  end
-
   local on_attach = function(client, bufnr)
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, bufopts)
@@ -65,6 +55,15 @@ lua <<EOF
 
   -- Completion --
   local cmp = require'cmp'
+
+  local has_words_before = function()
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  end
+
+  local feedkey = function(key, mode)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+  end
 
   cmp.setup({
     snippet = {
@@ -133,7 +132,6 @@ lua <<EOF
   local servers = { 'rust_analyzer', 'pyright' }
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-      -- on_attach = my_custom_on_attach,
       capabilities = capabilities,
     }
   end
