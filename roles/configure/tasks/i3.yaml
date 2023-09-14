@@ -92,7 +92,8 @@
     mode: "0644"
 
 - name: Reload i3 config
-  ansible.builtin.shell: pgrep -x i3 && i3-msg reload || echo "i3 not running"
+  ansible.builtin.shell: |
+    pgrep -x i3 && i3-msg reload || echo "i3 not running"
   changed_when: true
 
 # Autorandr
