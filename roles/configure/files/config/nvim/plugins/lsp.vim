@@ -5,7 +5,10 @@ lua <<EOF
     signs = true,
     underline = false,
     update_in_insert = false,
-    float = {border = "rounded"},
+    float = {
+      border = "rounded",
+      source = true,
+    },
     severity_sort = false,
   })
 
