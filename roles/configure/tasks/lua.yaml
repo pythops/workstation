@@ -1,0 +1,19 @@
+- name: Install lua language server
+  community.general.pacman:
+    name:
+      - stylua
+      - lua-language-server
+    state: latest
+  become: true
+
+- name: Create Stylua config directory
+  ansible.builtin.file:
+    path: ~/.config/stylua
+    state: directory
+    mode: "0755"
+
+- name: Copy stylua config file
+  ansible.builtin.copy:
+    src: config/stylua/stylua.toml
+    dest: ~/.config/stylua/stylua.toml
+    mode: "0644"

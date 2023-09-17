@@ -13,6 +13,7 @@ available_targets=(
     "gpu"
     "i3"
     "keyboard"
+    "lua"
     "minikube"
     "neovim"
     "npm"

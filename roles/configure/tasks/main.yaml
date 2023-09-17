@@ -33,6 +33,10 @@
   ansible.builtin.import_tasks: i3.yaml
   tags: i3
 
+- name: Lua
+  ansible.builtin.import_tasks: lua.yaml
+  tags: lua
+
 - name: NeoVIM
   ansible.builtin.import_tasks: neovim.yaml
   tags: neovim
