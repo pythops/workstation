@@ -9,3 +9,7 @@
     src: config/nvim
     dest: ~/.config/
     mode: "0644"
+
+- name: Install/Clean/Update the plugins # noqa no-changed-when
+  ansible.builtin.command: |
+    nvim --headless "+Lazy! sync" +qa
