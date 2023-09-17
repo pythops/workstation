@@ -24,7 +24,7 @@
 
 **Editor**: [NeoVim](https://github.com/neovim/neovim)
 
-**Neovim plugins**: [plugins](https://github.com/pythops/workstation/blob/master/roles/configure/files/config/nvim/plugins.vim)
+**Neovim plugins**: [plugins](https://github.com/pythops/workstation/blob/master/roles/configure/files/config/nvim/lua/plugins/)
 
 **Dev environments**: [Python]() and [Rust]()
 
