@@ -1,2 +1,3 @@
 archbox/
 cloudinit/
+roles/configure/files/config/nvim/lazy-lock.json
