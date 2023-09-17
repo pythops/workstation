@@ -4,36 +4,8 @@
     state: latest
   become: true
 
-- name: Create ~/.local/share/nvim/site/autoload directory
-  ansible.builtin.file:
-    path: ~/.local/share/nvim/site/autoload
-    state: directory
-    mode: "0755"
-
-- name: Install vim plug
-  ansible.builtin.get_url:
-    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-    dest: "~/.local/share/nvim/site/autoload/plug.vim"
-    mode: "0644"
-
 - name: Copy neovim config files
   ansible.builtin.copy:
     src: config/nvim
     dest: ~/.config/
-    mode: "0755"
-
-- name: Install neovim plugins
-  ansible.builtin.command: nvim --headless +PlugInstall +qa
-  changed_when: false
-
-- name: Upgrade VimPlug
-  ansible.builtin.command: nvim --headless +PlugUpgrade +qa
-  changed_when: false
-
-- name: Update neovim plugins
-  ansible.builtin.command: nvim --headless +PlugUpdate +qa
-  changed_when: false
-
-- name: Delete unused plugins
-  ansible.builtin.command: nvim --headless +PlugClean! +qa
-  changed_when: false
+    mode: "0644"

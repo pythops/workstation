@@ -1,11 +1,13 @@
-lua <<EOF
-    local util = require "formatter.util"
-    require("formatter").setup {
+return {
+  "mhartington/formatter.nvim",
+  config = function()
+    local util = require("formatter.util")
+    require("formatter").setup({
       filetype = {
         rust = {
           require("formatter.filetypes.rust").rustfmt,
         },
-        python= {
+        python = {
           require("formatter.filetypes.python").black,
           require("formatter.filetypes.python").isort,
           function()
@@ -15,28 +17,31 @@ lua <<EOF
                 "--fix",
               },
             }
-          end
+          end,
         },
         markdown = {
           require("formatter.defaults.prettier"),
         },
-        html= {
+        html = {
           require("formatter.defaults.prettier"),
         },
-        css= {
+        css = {
           require("formatter.defaults.prettier"),
         },
-        yaml= {
+        yaml = {
           require("formatter.defaults.prettier"),
         },
-        ['yaml.ansible']= {
+        ["yaml.ansible"] = {
           require("formatter.defaults.prettier"),
         },
-        ['yaml.github']= {
+        ["yaml.github"] = {
           require("formatter.defaults.prettier"),
         },
         json = {
           require("formatter.filetypes.json").jq,
+        },
+        lua = {
+          require("formatter.filetypes.lua").stylua,
         },
         sh = {
           require("formatter.filetypes.sh").shfmt,
@@ -56,16 +61,19 @@ lua <<EOF
               },
               stdin = true,
             }
-          end
+          end,
         },
         ["*"] = {
-          require("formatter.filetypes.any").remove_trailing_whitespace
-        }
-      }
-    }
-EOF
+          require("formatter.filetypes.any").remove_trailing_whitespace,
+        },
+      },
+    })
 
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost * FormatWrite
-augroup END
+    vim.cmd([[
+        augroup FormatAutogroup
+            autocmd!
+            autocmd BufWritePost * FormatWrite
+        augroup END
+      ]])
+  end,
+}
