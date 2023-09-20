@@ -25,6 +25,7 @@
       - dmidecode
       - dnsutils
       - dua-cli
+      - eva # A calculator REPL, similar to bc
       - eza
       - fd
       - gcc
@@ -92,7 +93,6 @@
       - tigervnc
       - tokei # Count the code
       - tree-sitter-cli
-      - typst
       - ttf-fira-code
       - ttf-font-awesome
       - usbutils
@@ -108,7 +108,8 @@
     extra_args: --removemake --cleanafter
 
 - name: Install AUR packages # noqa: no-changed-when
-  ansible.builtin.command: yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync "{{ item }}"
+  ansible.builtin.command: |
+    yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync "{{ item }}"
   loop:
     - act # Run github actions locally
     - spotify
