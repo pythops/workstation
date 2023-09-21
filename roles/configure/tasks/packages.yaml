@@ -66,6 +66,7 @@
       - noto-fonts
       - onefetch # Git repository summary on your terminal
       - ouch # Compressing and decompressing for various formats.
+      - oxipng # PNG optimizer
       - p7zip
       - pastel # Generate, analyze, convert and manipulate colors
       - pcsclite # needed by yubikey
