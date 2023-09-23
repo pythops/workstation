@@ -22,6 +22,7 @@
     - cargo-edit
     - cargo-generate
     - cargo-nextest
+    - cargo-watch
     - sccache
   become: true
 
