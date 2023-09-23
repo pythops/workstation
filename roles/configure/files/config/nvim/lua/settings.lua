@@ -14,11 +14,14 @@ vim.opt.clipboard = "unnamedplus"
 vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
 
--- Convert tab
+-- Tab settings
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
+vim.opt.smarttab = true
+vim.api.nvim_set_keymap("i", "<Tab>", "<C-t>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<S-Tab>", "<C-d>", { noremap = true })
 
 -- Split panes to right and bottom
 vim.opt.splitbelow = true
