@@ -8,6 +8,8 @@ return {
     vim.g.gruvbox_material_enable_italic = 0
     vim.g.gruvbox_material_sign_column_background = "none"
     vim.g.gruvbox_material_better_performance = 1
+    vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
+    vim.g.gruvbox_material_current_word = "bold"
 
     vim.g.gruvbox_material_colors_override = {
       bg0 = { "#000000", "255" },
