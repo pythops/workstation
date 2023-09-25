@@ -63,8 +63,8 @@ return {
     local on_attach = function(client, bufnr)
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
       vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, bufopts)
-      vim.keymap.set({ "n", "v" }, "<space>a", vim.lsp.buf.code_action, bufopts)
-      vim.keymap.set("n", "<space>h", vim.lsp.buf.hover, bufopts)
+      vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, bufopts)
+      vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, bufopts)
       require("completion").on_attach(client)
     end
 
