@@ -1,5 +1,6 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
+  tag = "v2.20.8",
   config = function()
     vim.opt.list = true
 
