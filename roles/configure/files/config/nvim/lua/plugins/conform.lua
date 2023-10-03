@@ -3,8 +3,7 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
-        rust = { "rustfmt" },
-        python = { "ruff", "black" },
+        python = { "ruff_fix", "ruff_format", "black" },
         markdown = { "prettier" },
         html = { "prettier" },
         css = { "prettier" },
@@ -19,7 +18,7 @@ return {
         ["*"] = { "trim_whitespace", "trim_newlines" },
       },
       format_on_save = {
-        timeout_ms = 100,
+        timeout_ms = 500,
         lsp_fallback = true,
       },
     })
