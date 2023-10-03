@@ -3,7 +3,7 @@ return {
   "mfussenegger/nvim-lint",
   config = function()
     require("lint").linters_by_ft = {
-      python = { "ruff", "flake8", "vulture" },
+      python = { "ruff" },
       yaml = { "yamllint" },
       markdown = { "vale" },
       dockerfile = { "hadolint" },
