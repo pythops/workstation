@@ -27,7 +27,7 @@ return {
         border = "rounded",
         source = true,
       },
-      severity_sort = false,
+      severity_sort = true,
     })
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
