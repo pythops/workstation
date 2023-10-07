@@ -16,5 +16,6 @@
     global: true
   loop:
     - "prettier"
+    - "prettierd"
     - "@ansible/ansible-language-server"
     - "bash-language-server"
