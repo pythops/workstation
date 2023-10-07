@@ -55,6 +55,12 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   command = "set filetype=i3config",
 })
 
+-- Justfile
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "[[\v(Justfile|justfile|JUSTFILE)]]",
+  command = "set filetype=just",
+})
+
 -- Add line text object
 vim.api.nvim_set_keymap("x", "il", "g_o^", { noremap = true })
 vim.api.nvim_set_keymap("o", "il", ":normal vil<CR>", { noremap = true })
