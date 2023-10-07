@@ -4,12 +4,12 @@ return {
     require("conform").setup({
       formatters_by_ft = {
         python = { "ruff_fix", "ruff_format", "black" },
-        markdown = { "prettier" },
-        html = { "prettier" },
-        css = { "prettier" },
-        yaml = { "prettier" },
-        ["yaml.ansible"] = { "prettier" },
-        ["yaml.github"] = { "prettier" },
+        markdown = { "prettierd" },
+        html = { "prettierd" },
+        css = { "prettierd" },
+        yaml = { "prettierd" },
+        ["yaml.ansible"] = { "prettierd" },
+        ["yaml.github"] = { "prettierd" },
         json = { "jq" },
         lua = { "stylua" },
         sh = { "shfmt" },
