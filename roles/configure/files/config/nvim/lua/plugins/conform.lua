@@ -12,7 +12,7 @@ return {
         ["yaml.github"] = { "prettierd" },
         json = { "jq" },
         lua = { "stylua" },
-        sh = { "shfmt" },
+        sh = { "shellcheck", "shfmt" },
         toml = { "taplo" },
         terraform = { "terraform" },
         ["*"] = { "trim_whitespace", "trim_newlines" },
