@@ -103,8 +103,9 @@ bindsym $mod+o move container to output right
 bindsym $mod+Shift+o move container to output left
 
 # Bind apps to specific workspaces
-assign [class="slack"] $ws4
+assign [class="Slack"] $ws4
 assign [class="discord"] $ws4
+assign [class="Signal"] $ws4
 assign [class="firefox"] $ws2
 assign [class="darktable"] $ws3
 
