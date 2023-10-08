@@ -4,11 +4,17 @@ default:
 configure target:
     @-scripts/configure.sh {{ target }}
 
+clean target:
+    @-scripts/clean.sh {{ target }}
+
 start-vm:
     @-scripts/start-vm.sh
 
 stop-vm:
     @-scripts/stop-vm.sh
+
+clean-vm:
+    @rm -rf archbox cloudinit
 
 configure-vm:
     ssh \
@@ -23,6 +29,3 @@ ssh-vm:
         -o "UserKnownHostsFile /dev/null" \
         -p 10022 \
         pythops@localhost
-
-clean:
-    @rm -rf archbox cloudinit
