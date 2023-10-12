@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
-set -e
-
 target=$1
 
 available_targets=(
@@ -13,6 +9,7 @@ available_targets=(
 if echo "${available_targets[@]}" | grep -qw "$target"; then
     case $target in
     neovim)
+        killall nvim 2>/dev/null
         rm -rf ~/.config/nvim
         rm -rf ~/.local/share/nvim
         rm -rf ~/.cache/nvim
