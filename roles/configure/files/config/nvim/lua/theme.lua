@@ -4,7 +4,6 @@ vim.api.nvim_set_hl(0, "ErrorFloat", { bg = "#000000" })
 vim.api.nvim_set_hl(0, "WarningFloat", { bg = "#000000" })
 vim.api.nvim_set_hl(0, "InfoFloat", { bg = "#000000" })
 vim.api.nvim_set_hl(0, "HintFloat", { bg = "#000000" })
-vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#FF0000" })
 
 vim.api.nvim_set_hl(0, "DiagnosticFloatingError", { fg = "#ea6962" })
 vim.api.nvim_set_hl(0, "DiagnosticFloatingWarn", { fg = "#d8a657" })
