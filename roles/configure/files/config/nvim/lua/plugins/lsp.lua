@@ -13,7 +13,7 @@ return {
   },
 
   config = function()
-    local signs = { Error = "❌", Warn = "⚠️", Hint = "💡", Info = "" }
+    local signs = { Error = "⨯", Warn = "⚠️", Hint = "💡", Info = "" }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -71,6 +71,7 @@ return {
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
       vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, bufopts)
       vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, bufopts)
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
       vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, bufopts)
       require("completion").on_attach(client)
     end
