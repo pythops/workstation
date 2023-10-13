@@ -1,7 +1,10 @@
 return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.3",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  },
   config = function()
     local present, telescope = pcall(require, "telescope")
 
@@ -67,17 +70,17 @@ return {
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
       },
-
-      extensions_list = { "themes", "terms" },
+      extensions = {
+        fzf = {
+          fuzzy = true,
+          override_generic_sorter = true,
+          override_file_sorter = true,
+          case_mode = "smart_case",
+        },
+      },
     }
 
     telescope.setup(options)
-
-    -- load extensions
-    pcall(function()
-      for _, ext in ipairs(options.extensions_list) do
-        telescope.load_extension(ext)
-      end
-    end)
+    telescope.load_extension("fzf")
   end,
 }
