@@ -21,7 +21,8 @@ export PATH=$ZSH_CUSTOM/plugins/git-fuzzy/bin:$HOME/.local/bin:$HOME/.npm-packag
 export EDITOR='nvim'
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export LANG=en_US.UTF-8
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 
 ##
 ## Prompt
