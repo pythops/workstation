@@ -42,7 +42,8 @@ return {
     -- then check for diagnostics under the cursor
     function OpenDiagnosticIfNoFloat()
       for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
-        if vim.api.nvim_win_get_config(winid).zindex then
+        local config = vim.api.nvim_win_get_config(winid)
+        if config.zindex and config.zindex > 20 then
           return
         end
       end
@@ -73,7 +74,9 @@ return {
       vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, bufopts)
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
       vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, bufopts)
-      require("completion").on_attach(client)
+      if client.server_capabilities.inlayHintProvider then
+        vim.lsp.buf.inlay_hint(bufnr, true)
+      end
     end
 
     -- Completion --
@@ -235,12 +238,21 @@ return {
     })
 
     -- Bash --
-    lspconfig.bashls.setup({})
+    lspconfig.bashls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
 
     -- Ansible --
-    lspconfig.ansiblels.setup({})
+    lspconfig.ansiblels.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
 
     -- Terraform --
-    lspconfig.terraformls.setup({})
+    lspconfig.terraformls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
   end,
 }
