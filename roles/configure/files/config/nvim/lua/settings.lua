@@ -34,31 +34,41 @@ vim.opt.cursorline = true
 -- Add wgsl file type
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*.wgsl",
-  command = "set filetype=wgsl",
+  callback = function()
+    vim.bo.filetype = "wgsl"
+  end,
 })
 
 -- Ansible file type
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*/roles/*.y*ml",
-  command = "set filetype=yaml.ansible",
+  callback = function()
+    vim.bo.filetype = "yaml.ansible"
+  end,
 })
 
 -- Github Actions file type
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*/.github/*.y*ml",
-  command = "set filetype=yaml.github",
+  callback = function()
+    vim.bo.filetype = "yaml.github"
+  end,
 })
 
 --i3
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = ".*/i3/config",
-  command = "set filetype=i3config",
+  callback = function()
+    vim.bo.filetype = "i3config"
+  end,
 })
 
 -- Justfile
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "[[\v(Justfile|justfile|JUSTFILE)]]",
-  command = "set filetype=just",
+  callback = function()
+    vim.bo.filetype = "just"
+  end,
 })
 
 -- Add line text object
