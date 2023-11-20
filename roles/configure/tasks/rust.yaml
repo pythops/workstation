@@ -24,6 +24,7 @@
     - cargo-nextest
     - cargo-watch
     - sccache
+    - cargo-udeps
   become: true
 
 - name: Create cargo config directory
