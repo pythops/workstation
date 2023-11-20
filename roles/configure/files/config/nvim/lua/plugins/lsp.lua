@@ -237,6 +237,12 @@ return {
       },
     })
 
+    -- Go --
+    lspconfig.gopls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+
     -- Bash --
     lspconfig.bashls.setup({
       on_attach = on_attach,

@@ -26,7 +26,7 @@
 
 **Neovim plugins**: [plugins](https://github.com/pythops/workstation/blob/master/roles/configure/files/config/nvim/lua/plugins/)
 
-**Dev environments**: [Python]() and [Rust]()
+**Dev environments**: [Python](), [Rust](), [Go]()
 
 <br>
 
@@ -60,6 +60,7 @@ Available targets:
 - dnsmasq
 - esp
 - git
+- go
 - gpu
 - i3
 - keyboard

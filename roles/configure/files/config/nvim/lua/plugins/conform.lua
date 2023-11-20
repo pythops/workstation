@@ -11,6 +11,7 @@ return {
         ["yaml.ansible"] = { "prettierd" },
         ["yaml.github"] = { "prettierd" },
         json = { "jq" },
+        go = { "gofmt" },
         lua = { "stylua" },
         sh = { "shellcheck", "shfmt" },
         toml = { "taplo" },

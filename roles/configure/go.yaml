@@ -1,0 +1,11 @@
+- name: Install Go
+  community.general.pacman:
+    name: go
+    state: latest
+  become: true
+
+- name: Install Go lsp
+  community.general.pacman:
+    name: gopls
+    state: latest
+  become: true

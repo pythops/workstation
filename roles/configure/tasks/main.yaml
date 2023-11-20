@@ -17,6 +17,10 @@
   ansible.builtin.import_tasks: git.yaml
   tags: git
 
+- name: Go
+  ansible.builtin.import_tasks: go.yaml
+  tags: go
+
 - name: Gpu
   ansible.builtin.import_tasks: gpu.yaml
   tags: gpu
