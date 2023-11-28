@@ -1,7 +1,7 @@
 <div align="center">
     <img src="https://img.shields.io/badge/Ansible-000000?style=for-the-badge&logo=ansible&logoColor=white"</img>
     <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white"</img>
-    <img src="https://img.shields.io/github/license/mrhrifat/web-badge?style=for-the-badge">
+    <img alt="Static Badge" src="https://img.shields.io/badge/GPLv3-License?style=for-the-badge&label=License">
     <h1>My Workstation Setup </h1>
     <img src="assets/cover.png"</img>
 </div>
