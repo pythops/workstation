@@ -26,7 +26,6 @@ return {
         null_ls.builtins.diagnostics.ruff,
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.diagnostics.shellcheck,
-        null_ls.builtins.diagnostics.vale,
         null_ls.builtins.diagnostics.yamllint.with({
           filetypes = { "yaml", "yaml.github", "yaml.ansible" },
         }),
