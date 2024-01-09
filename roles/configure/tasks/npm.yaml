@@ -16,6 +16,6 @@
     global: true
   loop:
     - "prettier"
-    - "prettierd"
+    - "@fsouza/prettierd"
     - "@ansible/ansible-language-server"
     - "bash-language-server"
