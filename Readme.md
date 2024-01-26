@@ -39,6 +39,7 @@ $ pip install --user ansible
 $ ansible-galaxy collection install community.general ansible.posix community.crypto
 ```
 
+> [!NOTE]
 > Make sure that $HOME/.local/bin is in your $PATH
 
 2. [just](https://github.com/casey/just) command runner
