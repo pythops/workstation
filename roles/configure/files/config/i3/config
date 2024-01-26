@@ -51,8 +51,7 @@ bindsym $mod+Shift+V split h
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# change container layout (tabbed, toggle split)
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -190,6 +189,7 @@ bindsym $mod+Shift+s move scratchpad
 bindsym $mod+p scratchpad show
 
 # Spotify
+exec --no-startup-id wezterm start --class Spotify spotify &
 bindsym $mod+m [con_mark="spotify"] scratchpad show
 for_window [class="Spotify"] mark "spotify", move scratchpad
 exec spotify
