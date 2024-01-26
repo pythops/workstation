@@ -113,10 +113,19 @@
     yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync "{{ item }}"
   loop:
     - act # Run github actions locally
-    - spotify
     - slack
     - hadolint-bin
     - doggo-bin # DNS client
+
+- name: Install spotify tui player
+  ansible.builtin.unarchive:
+    src: https://github.com/aome510/spotify-player/releases/latest/download/spotify_player-x86_64-unknown-linux-gnu.tar.gz
+    dest: ~/.local/bin/
+    remote_src: true
+    mode: "0755"
+    extra_opts:
+      - --transform
+      - s@^spotify_player@spotify@
 
 - name: Enable services
   ansible.builtin.systemd:
