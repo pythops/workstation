@@ -1,8 +1,9 @@
-- name: Install rustup & rust-analyzer
+- name: Install rust tools
   community.general.pacman:
     name:
       - rustup
       - rust-analyzer
+      - rust-bindgen
     state: latest
   become: true
 
