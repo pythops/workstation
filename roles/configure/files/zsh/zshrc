@@ -80,13 +80,13 @@ function upgrade_python_packages() {
 alias upgrade="yay ; omz update ; upgrade_python_packages ; rustup update"
 
 ## k8s
-alias start_minikube='minikube start -p dev --driver=docker --kubernetes-version=v1.22.17 --cpus=4 --memory=12gb --feature-gates="LocalStorageCapacityIsolation=false"'
+alias start_minikube='minikube start -p dev --driver=docker --kubernetes-version=v1.25.13 --cpus=4 --memory=12gb'
 alias delete_minikube='minikube delete -p dev'
 alias stop_minikube="minikube stop -p dev"
 alias kadm="kubectl -n kube-system "
 alias k="kubectl"
 alias kc="kubectx"
-alias skaffold="source <(minikube docker-env -p minikube) && skaffold"
+alias skaffold="source <(minikube docker-env -p dev) && skaffold"
 
 ## Commands
 alias cat="bat"
