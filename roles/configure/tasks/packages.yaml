@@ -70,7 +70,6 @@
       - p7zip
       - pastel # Generate, analyze, convert and manipulate colors
       - pcsclite # needed by yubikey
-      - pipewire-pulse
       - pkgconfig
       - powerline
       - powerline-fonts

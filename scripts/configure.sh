@@ -6,6 +6,7 @@ target=$1
 
 available_targets=(
     "all"
+    "audio"
     "containers"
     "dnsmasq"
     "esp"

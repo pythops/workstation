@@ -1,0 +1,5 @@
+- name: Restart pipewire
+  ansible.builtin.systemd:
+    name: pipewire
+    state: restarted
+    scope: user

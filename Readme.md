@@ -57,6 +57,7 @@ $ just configure <target>
 Available targets:
 
 - all
+- audio
 - containers
 - dnsmasq
 - esp

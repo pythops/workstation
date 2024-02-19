@@ -1,0 +1,30 @@
+- name: Install pipewire packages
+  community.general.pacman:
+    name:
+      - pipewire
+      - pipewire-audio
+      - pipewire-jack
+      - pipewire-pulse
+      - pipewire-v4l2
+    state: latest
+  become: true
+
+- name: Create the config dir
+  ansible.builtin.file:
+    path: ~/.config/pipewire/pipewire.conf.d/
+    state: directory
+    mode: "0755"
+
+- name: Install the noise suppression plugin
+  community.general.pacman:
+    name: noise-suppression-for-voice
+    state: latest
+  become: true
+
+- name: Add noise suppression config
+  ansible.builtin.copy:
+    src: config/pipewire/pipewire.conf.d/99-input-denoising.conf
+    dest: ~/.config/pipewire/pipewire.conf.d/99-input-denoising.conf
+    mode: "0644"
+  notify:
+    - Restart pipewire

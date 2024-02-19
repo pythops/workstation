@@ -9,6 +9,10 @@
   ansible.builtin.import_tasks: packages.yaml
   tags: packages
 
+- name: Audio
+  ansible.builtin.import_tasks: audio.yaml
+  tags: audio
+
 - name: Keyboard
   ansible.builtin.import_tasks: keyboard.yaml
   tags: keyboard
