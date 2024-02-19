@@ -156,13 +156,6 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lspconfig = require("lspconfig")
 
-    local servers = { "rust_analyzer", "pyright" }
-    for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup({
-        capabilities = capabilities,
-      })
-    end
-
     -- Lsp servers --
 
     -- rust --
@@ -219,6 +212,14 @@ return {
       return exepath("python3") or exepath("python") or "python"
     end
     --
+    lspconfig.ruff_lsp.setup({
+      before_init = function(_, config)
+        config.settings.python.pythonPath = get_python_path(config.root_dir)
+      end,
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+
     lspconfig.pyright.setup({
       before_init = function(_, config)
         config.settings.python.pythonPath = get_python_path(config.root_dir)
