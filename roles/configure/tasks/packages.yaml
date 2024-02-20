@@ -51,7 +51,7 @@
       - kubectl
       - kubectx
       - kustomize
-      - linux-lts
+      - linux
       - lrzip
       - lsof
       - lynis
