@@ -217,7 +217,19 @@ return {
         config.settings.python.pythonPath = get_python_path(config.root_dir)
       end,
       on_attach = on_attach,
-      capabilities = capabilities,
+      capabilisettings = {
+        pyright = {
+          -- Using Ruff's import organizer
+          disableOrganizeImports = true,
+        },
+        python = {
+          analysis = {
+            -- Ignore all files for analysis to exclusively use Ruff for linting
+            ignore = { "*" },
+          },
+        },
+      },
+      ties = capabilities,
     })
 
     lspconfig.pyright.setup({
@@ -262,5 +274,11 @@ return {
       on_attach = on_attach,
       capabilities = capabilities,
     })
+
+    -- Go --
+    require("lspconfig").gopls.setup({})
+
+    -- Toml --
+    require("lspconfig").taplo.setup({})
   end,
 }
