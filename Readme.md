@@ -35,7 +35,9 @@
 1. Ansible
 
 ```
-$ pip install --user ansible
+$ uv venv
+$ source .venv/bin/activate
+$ uv pip install ansible
 $ ansible-galaxy collection install community.general ansible.posix community.crypto
 ```
 
