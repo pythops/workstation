@@ -17,7 +17,7 @@ ENABLE_CORRECTION="false"
 
 skip_global_compinit=1
 
-export PATH=$ZSH_CUSTOM/plugins/git-fuzzy/bin:$HOME/.local/bin:$HOME/.npm-packages/bin:$HOME/.cargo/bin:$PATH
+export PATH=$ZSH_CUSTOM/plugins/git-fuzzy/bin:$HOME/.local/bin:$HOME/.npm-packages/bin:$HOME/.cargo/bin:$HOME/.python/bin:$PATH
 export EDITOR='nvim'
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export LANG=en_US.UTF-8

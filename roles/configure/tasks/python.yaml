@@ -1,72 +1,51 @@
-- name: Install pip # noqa command-instead-of-module risky-shell-pipe
-  ansible.builtin.shell: |
-    curl https://bootstrap.pypa.io/get-pip.py | python - --break-system-packages
-  args:
-    creates: $HOME/.local/bin/pip3
-
-- name: Create pip config dir
-  ansible.builtin.file:
-    path: $HOME/.config/pip
-    state: directory
-    mode: "0755"
-
-- name: Configure pip
-  ansible.builtin.copy:
-    src: config/pip/pip.conf
-    dest: ~/.config/pip/pip.conf
-    mode: "0644"
-
+# pyenv
 - name: Install pyenv
   community.general.pacman:
     name: pyenv
     state: latest
   become: true
 
-- name: Create $HOME/.python directory
-  ansible.builtin.file:
-    path: $HOME/.python
-    state: directory
-    mode: "0755"
+# uv
+- name: Install uv
+  community.general.pacman:
+    name: uv
+    state: latest
+  become: true
 
-- name: Install pip-tools package
-  ansible.builtin.pip:
-    name: pip-tools
-    state: present
-    extra_args: --user
-  environment:
-    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
-
-- name: Copy packages.in
-  ansible.builtin.copy:
-    src: python/packages.in
-    dest: $HOME/.python/packages.in
-    mode: "0644"
-
-- name: Generate python packages # noqa no-changed-when
+- name: Create $HOME/.python venv
   ansible.builtin.command: |
-    pip-compile --upgrade $HOME/.python/packages.in \
-      --output-file $HOME/.python/packages.txt \
-      --resolver=backtracking
-  environment:
-    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
+    uv venv $HOME/.python
+  changed_when: false
 
 - name: Install python packages
-  ansible.builtin.pip:
-    requirements: $HOME/.python/packages.txt
-    state: present
-    extra_args: --user
+  ansible.builtin.command: |
+    uv pip install \
+      ansible-lint \
+      httpie \
+      ipython \
+      pdbpp \
+      pgcli \
+      poetry \
+      pyright
   environment:
-    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
+    VIRTUAL_ENV: "{{ ansible_env.HOME }}/.python"
+  changed_when: false
 
 #
 # Poetry
 #
 - name: Install Poetry
-  ansible.builtin.command: pip3 install --user poetry
-  args:
-    creates: $HOME/.local/bin/poetry
+  ansible.builtin.command: |
+    uv pip install \
+      ansible-lint \
+      httpie \
+      ipython \
+      pdbpp \
+      pgcli \
+      pyright
   environment:
-    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
+    VIRTUAL_ENV: "{{ ansible_env.HOME }}/.python"
+  changed_when: false
 
 - name: Create poetry config dir
   ansible.builtin.file:
