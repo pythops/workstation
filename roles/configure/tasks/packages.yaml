@@ -97,6 +97,7 @@
       - ttf-font-awesome
       - usbutils
       - verilator
+      - viu # image viewer in the terminal
       - vlc
       - watchexec
       - which
