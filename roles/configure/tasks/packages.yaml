@@ -59,6 +59,7 @@
       - make
       - minicom
       - miniserve # Serve files over HTTP
+      - mold # fast linker
       - neofetch # system information
       - nuspell
       - nmap

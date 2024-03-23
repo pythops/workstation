@@ -38,8 +38,6 @@
 
 - name: Add cargo config
   ansible.builtin.copy:
-    content: |
-      [build]
-      rustc-wrapper = "sccache"
-    dest: ~/.cargo/config
+    src: cargo/config.toml
+    dest: $HOME/.cargo/config.toml
     mode: "0644"
