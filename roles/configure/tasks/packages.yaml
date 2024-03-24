@@ -10,6 +10,7 @@
     name:
       - arch-audit
       - arm-none-eabi-gdb
+      - awesome-terminal-fonts
       - bandwhich
       - base-devel
       - bat
