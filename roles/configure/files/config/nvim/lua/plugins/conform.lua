@@ -12,7 +12,7 @@ return {
         ["yaml.github"] = { "prettierd" },
         json = { "jq" },
         lua = { "stylua" },
-        sh = { "shellcheck", "shfmt" },
+        sh = { "shellcheck", "shfmt", "shellharden" },
         toml = { "taplo" },
         ["*"] = { "trim_whitespace", "trim_newlines" },
       },
@@ -21,6 +21,11 @@ return {
         lsp_fallback = true,
       },
     })
+
+    require("conform").formatters.shfmt = {
+      prepend_args = { "-i", "2" },
+    }
+
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",
       callback = function(args)
