@@ -78,6 +78,7 @@ Available targets:
 - starship
 - tmux
 - wezterm
+- wifi
 - yay
 - zsh
 

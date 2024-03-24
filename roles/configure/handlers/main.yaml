@@ -2,3 +2,4 @@
 - ansible.builtin.import_tasks: minikube.yaml # noqa: name[missing]
 - ansible.builtin.import_tasks: podman.yaml # noqa: name[missing]
 - ansible.builtin.import_tasks: audio.yaml # noqa: name[missing]
+- ansible.builtin.import_tasks: wifi.yaml # noqa: name[missing]

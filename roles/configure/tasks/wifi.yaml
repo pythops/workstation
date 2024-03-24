@@ -1,0 +1,21 @@
+- name: Install iwd
+  community.general.pacman:
+    name: iwd
+    state: latest
+  become: true
+
+- name: Copy iwd config
+  ansible.builtin.file:
+    src: etc/iwd/main.conf
+    dest: /etc/iwd/main.conf
+    mode: "0644"
+  notify:
+    - Restart iwd
+  become: true
+
+- name: Enable iwd service
+  ansible.builtin.systemd:
+    name: iwd
+    enabled: true
+    state: started
+  become: true

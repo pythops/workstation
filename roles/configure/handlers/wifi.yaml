@@ -1,0 +1,4 @@
+- name: Restart iwd
+  ansible.builtin.systemd:
+    name: iwd
+    state: restarted
