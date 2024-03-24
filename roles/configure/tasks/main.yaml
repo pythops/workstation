@@ -1,5 +1,10 @@
 - name: Common
   ansible.builtin.import_tasks: common.yaml
+  tags: common
+
+- name: Iwd
+  ansible.builtin.import_tasks: wifi.yaml
+  tags: wifi
 
 - name: Install yay AUR helper
   ansible.builtin.import_tasks: yay.yaml
@@ -89,3 +94,7 @@
 - name: Esp
   ansible.builtin.import_tasks: esp.yaml
   tags: esp
+
+- name: Bluetooth
+  ansible.builtin.import_tasks: bluetooth.yaml
+  tags: bluetooth
