@@ -32,23 +32,17 @@
 
 ### 🛠️ Requirements
 
-1. Ansible
-
-```
-$ uv venv
-$ source .venv/bin/activate
-$ uv pip install ansible
-$ ansible-galaxy collection install community.general ansible.posix community.crypto
-```
-
-> [!NOTE]
-> Make sure that $HOME/.local/bin is in your $PATH
-
-2. [just](https://github.com/casey/just) command runner
-
-3. Qemu (Optional)
+- [just](https://github.com/casey/just) command runner.
+- [uv](https://github.com/astral-sh/uv) python package installer.
+- Qemu (Optional)
 
 <br>
+
+### Setup
+
+```
+$ just setup
+```
 
 ### 🔬 Usage
 
@@ -60,6 +54,7 @@ Available targets:
 
 - all
 - audio
+- bluetooth
 - containers
 - dnsmasq
 - esp
