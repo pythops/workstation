@@ -20,7 +20,7 @@ skip_global_compinit=1
 export PATH=$ZSH_CUSTOM/plugins/git-fuzzy/bin:$HOME/.local/bin:$HOME/.npm-packages/bin:$HOME/.cargo/bin:$HOME/.python/bin:$PATH
 export EDITOR='nvim'
 export VIRTUAL_ENV_DISABLE_PROMPT=
-export LANG=en_US.UTF-8
+export LANG=C
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
@@ -63,21 +63,11 @@ enable-fzf-tab
 zstyle ':fzf-tab:*' fzf-pad 4
 
 ##
-## Custom functions
-##
-
-function upgrade_python_packages() {
-    pip install --upgrade --user pip
-    pip-compile --upgrade $HOME/.python/packages.in --output-file $HOME/.python/packages.txt --resolver=backtracking
-    pip install --user -r $HOME/.python/packages.txt
-}
-
-##
 ## Aliases
 ##
 
 ## Shortcuts
-alias upgrade="yay ; omz update ; upgrade_python_packages ; rustup update"
+alias upgrade="yay ; omz update ; rustup update"
 
 ## k8s
 alias start_minikube='minikube start -p dev --driver=docker --kubernetes-version=v1.25.13 --cpus=4 --memory=12gb'
@@ -119,6 +109,17 @@ alias get_idf="source $HOME/.esp/export.sh"
 
 unset I3SOCK
 
+##
+## gcloud
+##
+
+if [ -f '$HOME/gcloud/google-cloud-sdk/path.zsh.inc' ]; then
+    source '$HOME/gcloud/google-cloud-sdk/path.zsh.inc';
+fi
+
+if [ -f '$HOME/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then
+    source '$HOME/gcloud/google-cloud-sdk/completion.zsh.inc';
+fi
 
 ##
 ## Pyenv
