@@ -54,6 +54,13 @@
     dest: ~/.xinitrc
     mode: "0644"
 
+# Xresources
+- name: Copy Xresources
+  ansible.builtin.copy:
+    src: xrdb/Xresources
+    dest: ~/.Xresources
+    mode: "0644"
+
 # Status bar
 - name: Install i3status-rs
   community.general.pacman:
