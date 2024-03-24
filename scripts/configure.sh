@@ -2,6 +2,8 @@
 
 set -e
 
+source .venv/bin/activate
+
 target=$1
 
 available_targets=(
