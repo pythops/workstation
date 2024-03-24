@@ -118,9 +118,8 @@
     yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync "{{ item }}"
   loop:
     - act # Run github actions locally
-    - slack
+    - slack-desktop
     - hadolint-bin
-    - doggo-bin # DNS client
 
 - name: Install spotify tui player
   ansible.builtin.unarchive:
