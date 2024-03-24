@@ -1,6 +1,12 @@
 default:
     @just --list --unsorted
 
+setup:
+    uv venv
+    source .venv/bin/activate
+    uv pip install ansible
+    ansible-galaxy collection install community.general ansible.posix community.crypto
+
 configure target:
     @-scripts/configure.sh {{ target }}
 
