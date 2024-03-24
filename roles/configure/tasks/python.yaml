@@ -21,6 +21,7 @@
   ansible.builtin.command: |
     uv pip install \
       ansible-lint \
+      autorandr \
       httpie \
       ipython \
       pdbpp \
@@ -36,13 +37,7 @@
 #
 - name: Install Poetry
   ansible.builtin.command: |
-    uv pip install \
-      ansible-lint \
-      httpie \
-      ipython \
-      pdbpp \
-      pgcli \
-      pyright
+    uv pip install poetry
   environment:
     VIRTUAL_ENV: "{{ ansible_env.HOME }}/.python"
   changed_when: false
@@ -69,7 +64,7 @@
   ansible.builtin.shell: |
     poetry completions zsh > $HOME/.oh-my-zsh/custom/plugins/poetry/_poetry
   environment:
-    PATH: "{{ ansible_env.HOME }}/.local/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ ansible_env.HOME }}/.python/bin:{{ ansible_env.PATH }}"
 
 #
 # pdbpp
