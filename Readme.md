@@ -38,7 +38,7 @@
 
 <br>
 
-### Setup
+### 🚀 Setup
 
 ```
 $ just setup
