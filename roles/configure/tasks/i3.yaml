@@ -8,10 +8,12 @@
   community.general.pacman:
     name:
       - autocutsel
-      - autorandr
       - brightnessctl
       - maim
       - feh
+      - geoclue2
+      - i3lock
+      - redshift
       - unclutter
       - xbindkeys
       - xorg-xinit
