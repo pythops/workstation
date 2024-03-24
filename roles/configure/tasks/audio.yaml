@@ -1,12 +1,15 @@
 - name: Install pipewire packages
   community.general.pacman:
     name:
+      - sof-firmware
+      - alsa-firmware
       - alsa-utils
       - pipewire
       - pipewire-audio
       - pipewire-jack
       - pipewire-pulse
       - pipewire-v4l2
+      - rtkit
     state: latest
   become: true
 
@@ -29,3 +32,9 @@
     mode: "0644"
   notify:
     - Restart pipewire
+
+- name: Enable pipewire service
+  ansible.builtin.systemd:
+    name: pipewire
+    enabled: true
+    scope: user
