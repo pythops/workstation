@@ -1,6 +1,7 @@
 #!/bin/sh
 
 xset s off -dpms
+xset -b
 xrdb ~/.Xresources
 unclutter &
 exec i3
