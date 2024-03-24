@@ -1,6 +1,7 @@
 - name: Install pipewire packages
   community.general.pacman:
     name:
+      - alsa-utils
       - pipewire
       - pipewire-audio
       - pipewire-jack

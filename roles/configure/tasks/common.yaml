@@ -1,0 +1,29 @@
+- name: Generate locale
+  community.general.locale_gen:
+    name: en_US.UTF-8
+    state: present
+  become: true
+
+- name: Create ~/.local/bin directory
+  ansible.builtin.file:
+    path: $HOME/.local/bin
+    state: directory
+    mode: "0755"
+
+- name: Enable ssh agent
+  ansible.builtin.systemd:
+    name: ssh-agent
+    enabled: true
+    state: started
+    scope: user
+
+- name: Set timezone to Europe/Stockholm
+  community.general.timezone:
+    name: Europe/Stockholm
+  become: true
+
+- name: Set a hostname
+  ansible.builtin.hostname:
+    name: tenere
+    use: systemd
+  become: true

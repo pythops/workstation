@@ -1,5 +1,0 @@
-- name: Create ~/.local/bin directory
-  ansible.builtin.file:
-    path: $HOME/.local/bin
-    state: directory
-    mode: "0755"
