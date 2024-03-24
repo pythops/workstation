@@ -113,12 +113,12 @@ unset I3SOCK
 ## gcloud
 ##
 
-if [ -f '$HOME/gcloud/google-cloud-sdk/path.zsh.inc' ]; then
-    source '$HOME/gcloud/google-cloud-sdk/path.zsh.inc';
+if [ -f $HOME/gcloud/google-cloud-sdk/path.zsh.inc ]; then
+    source $HOME/gcloud/google-cloud-sdk/path.zsh.inc
 fi
 
-if [ -f '$HOME/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then
-    source '$HOME/gcloud/google-cloud-sdk/completion.zsh.inc';
+if [ -f $HOME/gcloud/google-cloud-sdk/completion.zsh.inc ]; then
+    source $HOME/gcloud/google-cloud-sdk/completion.zsh.inc
 fi
 
 ##
