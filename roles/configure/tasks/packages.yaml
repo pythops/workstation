@@ -51,6 +51,7 @@
       - kubectl
       - kubectx
       - kustomize
+      - less
       - linux
       - lrzip
       - lsof
@@ -80,6 +81,7 @@
       - rustscan
       - screen
       - shellcheck
+      - shellharden
       - shfmt
       - skaffold
       - sniffnet
@@ -96,6 +98,7 @@
       - tree-sitter-cli
       - ttf-fira-code
       - ttf-font-awesome
+      - ttf-nord-fonts
       - usbutils
       - verilator
       - viu # image viewer in the terminal
