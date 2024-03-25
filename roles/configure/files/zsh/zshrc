@@ -46,8 +46,6 @@ plugins=(
   pip
   poetry
   python
-  sudo
-  vagrant
   vi-mode
   fzf-tab
   zsh-autosuggestions
