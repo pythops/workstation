@@ -21,7 +21,6 @@
   ansible.builtin.command: |
     uv pip install \
       ansible-lint \
-      autorandr \
       httpie \
       ipython \
       pdbpp \
