@@ -30,6 +30,7 @@
       - eza
       - fd
       - gcc
+      - genact
       - git
       - git-delta
       - github-cli
@@ -84,6 +85,7 @@
       - shellcheck
       - shellharden
       - shfmt
+      - signal-desktop
       - skaffold
       - sniffnet
       - socat
