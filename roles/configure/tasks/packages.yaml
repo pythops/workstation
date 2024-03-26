@@ -49,6 +49,7 @@
       - jq
       - just
       - jwt-cli
+      - k9s
       - kubeconform
       - kubectl
       - kubectx
@@ -63,6 +64,7 @@
       - minicom
       - miniserve # Serve files over HTTP
       - mold # fast linker
+      - mpv
       - neofetch # system information
       - nuspell
       - nmap
@@ -75,6 +77,7 @@
       - pastel # Generate, analyze, convert and manipulate colors
       - pcsclite # needed by yubikey
       - pkgconfig
+      - postgresql-libs
       - powerline
       - powerline-fonts
       - procs
@@ -93,7 +96,6 @@
       - systeroid # Alternative to sysctl
       - swig # needed by yubikey
       - taplo-cli # TOML toolkit
-      - task
       - tealdeer
       - terraform
       - tigervnc
