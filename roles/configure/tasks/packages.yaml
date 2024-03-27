@@ -8,6 +8,7 @@
 - name: Install packages
   community.general.pacman:
     name:
+      - act # Run github actions locally
       - arch-audit
       - arm-none-eabi-gdb
       - awesome-terminal-fonts
@@ -121,7 +122,6 @@
   ansible.builtin.command: |
     yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync "{{ item }}"
   loop:
-    - act # Run github actions locally
     - slack-desktop
     - hadolint-bin
 
