@@ -27,6 +27,7 @@
       - dmidecode
       - dnsutils
       - dua-cli
+      - earlyoom
       - eva # A calculator REPL, similar to bc
       - eza
       - fd
@@ -45,6 +46,7 @@
       - htop
       - hyperfine # CLI benchmarking tool
       - gimp
+      - imagemagick
       - iwd
       - jless
       - jq
@@ -124,21 +126,4 @@
   loop:
     - slack-desktop
     - hadolint-bin
-
-- name: Install spotify tui player
-  ansible.builtin.unarchive:
-    src: https://github.com/aome510/spotify-player/releases/latest/download/spotify_player-x86_64-unknown-linux-gnu.tar.gz
-    dest: ~/.local/bin/
-    remote_src: true
-    mode: "0755"
-    extra_opts:
-      - --transform
-      - s@^spotify_player@spotify@
-
-- name: Enable services
-  ansible.builtin.systemd:
-    name: "{{ item }}"
-    enabled: true
-  loop:
-    - iwd
-  become: true
+    - spotify-player
