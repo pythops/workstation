@@ -9,6 +9,7 @@
   community.general.pacman:
     name:
       - act # Run github actions locally
+      - android-tools
       - arch-audit
       - arm-none-eabi-gdb
       - awesome-terminal-fonts
@@ -53,6 +54,7 @@
       - just
       - jwt-cli
       - k9s
+      - helm
       - kubeconform
       - kubectl
       - kubectx
@@ -95,6 +97,7 @@
       - skaffold
       - sniffnet
       - socat
+      - scrcpy
       - stylua
       - systeroid # Alternative to sysctl
       - swig # needed by yubikey
