@@ -37,6 +37,7 @@
       - git
       - git-delta
       - github-cli
+      - gnu-netcat
       - gping # ping with a graph
       - dua-cli # disk space usage
       - duf
@@ -106,6 +107,7 @@
       - terraform
       - tigervnc
       - tokei # Count the code
+      - torbrowser-launcher
       - tree-sitter-cli
       - ttf-fira-code
       - ttf-font-awesome
