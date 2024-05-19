@@ -76,7 +76,7 @@ return {
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
       vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, bufopts)
       if client.server_capabilities.inlayHintProvider then
-        vim.lsp.buf.inlay_hint(bufnr, true)
+        vim.lsp.inlay_hint.enable(true)
       end
     end
 
