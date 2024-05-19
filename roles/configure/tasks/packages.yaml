@@ -67,6 +67,7 @@
       - lynis
       - luacheck
       - make
+      - menyoki # screen cast/shot
       - minicom
       - miniserve # Serve files over HTTP
       - mold # fast linker
