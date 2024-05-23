@@ -9,6 +9,7 @@
   community.general.pacman:
     name:
       - act # Run github actions locally
+      - actionlint
       - android-tools
       - arch-audit
       - arm-none-eabi-gdb
@@ -67,6 +68,8 @@
       - lynis
       - luacheck
       - make
+      - man-db
+      - man-pages
       - menyoki # screen cast/shot
       - minicom
       - miniserve # Serve files over HTTP
@@ -100,6 +103,7 @@
       - sniffnet
       - socat
       - scrcpy
+      - strace
       - stylua
       - systeroid # Alternative to sysctl
       - swig # needed by yubikey
