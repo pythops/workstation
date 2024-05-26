@@ -63,6 +63,8 @@
       - kustomize
       - less
       - linux
+      - lld
+      - llvm
       - lrzip
       - lsof
       - lynis
@@ -86,6 +88,7 @@
       - p7zip
       - pastel # Generate, analyze, convert and manipulate colors
       - pcsclite # needed by yubikey
+      - pigz
       - pkgconfig
       - postgresql-libs
       - powerline
