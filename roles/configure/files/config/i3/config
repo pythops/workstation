@@ -209,6 +209,9 @@ exec --no-startup-id autocutsel -s PRIMARY -fork
 # keyboard layout
 exec_always setxkbmap -layout us
 
+# Turn off bell sound
+exec_always --no-startup-id xset -b
+
 # speedup the keyboard
 exec_always --no-startup-id xset r rate 180 80
 
