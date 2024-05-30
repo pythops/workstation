@@ -27,7 +27,8 @@
       pgcli \
       poetry \
       pyright \
-      pynvim
+      pynvim \
+      terminaltexteffects
   environment:
     VIRTUAL_ENV: "{{ ansible_env.HOME }}/.python"
   changed_when: false
