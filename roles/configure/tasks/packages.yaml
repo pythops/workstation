@@ -62,6 +62,7 @@
       - kubectx
       - kustomize
       - less
+      - librdkafka
       - linux
       - lld
       - llvm
@@ -88,6 +89,7 @@
       - p7zip
       - pastel # Generate, analyze, convert and manipulate colors
       - pcsclite # needed by yubikey
+      - perf
       - pigz
       - pkgconfig
       - postgresql-libs
@@ -96,6 +98,7 @@
       - procs
       - qemu-base
       - ripgrep
+      - rsync
       - rustscan
       - screen
       - shellcheck
