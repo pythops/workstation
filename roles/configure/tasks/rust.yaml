@@ -23,6 +23,7 @@
     - cross
     - cargo-deny
     - cargo-edit
+    - cargo-flamegraph
     - cargo-generate
     - cargo-nextest
     - cargo-watch
