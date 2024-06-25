@@ -84,7 +84,7 @@ return {
     local cmp = require("cmp")
 
     local has_words_before = function()
-      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
       return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
     end
 
@@ -209,27 +209,12 @@ return {
       end
 
       -- Fallback to system Python.
-      return exepath("python3") or exepath("python") or "python"
+      return vim.fn.exepath("python3") or vim.fn.exepath("python")
     end
-    --
-    lspconfig.ruff_lsp.setup({
-      before_init = function(_, config)
-        config.settings.python.pythonPath = get_python_path(config.root_dir)
-      end,
+
+    lspconfig.ruff.setup({
       on_attach = on_attach,
-      capabilisettings = {
-        pyright = {
-          -- Using Ruff's import organizer
-          disableOrganizeImports = true,
-        },
-        python = {
-          analysis = {
-            -- Ignore all files for analysis to exclusively use Ruff for linting
-            ignore = { "*" },
-          },
-        },
-      },
-      ties = capabilities,
+      capabilities = capabilities,
     })
 
     lspconfig.pyright.setup({
