@@ -10,6 +10,7 @@ return {
     "hrsh7th/vim-vsnip",
     "hrsh7th/cmp-nvim-lsp-signature-help",
     "stevearc/dressing.nvim",
+    "saecki/crates.nvim",
   },
 
   config = function()
@@ -134,6 +135,7 @@ return {
         { name = "nvim_lsp_signature_help" },
         { name = "spell" },
         { name = "buffer" },
+        { name = "crates" },
       }),
     })
 
@@ -160,6 +162,22 @@ return {
     -- Lsp servers --
 
     -- rust --
+
+    local crates = require("crates")
+    crates.setup({
+      lsp = {
+        enabled = true,
+        on_attach = on_attach,
+        actions = true,
+        completion = true,
+        hover = true,
+      },
+      completion = {
+        cmp = {
+          enabled = true,
+        },
+      },
+    })
 
     lspconfig.rust_analyzer.setup({
       settings = {
