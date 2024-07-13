@@ -83,6 +83,6 @@ return {
 
     telescope.setup(options)
     telescope.load_extension("fzf")
-    require("telescope").load_extension("ui-select")
+    telescope.load_extension("ui-select")
   end,
 }
