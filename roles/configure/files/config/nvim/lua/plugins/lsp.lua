@@ -280,9 +280,15 @@ return {
     })
 
     -- Go --
-    require("lspconfig").gopls.setup({})
+    require("lspconfig").gopls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
 
     -- Toml --
-    require("lspconfig").taplo.setup({})
+    require("lspconfig").taplo.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
   end,
 }
