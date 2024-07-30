@@ -26,7 +26,7 @@
 
 **Neovim plugins**: [plugins](https://github.com/pythops/workstation/blob/master/roles/configure/files/config/nvim/lua/plugins/)
 
-**Dev environments**: [Python](), [Rust](), [Go]()
+**Dev environments**: [Python](https://github.com/pythops/workstation/blob/master/roles/configure/tasks/python.yaml), [Rust](https://github.com/pythops/workstation/blob/master/roles/configure/tasks/rust.yaml), [Go](https://github.com/pythops/workstation/blob/master/roles/configure/tasks/go.yaml)
 
 <br>
 
@@ -34,7 +34,7 @@
 
 - [just](https://github.com/casey/just) command runner.
 - [uv](https://github.com/astral-sh/uv) python package installer.
-- Qemu (Optional)
+- Qemu (Optional, used for the preview only)
 
 <br>
 
@@ -43,6 +43,8 @@
 ```
 $ just setup
 ```
+
+<br>
 
 ### 🔬 Usage
 
