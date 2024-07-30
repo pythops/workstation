@@ -4,8 +4,11 @@
     state: latest
   become: true
 
-- name: Install Go lsp
+- name: Install Go dev utils
   community.general.pacman:
-    name: gopls
+    name:
+      - gopls # lsp
+      - gofumpt # formatter
+      - delve # debugger
     state: latest
   become: true
