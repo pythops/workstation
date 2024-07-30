@@ -259,6 +259,30 @@ return {
     lspconfig.gopls.setup({
       on_attach = on_attach,
       capabilities = capabilities,
+      settings = {
+        gopls = {
+          gofumpt = true,
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
+          analyses = {
+            fieldalignment = true,
+            nilness = true,
+            unusedparams = true,
+            unusedwrite = true,
+            useany = true,
+          },
+          usePlaceholders = true,
+          staticcheck = true,
+          semanticTokens = true,
+        },
+      },
     })
 
     -- Bash --
@@ -275,12 +299,6 @@ return {
 
     -- Terraform --
     lspconfig.terraformls.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    -- Go --
-    require("lspconfig").gopls.setup({
       on_attach = on_attach,
       capabilities = capabilities,
     })
