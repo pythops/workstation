@@ -26,6 +26,7 @@
       - discord
       - darktable
       - dcraw # Decoding raw photos
+      - delve # Go debugger
       - dmidecode
       - dnsutils
       - dua-cli
@@ -49,6 +50,7 @@
       - htop
       - hyperfine # CLI benchmarking tool
       - gimp
+      - gofumpt # A stricter gofmt
       - imagemagick
       - iwd
       - jless
@@ -70,6 +72,7 @@
       - lsof
       - lynis
       - luacheck
+      - luarocks
       - make
       - man-db
       - man-pages
