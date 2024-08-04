@@ -99,7 +99,9 @@ alias gl="git pull"
 ##
 ## ESP
 ##
-alias get_idf="source $HOME/.esp/export.sh"
+if [ -f $HOME/.espup/export-esp.sh ]; then
+    source $HOME/.espup/export-esp.sh
+fi
 
 ##
 ## i3 tmux

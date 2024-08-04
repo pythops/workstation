@@ -1,31 +1,27 @@
-- name: Install dependencies
+- name: Install esp tools
   community.general.pacman:
     name: "{{ item }}"
     state: latest
   loop:
-    - gcc
-    - make
-    - flex
-    - git
-    - bison
-    - gperf
-    - cmake
-    - ninja
-    - ccache
-    - dfu-util
-    - libusb
+    - ldproxy
+    - espup
+    - espflash
   become: true
 
-- name: Get ESP-IDF
-  ansible.builtin.git:
-    repo: https://github.com/espressif/esp-idf.git
-    dest: ~/.esp
-    clone: true
-    recursive: true
-    version: "v5.0"
+- name: Install rust toolochain
+  ansible.builtin.command:
+    cmd: espup install --targets esp32s3
+    creates: ~/.rustup/toolchains/esp
 
-- name: Install ESP-IDF for ESP32S3
-  ansible.builtin.command: ./install.sh esp32s3
-  args:
-    chdir: ~/.esp
-  changed_when: false
+- name: Get export-esp.sh stat
+  ansible.builtin.stat:
+    path: ~/export-esp.sh
+  register: file
+
+- name: Move export-esp.sh script to ~/.espup
+  ansible.builtin.copy:
+    src: ~/export-esp.sh
+    dest: ~/.espup/export-esp.sh
+    mode: preserve
+    remote_src: true
+  when: file.stat.exists
