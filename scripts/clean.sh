@@ -3,7 +3,7 @@
 target=$1
 
 available_targets=(
-  "neovim"
+  "neovim" "tmux"
 )
 
 if echo "${available_targets[@]}" | grep -qw "$target"; then
@@ -13,6 +13,12 @@ if echo "${available_targets[@]}" | grep -qw "$target"; then
     rm -rf ~/.config/nvim
     rm -rf ~/.local/share/nvim
     rm -rf ~/.cache/nvim
+    ;;
+  tmux)
+    killall tmux 2>/dev/null
+    rm -rf ~/.config/tmux
+    rm -rf ~/.tmux
+    rm -rf ~/.local/share/tmux
     ;;
   esac
 else
