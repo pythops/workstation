@@ -123,7 +123,7 @@
       - tree-sitter-cli
       - ttf-fira-code
       - ttf-font-awesome
-      - ttf-nord-fonts
+      - ttf-nerd-fonts-symbols
       - usbutils
       - verilator
       - viu # image viewer in the terminal
@@ -131,6 +131,7 @@
       - watchexec
       - which
       - xdp-tools
+      - xorriso
       - zathura-pdf-mupdf
     state: latest
     executable: yay
