@@ -27,7 +27,7 @@ if [ ! -f "archbox/cloud-init.iso" ]; then
         sudo: ALL=(ALL) NOPASSWD:ALL
         plain_text_passwd: pythops
         lock_passwd: false
-        ssh_authorized_keys: $(cat ~/.ssh/id_rsa.pub)
+        ssh_authorized_keys: $(cat ~/.ssh/id_ed25519.pub)
     mounts:
       - [ "host_share", "/mnt", "9p", "trans=virtio,version=9p2000.L", "0", "0" ]
 EOF
