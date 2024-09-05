@@ -4,8 +4,15 @@
     state: latest
   become: true
 
-- name: Copy iwd config
+- name: Create iwd config dir
   ansible.builtin.file:
+    path: /etc/iwd
+    state: directory
+    mode: u=rwx,g=rx,o=rx
+  become: true
+
+- name: Copy iwd config
+  ansible.builtin.copy:
     src: etc/iwd/main.conf
     dest: /etc/iwd/main.conf
     mode: "0644"
