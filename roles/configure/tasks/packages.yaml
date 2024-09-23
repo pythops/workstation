@@ -40,6 +40,7 @@
       - github-cli
       - gnu-netcat
       - gping # ping with a graph
+      - devtools
       - dua-cli # disk space usage
       - duf
       - dust
@@ -80,6 +81,7 @@
       - mold # fast linker
       - mpv
       - neofetch # system information
+      - net-tools
       - nuspell
       - nmap
       - nvme-cli
