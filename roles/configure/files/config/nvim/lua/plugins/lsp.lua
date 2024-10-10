@@ -9,8 +9,10 @@ return {
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
     "hrsh7th/cmp-nvim-lsp-signature-help",
+    "f3fora/cmp-spell",
     "stevearc/dressing.nvim",
     "saecki/crates.nvim",
+    "nvimdev/lspsaga.nvim",
   },
 
   config = function()
@@ -70,9 +72,26 @@ return {
     })
     --
 
+    -- Lsp Saga
+    require("lspsaga").setup({
+      lightbulb = { enable = false },
+      symbol_in_winbar = { enable = false },
+      definition = {
+        width = 0.8,
+        height = 0.9,
+        keys = {
+          vsplit = "<leader>v",
+          split = "<leader>h",
+          edit = "<CR>",
+        },
+      },
+    })
+    --
+
     local on_attach = function(client, bufnr)
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
-      vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, bufopts)
+      vim.keymap.set("n", "<leader>ff", "<cmd>Lspsaga finder<CR>", bufopts)
+      vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga peek_definition<CR>", bufopts)
       vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, bufopts)
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
       vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, bufopts)
