@@ -22,6 +22,8 @@
       - bore # making tunnels to localhost
       - btop
       - chromium
+      - clang
+      - cyme
       - difftastic
       - discord
       - darktable
@@ -80,6 +82,7 @@
       - miniserve # Serve files over HTTP
       - mold # fast linker
       - mpv
+      - ndisc6
       - neofetch # system information
       - net-tools
       - nuspell
