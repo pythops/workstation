@@ -62,7 +62,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # Workspaces
 set $ws1 "1: "
@@ -191,16 +191,21 @@ bindsym $mod+Shift+s move scratchpad
 # show the first scratchpad window
 bindsym $mod+p scratchpad show
 
-# Spotify
-exec --no-startup-id wezterm start --class Spotify spotify &
-bindsym $mod+m [con_mark="spotify"] scratchpad show
-for_window [class="Spotify"] mark "spotify", move scratchpad
-exec spotify
-
 # Todo scratchpad
-exec --no-startup-id wezterm start --class todo &
+exec --no-startup-id --no-startup-id wezterm start --class todo &
 bindsym $mod+t [instance="todo"] scratchpad show
 for_window [instance="todo"] move scratchpad
+
+# Spotify
+exec --no-startup-id wezterm start --class spotify &
+bindsym $mod+m [instance="spotify"] scratchpad show
+for_window [instance="spotify"] move scratchpad
+exec spotify_player
+
+# Dropdown Terminal
+exec --no-startup-id wezterm start --class dropdown_terminal &
+bindsym $mod+space [instance="dropdown_terminal"] scratchpad show
+for_window [instance="dropdown_terminal"] move scratchpad
 
 # Share clipboard
 exec --no-startup-id autocutsel -fork
@@ -209,11 +214,10 @@ exec --no-startup-id autocutsel -s PRIMARY -fork
 # keyboard layout
 exec_always setxkbmap -layout us
 
-# Turn off bell sound
-exec_always --no-startup-id xset -b
-
 # speedup the keyboard
 exec_always --no-startup-id xset r rate 180 80
+
+exec_always --no-startup-id xset -b
 
 # Redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
