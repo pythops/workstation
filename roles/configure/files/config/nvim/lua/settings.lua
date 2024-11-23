@@ -55,6 +55,14 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
+-- Typst filetype
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.typ",
+  callback = function()
+    vim.bo.filetype = "typst"
+  end,
+})
+
 --i3
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = ".*/i3/config",

@@ -13,6 +13,7 @@ return {
     "stevearc/dressing.nvim",
     "saecki/crates.nvim",
     "nvimdev/lspsaga.nvim",
+    "Myriad-Dreamin/tinymist",
   },
 
   config = function()
@@ -324,6 +325,13 @@ return {
 
     -- Toml --
     require("lspconfig").taplo.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+
+    -- Typst --
+    require("lspconfig").tinymist.setup({
+      root_dir = ".",
       on_attach = on_attach,
       capabilities = capabilities,
     })
