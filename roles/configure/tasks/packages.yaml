@@ -21,6 +21,7 @@
       - bluez-utils
       - bore # making tunnels to localhost
       - btop
+      - buf # proto buf lsp
       - chromium
       - clang
       - cyme
