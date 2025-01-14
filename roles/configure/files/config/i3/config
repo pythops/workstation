@@ -200,7 +200,6 @@ for_window [instance="todo"] move scratchpad
 exec --no-startup-id wezterm start --class spotify &
 bindsym $mod+m [instance="spotify"] scratchpad show
 for_window [instance="spotify"] move scratchpad
-exec spotify_player
 
 # Dropdown Terminal
 exec --no-startup-id wezterm start --class dropdown_terminal &
