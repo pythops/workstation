@@ -2,13 +2,15 @@ return {
   "neovim/nvim-lspconfig",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
+    "hrsh7th/cmp-nvim-lsp-document-symbol",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
-    "hrsh7th/cmp-nvim-lsp-signature-help",
+    "hrsh7th/cmp-emoji",
     "f3fora/cmp-spell",
     "stevearc/dressing.nvim",
     "saecki/crates.nvim",
@@ -153,9 +155,11 @@ return {
         { name = "nvim_lsp" },
         { name = "vsnip" },
         { name = "nvim_lsp_signature_help" },
+        { name = "nvim_lsp_document_symbol" },
         { name = "spell" },
         { name = "buffer" },
         { name = "crates" },
+        { name = "emoji" },
       }),
     })
 
@@ -264,12 +268,6 @@ return {
         pyright = {
           -- Using Ruff's import organizer
           disableOrganizeImports = true,
-        },
-        python = {
-          analysis = {
-            -- Ignore all files for analysis to exclusively use Ruff for linting
-            ignore = { "*" },
-          },
         },
       },
       on_attach = on_attach,
