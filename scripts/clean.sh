@@ -12,6 +12,7 @@ if echo "${available_targets[@]}" | grep -qw "$target"; then
     killall nvim 2>/dev/null
     rm -rf ~/.config/nvim
     rm -rf ~/.local/share/nvim
+    rm -rf ~/.local/state/nvim
     rm -rf ~/.cache/nvim
     ;;
   tmux)
