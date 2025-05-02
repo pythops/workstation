@@ -9,3 +9,7 @@ vim.api.nvim_set_hl(0, "DiagnosticFloatingError", { fg = "#ea6962" })
 vim.api.nvim_set_hl(0, "DiagnosticFloatingWarn", { fg = "#d8a657" })
 vim.api.nvim_set_hl(0, "DiagnosticFloatingInfo", { fg = "#7daea3" })
 vim.api.nvim_set_hl(0, "DiagnosticFloatingHint", { fg = "#89b482" })
+
+vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#e78a4e" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#e78a4e", bg = "#000000" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#000000" })
