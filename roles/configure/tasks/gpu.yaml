@@ -16,8 +16,14 @@
     state: latest
   become: true
 
-- name: Install wgsl-analyer
+- name: Download wgsl-analyer
   ansible.builtin.get_url:
-    url: https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64
-    dest: ~/.local/bin/wgsl_analyzer
-    mode: "0755"
+    url: https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl-analyzer-x86_64-unknown-linux-musl.gz
+    dest: /tmp/
+    mode: "0644"
+
+- name: Unarchive wgsl-analyer # noqa no-changed-when
+  ansible.builtin.shell: |
+    gzip -d /tmp/wgsl-analyzer-x86_64-unknown-linux-musl.gz
+    mv /tmp/wgsl-analyzer-x86_64-unknown-linux-musl ~/.local/bin/wgsl-analyzer
+    chmod +x ~/.local/bin/wgsl-analyzer
