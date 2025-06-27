@@ -67,7 +67,7 @@ bindsym $mod+Shift+space floating toggle
 # Workspaces
 set $ws1 "1: "
 set $ws2 "2: "
-set $ws3 "3: "
+set $ws3 "3: "
 set $ws4 "4: "
 set $ws5 "5"
 set $ws6 "6"
@@ -108,8 +108,9 @@ bindsym $mod+Shift+o move container to output left
 assign [class="Slack"] $ws4
 assign [class="discord"] $ws4
 assign [class="Signal"] $ws4
+assign [class="Chromium"] $ws4
 assign [class="firefox"] $ws2
-assign [class="darktable"] $ws3
+assign [class="Zathura"] $ws3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
