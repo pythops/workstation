@@ -3,7 +3,7 @@
     upgrade: true
     executable: yay
     update_cache: true
-    extra_args: --removemake --cleanafter
+    extra_args: --removemake --cleanafter --noconfirm
 
 - name: Install packages
   community.general.pacman:
@@ -41,7 +41,6 @@
       - git
       - git-delta
       - github-cli
-      - gnu-netcat
       - gping # ping with a graph
       - devtools
       - dua-cli # disk space usage
@@ -84,7 +83,6 @@
       - mold # fast linker
       - mpv
       - ndisc6
-      - neofetch # system information
       - net-tools
       - nuspell
       - nmap
@@ -116,6 +114,7 @@
       - sniffnet
       - socat
       - scrcpy
+      - spotify-player
       - strace
       - stylua
       - systeroid # Alternative to sysctl
@@ -142,7 +141,7 @@
     state: latest
     executable: yay
     update_cache: true
-    extra_args: --removemake --cleanafter
+    extra_args: --removemake --cleanafter --noconfirm
 
 - name: Install AUR packages # noqa: no-changed-when
   ansible.builtin.command: |
@@ -150,4 +149,3 @@
   loop:
     - slack-desktop
     - hadolint-bin
-    - spotify-player
