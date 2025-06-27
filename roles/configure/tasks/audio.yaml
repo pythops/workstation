@@ -6,11 +6,12 @@
       - alsa-utils
       - pipewire
       - pipewire-audio
-      - pipewire-jack
       - pipewire-pulse
       - pipewire-v4l2
       - rtkit
     state: latest
+    executable: yay
+    extra_args: --removemake --cleanafter --confirm
   become: true
 
 - name: Create the config dir
