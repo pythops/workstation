@@ -8,7 +8,6 @@
   community.general.pacman:
     name:
       - autorandr
-      - autocutsel
       - brightnessctl
       - maim
       - feh
@@ -30,6 +29,10 @@
       - xclip
     state: latest
   become: true
+
+- name: Install autocutsel # noqa: no-changed-when
+  ansible.builtin.command: |
+    yay --noconfirm --noprogressbar --cleanafter --removemake --needed --sync autocutsel
 
 - name: Create config dirs
   ansible.builtin.file:
