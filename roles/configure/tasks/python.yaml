@@ -1,14 +1,9 @@
-# pyenv
-- name: Install pyenv
+- name: Install python tools
   community.general.pacman:
-    name: pyenv
-    state: latest
-  become: true
-
-# uv
-- name: Install uv
-  community.general.pacman:
-    name: uv
+    name:
+      - uv
+      - ruff
+      - ty
     state: latest
   become: true
 
@@ -21,51 +16,14 @@
   ansible.builtin.command: |
     uv pip install \
       ansible-lint \
-      httpie \
       ipython \
       pdbpp \
       pgcli \
-      poetry \
-      pyright \
-      pynvim \
-      terminaltexteffects
+      pynvim
+
   environment:
     VIRTUAL_ENV: "{{ ansible_env.HOME }}/.python"
   changed_when: false
-
-#
-# Poetry
-#
-- name: Install Poetry
-  ansible.builtin.command: |
-    uv pip install poetry
-  environment:
-    VIRTUAL_ENV: "{{ ansible_env.HOME }}/.python"
-  changed_when: false
-
-- name: Create poetry config dir
-  ansible.builtin.file:
-    path: $HOME/.config/pypoetry
-    state: directory
-    mode: "0755"
-
-- name: Copy poetry config file
-  ansible.builtin.copy:
-    src: config/pypoetry/config.toml
-    dest: $HOME/.config/pypoetry/config.toml
-    mode: "0644"
-
-- name: Create omz completion directory
-  ansible.builtin.file:
-    path: $HOME/.oh-my-zsh/custom/plugins/poetry/
-    state: directory
-    mode: "0755"
-
-- name: Generate completion file # noqa no-changed-when
-  ansible.builtin.shell: |
-    poetry completions zsh > $HOME/.oh-my-zsh/custom/plugins/poetry/_poetry
-  environment:
-    PATH: "{{ ansible_env.HOME }}/.python/bin:{{ ansible_env.PATH }}"
 
 #
 # pdbpp
@@ -74,25 +32,4 @@
   ansible.builtin.copy:
     src: python/pdbrc.py
     dest: $HOME/.pdbrc.py
-    mode: "0644"
-
-#
-# ruff
-#
-- name: Install ruff
-  community.general.pacman:
-    name: ruff
-    state: latest
-  become: true
-
-- name: Create ruff config dir
-  ansible.builtin.file:
-    path: $HOME/.config/ruff
-    state: directory
-    mode: "0755"
-
-- name: Copy ruff config
-  ansible.builtin.copy:
-    src: config/ruff/pyproject.toml
-    dest: $HOME/.config/ruff/pyproject.toml
     mode: "0644"
