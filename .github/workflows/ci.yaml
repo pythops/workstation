@@ -4,13 +4,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: taiki-e/install-action@just
+
+      - name: install uv
+        uses: astral-sh/setup-uv@v1
         with:
-          python-version: "3.11"
+          version: "latest"
+
       - name: Install Ansible
-        run: |
-          pip3 install ansible
-          ansible-galaxy collection install community.general
+        run: just setup
+
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@main
+        run: .venv/bin/ansible-lint

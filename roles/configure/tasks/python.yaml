@@ -15,7 +15,6 @@
 - name: Install python packages
   ansible.builtin.command: |
     uv pip install \
-      ansible-lint \
       ipython \
       pdbpp \
       pgcli \

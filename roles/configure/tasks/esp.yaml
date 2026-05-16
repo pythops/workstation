@@ -16,7 +16,7 @@
 - name: Get export-esp.sh stat
   ansible.builtin.stat:
     path: ~/export-esp.sh
-  register: file
+  register: configure_file
 
 - name: Move export-esp.sh script to ~/.espup
   ansible.builtin.copy:
@@ -24,4 +24,4 @@
     dest: ~/.espup/export-esp.sh
     mode: preserve
     remote_src: true
-  when: file.stat.exists
+  when: configure_file.stat.exists
