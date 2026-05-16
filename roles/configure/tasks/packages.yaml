@@ -53,6 +53,7 @@
       - hyperfine # CLI benchmarking tool
       - gimp
       - imagemagick
+      - inetutils
       - iwd
       - jless
       - jq
@@ -67,6 +68,7 @@
       - less
       - librdkafka
       - linux
+      - linux-headers
       - lld
       - llvm
       - lrzip
@@ -111,7 +113,6 @@
       - shfmt
       - signal-desktop
       - skaffold
-      - sniffnet
       - socat
       - scrcpy
       - spotify-player
@@ -125,11 +126,12 @@
       - tigervnc
       - tokei # Count the code
       - torbrowser-launcher
-      - tree-sitter-cli
       - ttf-fira-code
-      - ttf-font-awesome
+      - woff2-font-awesome
       - ttf-nerd-fonts-symbols
       - usbutils
+      - v4l2loopback-dkms
+      - v4l2loopback-utils
       - verilator
       - viu # image viewer in the terminal
       - vlc
