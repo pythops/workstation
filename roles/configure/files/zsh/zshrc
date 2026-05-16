@@ -41,9 +41,7 @@ plugins=(
   docker
   gcloud
   git
-  httpie
   kubectl
-  pip
   python
   vi-mode
   fzf-tab
@@ -120,14 +118,6 @@ fi
 if [ -f $HOME/gcloud/google-cloud-sdk/completion.zsh.inc ]; then
     source $HOME/gcloud/google-cloud-sdk/completion.zsh.inc
 fi
-
-##
-## Pyenv
-##
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 ##
 ## FZF
