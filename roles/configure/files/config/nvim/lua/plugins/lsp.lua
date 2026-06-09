@@ -113,8 +113,7 @@ return {
 
     -- rust --
 
-    local crates = require("crates")
-    crates.setup({
+    require("crates").setup({
       lsp = {
         enabled = true,
         actions = true,
@@ -148,6 +147,7 @@ return {
       },
     })
     vim.lsp.enable("rust_analyzer")
+    vim.lsp.enable("crates")
 
     -- C --
     vim.lsp.enable("clangd")
