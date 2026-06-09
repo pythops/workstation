@@ -7,17 +7,11 @@
     - zoxide
   become: true
 
-- name: Remove any existing directory before installing omz
+- name: Create ~/.zsh directory
   ansible.builtin.file:
-    path: ~/.oh-my-zsh
-    state: absent
-
-- name: Install oh my zsh # noqa latest[git]
-  ansible.builtin.git:
-    repo: "https://github.com/ohmyzsh/ohmyzsh.git"
-    dest: ~/.oh-my-zsh
-    force: true
-    depth: 1
+    path: ~/.zsh
+    state: directory
+    mode: "0755"
 
 - name: Copy zshrc
   ansible.builtin.copy:
@@ -28,24 +22,24 @@
 - name: Install zsh-syntax-highlighting plugin # noqa latest[git]
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    dest: ~/.zsh/zsh-syntax-highlighting
 
 - name: Install zsh-autosuggestions plugin # noqa latest[git]
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-autosuggestions
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    dest: ~/.zsh/zsh-autosuggestions
 
 - name: Install zsh-completions plugin # noqa latest[git]
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-completions
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
+    dest: ~/.zsh/zsh-completions
 
 - name: Install git-fuzzy plugin # noqa latest[git]
   ansible.builtin.git:
     repo: https://github.com/bigH/git-fuzzy.git
-    dest: ~/.oh-my-zsh/custom/plugins/git-fuzzy
+    dest: ~/.zsh/git-fuzzy
 
 - name: Install fzf-tab plugin # noqa latest[git]
   ansible.builtin.git:
     repo: https://github.com/Aloxaf/fzf-tab
-    dest: ~/.oh-my-zsh/custom/plugins/fzf-tab
+    dest: ~/.zsh/fzf-tab

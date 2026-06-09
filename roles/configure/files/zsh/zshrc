@@ -2,14 +2,8 @@
 ## Zsh
 ##
 
-export ZSH=$HOME/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
 setopt inc_append_history
 setopt share_history
-
-DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="false"
 
 ##
 ## General config
@@ -17,7 +11,7 @@ ENABLE_CORRECTION="false"
 
 skip_global_compinit=1
 
-export PATH=$ZSH_CUSTOM/plugins/git-fuzzy/bin:$HOME/.local/bin:$HOME/.npm-packages/bin:$HOME/.cargo/bin:$HOME/.python/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.npm-packages/bin:$HOME/.cargo/bin:$HOME/.python/bin:$HOME/.krew/bin:$PATH
 export EDITOR='nvim'
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export LANG=en_US.UTF-8
@@ -32,27 +26,17 @@ export STARSHIP_CONFIG=~/.config/starship/config.toml
 eval "$(starship init zsh)"
 
 ##
-## Oh my ZSH Plugins
+## ZSH Plugins
 ##
 
-plugins=(
-  ansible
-  command-not-found
-  docker
-  gcloud
-  git
-  kubectl
-  python
-  vi-mode
-  fzf-tab
-  zsh-autosuggestions
-  zsh-completions
-  zsh-syntax-highlighting
-)
+source $HOME/.zsh/fzf-tab/fzf-tab.plugin.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $HOME/.zsh/zsh-completions/zsh-completions.plugin.zsh
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+fpath=($ZSH/zsh-completions/src $fpath)
 
-source $ZSH/oh-my-zsh.sh
+autoload -U compinit; compinit
 
 enable-fzf-tab
 zstyle ':fzf-tab:*' fzf-pad 4
@@ -62,17 +46,16 @@ zstyle ':fzf-tab:*' fzf-pad 4
 ##
 
 ## Shortcuts
-alias upgrade="yay ; omz update ; rustup update"
-alias j="just"
+alias upgrade="yay ; rustup update"
 
 ## k8s
-alias start_minikube='minikube start -p dev --driver=docker --kubernetes-version=v1.25.13 --cpus=4 --memory=12gb'
+alias start_minikube='minikube start -p dev --driver=docker --kubernetes-version=v1.30.5 --cpus=4 --memory=8gb'
 alias delete_minikube='minikube delete -p dev'
 alias stop_minikube="minikube stop -p dev"
 alias kadm="kubectl -n kube-system "
 alias k="kubectl"
 alias kc="kubectx"
-alias skaffold="source <(minikube docker-env -p dev) && skaffold"
+# alias skaffold="source <(minikube docker-env -p dev) && skaffold"
 
 ## Commands
 alias cat="bat"
@@ -89,17 +72,11 @@ alias sudo="sudo "
 alias pdf="zathura"
 alias diff="difft"
 
-## git
-alias gd="git fuzzy diff"
-alias gs="git fuzzy status"
-alias gl="git pull"
-
 ##
 ## ESP
 ##
-if [ -f $HOME/.espup/export-esp.sh ]; then
-    source $HOME/.espup/export-esp.sh
-fi
+
+alias get_idf="source $HOME/esp/esp-idf/export.sh"
 
 ##
 ## i3 tmux
@@ -145,11 +122,13 @@ bindkey '^F' _zi
 ##
 ## SSH Agent
 ##
+
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 ##
 ## X
 ##
+
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
