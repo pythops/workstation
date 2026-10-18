@@ -18,7 +18,7 @@
 
 **Tmux plugins**: [plugins](https://github.com/pythops/workstation/blob/master/roles/configure/files/config/tmux/tmux.conf#L60)
 
-**Zsh configuration framework**: [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
+**Shell**: [fish](https://github.com/fish-shell/fish-shell)
 
 **Prompt**: [starship](https://github.com/starship/starship)
 
@@ -60,6 +60,7 @@ Available targets:
 - containers
 - dnsmasq
 - esp
+- fish
 - git
 - go
 - gpu
@@ -77,7 +78,6 @@ Available targets:
 - wezterm
 - wifi
 - yay
-- zsh
 
 <br>
 

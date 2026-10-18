@@ -13,7 +13,7 @@ if [ ! -f "archbox/cloud-init.iso" ]; then
   cat <<EOF >cloudinit/user-data
     #cloud-config
     packages:
-        - zsh
+        - fish
         - git
         - just
         - ansible
@@ -23,7 +23,7 @@ if [ ! -f "archbox/cloud-init.iso" ]; then
       filename: ""
     users:
       - name: pythops
-        shell: /usr/bin/zsh
+        shell: /usr/bin/fish
         sudo: ALL=(ALL) NOPASSWD:ALL
         plain_text_passwd: pythops
         lock_passwd: false

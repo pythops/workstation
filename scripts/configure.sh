@@ -13,6 +13,7 @@ available_targets=(
   "containers"
   "dnsmasq"
   "esp"
+  "fish"
   "git"
   "go"
   "gpu"
@@ -31,7 +32,6 @@ available_targets=(
   "wifi"
   "yay"
   "zathura"
-  "zsh"
 )
 
 if echo "${available_targets[@]}" | grep -qw "$target"; then

@@ -66,9 +66,9 @@
   ansible.builtin.import_tasks: python.yaml
   tags: python
 
-- name: Zsh
-  ansible.builtin.import_tasks: zsh.yaml
-  tags: zsh
+- name: Fish
+  ansible.builtin.import_tasks: fish.yaml
+  tags: fish
 
 - name: Containers
   ansible.builtin.import_tasks: containers.yaml

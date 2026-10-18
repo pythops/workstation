@@ -49,6 +49,7 @@
       - fakeroot
       - firefox
       - fzf
+      - handbrake
       - htop
       - hyperfine # CLI benchmarking tool
       - gimp
@@ -58,10 +59,8 @@
       - jless
       - jq
       - just
-      - jwt-cli
       - k9s
       - helm
-      - kubeconform
       - kubectl
       - kubectx
       - kustomize
@@ -103,7 +102,7 @@
       - powerline
       - powerline-fonts
       - procs
-      - qemu-base
+      - recordmydesktop
       - ripgrep
       - rsync
       - rustscan
@@ -134,7 +133,6 @@
       - v4l2loopback-utils
       - verilator
       - viu # image viewer in the terminal
-      - vlc
       - watchexec
       - which
       - xdp-tools

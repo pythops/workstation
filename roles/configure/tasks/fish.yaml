@@ -1,0 +1,14 @@
+- name: Install packages
+  community.general.pacman:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - fish
+    - zoxide
+  become: true
+
+- name: Copy config
+  ansible.builtin.copy:
+    src: config/fish/config.fish
+    dest: ~/.config/fish/config.fish
+    mode: "0644"
